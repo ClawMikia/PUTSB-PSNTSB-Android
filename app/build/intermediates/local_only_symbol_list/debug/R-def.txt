@@ -115,6 +115,7 @@ dimen text_xl
 dimen text_xs
 dimen text_xxl
 dimen toolbar_height
+drawable app_icon
 drawable bg_bottom_nav_cyber
 drawable bg_cyber_button
 drawable bg_cyber_button_outlined
@@ -202,7 +203,6 @@ id progress_payment
 id recycler_debts
 id recycler_top_contacts
 id row_due_date
-id scroll_content
 id sort_amount_high
 id sort_amount_low
 id sort_date_newest

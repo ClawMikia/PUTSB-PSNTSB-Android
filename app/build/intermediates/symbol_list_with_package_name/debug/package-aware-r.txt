@@ -3242,6 +3242,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_bottom_nav_cyber
@@ -3839,7 +3840,6 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
-id scroll_content
 id scrollable
 id search_badge
 id search_bar

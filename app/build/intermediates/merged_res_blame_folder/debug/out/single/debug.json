@@ -1,318 +1,326 @@
 [
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_activity_debt_detail.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_debt_detail.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_slide_out_left.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\slide_out_left.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_fab_gold.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_fab_gold.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_activity_main.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_info.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_info.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_fragment_about.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_about.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_check.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_check.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_cyber_button_outlined.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_cyber_button_outlined.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_empty_state.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_empty_state.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/menu_menu_debt_list.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/menu/menu_debt_list.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_slide_out_right.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\slide_out_right.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_toolbar_cyber.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_toolbar_cyber.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_summary_card_gold.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_summary_card_gold.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/xml_data_extraction_rules.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/xml/data_extraction_rules.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_fragment_analytics.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_analytics.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_fragment_lent.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_lent.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_splash_animated_icon.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\splash_animated_icon.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/color_edittext_hint_color.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/color/edittext_hint_color.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_item_debt.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\item_debt.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_sort.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_sort.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_activity_add_debt.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_add_debt.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_popup_menu_bg.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/popup_menu_bg.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\color_edittext_hint_color.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\color\\edittext_hint_color.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_status_badge.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_status_badge.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_divider_cyber.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\divider_cyber.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_empty_state.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_empty_state.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_status_badge_red.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_status_badge_red.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_cyber_card.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_cyber_card.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_ripple_gold.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_ripple_gold.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_dialog_cyber.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_dialog_cyber.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_popup_menu_bg.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\popup_menu_bg.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_item_animation_fall_down.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/item_animation_fall_down.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_cyber_card.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_cyber_card.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_rotate_loading.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/rotate_loading.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\color_bottom_nav_item_color.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\color\\bottom_nav_item_color.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_ripple_gold.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_ripple_gold.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_back.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_activity_add_debt.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_add_debt.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_slide_in_right.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\slide_in_right.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_splash_animated_icon.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/splash_animated_icon.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_slide_up.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\slide_up.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_analytics.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_analytics.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_fade_in.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\fade_in.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_divider_cyber.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/divider_cyber.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_money.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_money.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_slide_in_left.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/slide_in_left.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_toolbar_cyber.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_toolbar_cyber.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_fade_in.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/fade_in.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_item_top_contact.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\item_top_contact.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_progress_horizontal_cyber.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/progress_horizontal_cyber.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\color_edittext_stroke_color.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\color\\edittext_stroke_color.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_status_badge_green.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_status_badge_green.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_splash_screen.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_splash_screen.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_pulse_scale.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/pulse_scale.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_activity_debt_detail.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_debt_detail.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/color_chip_text_color.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/color/chip_text_color.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_rotate_loading.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\rotate_loading.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_person.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_person.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_dialog_partial_payment.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/dialog_partial_payment.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_pulse_scale.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\pulse_scale.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_warning.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_warning.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\menu_menu_debt_detail.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\menu\\menu_debt_detail.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_edit.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_edit.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_summary_card_green.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_summary_card_green.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_bottom_nav_cyber.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_bottom_nav_cyber.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_cyber_card_debt.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_cyber_card_debt.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_status_badge_orange.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_status_badge_orange.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_owe.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_owe.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/font_rajdhani_font_family.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/font/rajdhani_font_family.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\color_chip_bg_color.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\color\\chip_bg_color.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_activity_main.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_main.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_edit.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_edit.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_slide_out_right.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/slide_out_right.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_dashboard.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_dashboard.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_slide_out_left.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/slide_out_left.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_cyber_button.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_cyber_button.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_item_debt.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/item_debt.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_fragment_lent.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_lent.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/color_edittext_stroke_color.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/color/edittext_stroke_color.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\color_chip_text_color.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\color\\chip_text_color.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/color_bottom_nav_item_color.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/color/bottom_nav_item_color.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_warning.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_warning.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_check_circle.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_check_circle.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\font_orbitron_font_family.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\font\\orbitron_font_family.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_money.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_money.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_delete.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_delete.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_fragment_about.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_about.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_dialog_cyber.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_dialog_cyber.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_cyber_card_lent.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_cyber_card_lent.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\xml_data_extraction_rules.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/color_switch_thumb_color.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/color/switch_thumb_color.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_fragment_dashboard.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_dashboard.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_owe.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_owe.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_slide_in_left.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\slide_in_left.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_edittext_cyber.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_edittext_cyber.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_item_animation_fall_down.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\item_animation_fall_down.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_item_top_contact.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/item_top_contact.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_progress_horizontal_cyber.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\progress_horizontal_cyber.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_check.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_check.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\color_switch_track_color.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\color\\switch_track_color.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/color_chip_bg_color.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/color/chip_bg_color.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\menu_menu_debt_list.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\menu\\menu_debt_list.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_activity_splash.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_splash.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_add.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_add.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/xml_backup_rules.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/xml/backup_rules.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_lent.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_lent.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_delete.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_delete.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_summary_card_red.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_summary_card_red.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_dashboard.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_dashboard.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_fab_gold.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_fab_gold.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_slide_in_right.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/slide_in_right.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_sort.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_sort.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/font_orbitron_font_family.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/font/orbitron_font_family.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_cyber_card_debt.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_cyber_card_debt.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_cyber_button.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_cyber_button.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\font_rajdhani_font_family.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\font\\rajdhani_font_family.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/menu_menu_debt_detail.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/menu/menu_debt_detail.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\anim_fade_out.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\anim\\fade_out.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/color_switch_track_color.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/color/switch_track_color.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_analytics.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_analytics.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_back.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_back.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_dialog_partial_payment.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\dialog_partial_payment.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/menu/bottom_nav_menu.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_status_badge_orange.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_status_badge_orange.xml"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_calendar.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_calendar.xml"
     },
     {
         "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_fragment_dashboard.xml.flat",
         "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_dashboard.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_summary_card_red.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_summary_card_red.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_summary_card_green.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_summary_card_green.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_slide_up.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/slide_up.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_cyber_button_outlined.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_cyber_button_outlined.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_add.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_add.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\color_switch_thumb_color.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\color\\switch_thumb_color.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_summary_card_gold.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_summary_card_gold.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_activity_splash.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_splash_screen.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_splash_screen.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\xml_backup_rules.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_calendar.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_calendar.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\menu_bottom_nav_menu.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_fragment_analytics.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_analytics.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_app_icon.png.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\app_icon.png"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_person.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_person.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_check_circle.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_check_circle.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/navigation_nav_graph.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/navigation/nav_graph.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\navigation_nav_graph.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_status_badge_red.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_status_badge_red.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\layout_fragment_owed.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_owed.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/anim_fade_out.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/anim/fade_out.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_status_badge.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_status_badge.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_ic_lent.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/ic_lent.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_cyber_card_lent.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_cyber_card_lent.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/drawable_bg_bottom_nav_cyber.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/drawable/bg_bottom_nav_cyber.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_ic_info.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\ic_info.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-merged_res-57:/layout_fragment_owed.xml.flat",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_owed.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_status_badge_green.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_status_badge_green.xml"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-merged_res-57:\\drawable_bg_edittext_cyber.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\drawable\\bg_edittext_cyber.xml"
     }
 ]

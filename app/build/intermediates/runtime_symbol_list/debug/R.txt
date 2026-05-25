@@ -3241,6 +3241,7 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f070073
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f070074
 int drawable abc_textfield_search_material 0x7f070075
 int drawable abc_vector_test 0x7f070076
+int drawable app_icon 0x7f070111
 int drawable avd_hide_password 0x7f070077
 int drawable avd_show_password 0x7f070078
 int drawable bg_bottom_nav_cyber 0x7f070079
@@ -3838,7 +3839,6 @@ int id scroll 0x7f0901b5
 int id scrollIndicatorDown 0x7f0901b6
 int id scrollIndicatorUp 0x7f0901b7
 int id scrollView 0x7f0901b8
-int id scroll_content 0x7f0901b9
 int id scrollable 0x7f0901ba
 int id search_badge 0x7f0901bb
 int id search_bar 0x7f0901bc

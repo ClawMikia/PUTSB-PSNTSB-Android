@@ -1,47 +1,51 @@
 [
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/item_top_contact.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/item_top_contact.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\activity_main.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/activity_splash.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_splash.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\activity_splash.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/fragment_about.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_about.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\fragment_about.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_about.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/activity_debt_detail.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_debt_detail.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\activity_add_debt.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_add_debt.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/dialog_partial_payment.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/dialog_partial_payment.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\fragment_owed.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_owed.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/fragment_owed.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_owed.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\activity_debt_detail.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\activity_debt_detail.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/activity_add_debt.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_add_debt.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\dialog_partial_payment.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\dialog_partial_payment.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/fragment_analytics.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_analytics.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\item_debt.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\item_debt.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/item_debt.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/item_debt.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\fragment_dashboard.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_dashboard.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/activity_main.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/activity_main.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\item_top_contact.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\item_top_contact.xml"
     },
     {
-        "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/fragment_lent.xml",
-        "source": "com.cyberpunk.debttracker.app-main-59:/layout/fragment_lent.xml"
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\fragment_analytics.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_analytics.xml"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-mergeDebugResources-56:\\layout\\fragment_lent.xml",
+        "source": "D:\\.gradle\\daemon\\8.4\\com.cyberpunk.debttracker.app-main-59:\\layout\\fragment_lent.xml"
     },
     {
         "merged": "com.cyberpunk.debttracker.app-mergeDebugResources-56:/layout/fragment_dashboard.xml",

@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -48,9 +47,6 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final RecyclerView recyclerDebts;
 
   @NonNull
-  public final NestedScrollView scrollContent;
-
-  @NonNull
   public final Toolbar toolbar;
 
   @NonNull
@@ -75,8 +71,7 @@ public final class FragmentDashboardBinding implements ViewBinding {
       @NonNull AppBarLayout appBar, @NonNull ImageView btnSort, @NonNull MaterialCardView cardIOwe,
       @NonNull MaterialCardView cardNetBalance, @NonNull MaterialCardView cardOwesMe,
       @NonNull LinearLayout layoutEmpty, @NonNull RecyclerView recyclerDebts,
-      @NonNull NestedScrollView scrollContent, @NonNull Toolbar toolbar,
-      @NonNull TextView tvActiveCount, @NonNull TextView tvNetBalance,
+      @NonNull Toolbar toolbar, @NonNull TextView tvActiveCount, @NonNull TextView tvNetBalance,
       @NonNull TextView tvNetBalanceLabel, @NonNull TextView tvOverdueCount,
       @NonNull TextView tvTotalLent, @NonNull TextView tvTotalOwe) {
     this.rootView = rootView;
@@ -87,7 +82,6 @@ public final class FragmentDashboardBinding implements ViewBinding {
     this.cardOwesMe = cardOwesMe;
     this.layoutEmpty = layoutEmpty;
     this.recyclerDebts = recyclerDebts;
-    this.scrollContent = scrollContent;
     this.toolbar = toolbar;
     this.tvActiveCount = tvActiveCount;
     this.tvNetBalance = tvNetBalance;
@@ -166,12 +160,6 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.scroll_content;
-      NestedScrollView scrollContent = ViewBindings.findChildViewById(rootView, id);
-      if (scrollContent == null) {
-        break missingId;
-      }
-
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -215,8 +203,8 @@ public final class FragmentDashboardBinding implements ViewBinding {
       }
 
       return new FragmentDashboardBinding((CoordinatorLayout) rootView, appBar, btnSort, cardIOwe,
-          cardNetBalance, cardOwesMe, layoutEmpty, recyclerDebts, scrollContent, toolbar,
-          tvActiveCount, tvNetBalance, tvNetBalanceLabel, tvOverdueCount, tvTotalLent, tvTotalOwe);
+          cardNetBalance, cardOwesMe, layoutEmpty, recyclerDebts, toolbar, tvActiveCount,
+          tvNetBalance, tvNetBalanceLabel, tvOverdueCount, tvTotalLent, tvTotalOwe);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
