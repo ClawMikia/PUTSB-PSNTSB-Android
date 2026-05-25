@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Outer hexagon -->
+    <path
+        android:pathData="M48,6 L82,26 L82,70 L48,90 L14,70 L14,26 Z"
+        android:strokeColor="#33FFD700"
+        android:strokeWidth="1.5"
+        android:fillColor="#0AFFD700" />
+    <!-- Inner hexagon -->
+    <path
+        android:pathData="M48,20 L72,34 L72,62 L48,76 L24,62 L24,34 Z"
+        android:strokeColor="#22FFD700"
+        android:strokeWidth="1"
+        android:fillColor="#00000000" />
+    <!-- Question mark body -->
+    <path
+        android:pathData="M40,36 C40,28 56,28 56,38 C56,44 48,46 48,54"
+        android:strokeColor="#66FFD700"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <!-- Question mark dot -->
+    <path
+        android:fillColor="#66FFD700"
+        android:pathData="M 48, 62 m -2.5, 0 a 2.5, 2.5 0 1, 1 5, 0 a 2.5, 2.5 0 1, 1 -5, 0" />
+</vector>

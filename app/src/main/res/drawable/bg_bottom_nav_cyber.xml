@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Top gold border -->
+    <item android:gravity="top" android:height="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/cyber_gold_alpha30" />
+        </shape>
+    </item>
+    <!-- Nav body -->
+    <item android:top="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/cyber_surface" />
+        </shape>
+    </item>
+</layer-list>

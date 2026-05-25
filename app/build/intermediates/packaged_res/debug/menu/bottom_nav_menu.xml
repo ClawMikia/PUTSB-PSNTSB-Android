@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/nav_dashboard" />
+
+    <item
+        android:id="@+id/owedFragment"
+        android:icon="@drawable/ic_owe"
+        android:title="@string/nav_owed" />
+
+    <item
+        android:id="@+id/lentFragment"
+        android:icon="@drawable/ic_lent"
+        android:title="@string/nav_lent" />
+
+    <item
+        android:id="@+id/analyticsFragment"
+        android:icon="@drawable/ic_analytics"
+        android:title="@string/nav_analytics" />
+
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/ic_info"
+        android:title="@string/nav_about" />
+
+</menu>

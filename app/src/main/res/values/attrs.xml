@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CyberCardView">
+        <attr name="glowColor" format="color" />
+        <attr name="glowRadius" format="dimension" />
+        <attr name="cornerRadiusCustom" format="dimension" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CyberProgressBar">
+        <attr name="progressColor" format="color" />
+        <attr name="trackColor" format="color" />
+        <attr name="animateOnAttach" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="GlowTextView">
+        <attr name="glowColor" />
+        <attr name="glowRadius" />
+    </declare-styleable>
+</resources>

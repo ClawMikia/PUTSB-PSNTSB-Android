@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Cyberpunk Palette: Gold + Matte Black -->
+    <color name="cyber_gold">#FFD700</color>
+    <color name="cyber_gold_bright">#FFEA00</color>
+    <color name="cyber_gold_dark">#B8860B</color>
+    <color name="cyber_gold_dim">#80FFD700</color>
+    <color name="cyber_gold_alpha30">#4DFFD700</color>
+    <color name="cyber_gold_alpha15">#26FFD700</color>
+    <color name="cyber_gold_alpha60">#99FFD700</color>
+
+    <!-- Background Blacks -->
+    <color name="cyber_black">#0A0A0A</color>
+    <color name="cyber_black_deep">#050505</color>
+    <color name="cyber_surface">#111111</color>
+    <color name="cyber_surface_raised">#1A1A1A</color>
+    <color name="cyber_surface_high">#222222</color>
+    <color name="cyber_panel">#141414</color>
+    <color name="cyber_card">#181818</color>
+    <color name="cyber_card_border">#2A2A2A</color>
+
+    <!-- Metallic Accents -->
+    <color name="cyber_metallic_light">#C0C0C0</color>
+    <color name="cyber_metallic_mid">#888888</color>
+    <color name="cyber_metallic_dark">#444444</color>
+    <color name="cyber_chrome">#E8E8E8</color>
+
+    <!-- Neon Accent Colors -->
+    <color name="neon_amber">#FFC107</color>
+    <color name="neon_orange">#FF6D00</color>
+    <color name="neon_red_alert">#FF1744</color>
+    <color name="neon_green_ok">#00E676</color>
+    <color name="neon_cyan_info">#00E5FF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#F5F5F5</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_tertiary">#666666</color>
+    <color name="text_gold">#FFD700</color>
+    <color name="text_on_gold">#1A1A1A</color>
+    <color name="text_disabled">#3D3D3D</color>
+
+    <!-- Semantic Colors -->
+    <color name="debt_owed">#FF4444</color>      <!-- Red: I owe someone -->
+    <color name="debt_lent">#00C853</color>       <!-- Green: Someone owes me -->
+    <color name="debt_partial">#FF9800</color>    <!-- Orange: Partially paid -->
+    <color name="debt_settled">#607D8B</color>    <!-- Grey: Settled -->
+
+    <color name="debt_owed_dim">#33FF4444</color>
+    <color name="debt_lent_dim">#3300C853</color>
+    <color name="debt_partial_dim">#33FF9800</color>
+
+    <!-- Glow / Shadow Overlays -->
+    <color name="glow_gold">#80FFD700</color>
+    <color name="glow_red">#80FF1744</color>
+    <color name="glow_green">#8000E676</color>
+
+    <!-- Status Bar / Nav Bar -->
+    <color name="status_bar_color">#050505</color>
+    <color name="nav_bar_color">#0A0A0A</color>
+
+    <!-- Divider -->
+    <color name="divider_color">#1AFFD700</color>
+
+    <!-- Overlay Scrim -->
+    <color name="scrim">#CC000000</color>
+
+    <!-- Progress Track -->
+    <color name="progress_track">#1AFFD700</color>
+    <color name="progress_fill">#FFD700</color>
+</resources>

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cyber_black">#0A0A0A</color>
+    <color name="cyber_black_deep">#050505</color>
+    <color name="cyber_card">#181818</color>
+    <color name="cyber_card_border">#2A2A2A</color>
+    <color name="cyber_chrome">#E8E8E8</color>
+    <color name="cyber_gold">#FFD700</color>
+    <color name="cyber_gold_alpha15">#26FFD700</color>
+    <color name="cyber_gold_alpha30">#4DFFD700</color>
+    <color name="cyber_gold_alpha60">#99FFD700</color>
+    <color name="cyber_gold_bright">#FFEA00</color>
+    <color name="cyber_gold_dark">#B8860B</color>
+    <color name="cyber_gold_dim">#80FFD700</color>
+    <color name="cyber_metallic_dark">#444444</color>
+    <color name="cyber_metallic_light">#C0C0C0</color>
+    <color name="cyber_metallic_mid">#888888</color>
+    <color name="cyber_panel">#141414</color>
+    <color name="cyber_surface">#111111</color>
+    <color name="cyber_surface_high">#222222</color>
+    <color name="cyber_surface_raised">#1A1A1A</color>
+    <color name="debt_lent">#00C853</color>
+    <color name="debt_lent_dim">#3300C853</color>
+    <color name="debt_owed">#FF4444</color>
+    <color name="debt_owed_dim">#33FF4444</color>
+    <color name="debt_partial">#FF9800</color>
+    <color name="debt_partial_dim">#33FF9800</color>
+    <color name="debt_settled">#607D8B</color>
+    <color name="divider_color">#1AFFD700</color>
+    <color name="glow_gold">#80FFD700</color>
+    <color name="glow_green">#8000E676</color>
+    <color name="glow_red">#80FF1744</color>
+    <color name="nav_bar_color">#0A0A0A</color>
+    <color name="neon_amber">#FFC107</color>
+    <color name="neon_cyan_info">#00E5FF</color>
+    <color name="neon_green_ok">#00E676</color>
+    <color name="neon_orange">#FF6D00</color>
+    <color name="neon_red_alert">#FF1744</color>
+    <color name="progress_fill">#FFD700</color>
+    <color name="progress_track">#1AFFD700</color>
+    <color name="scrim">#CC000000</color>
+    <color name="status_bar_color">#050505</color>
+    <color name="text_disabled">#3D3D3D</color>
+    <color name="text_gold">#FFD700</color>
+    <color name="text_on_gold">#1A1A1A</color>
+    <color name="text_primary">#F5F5F5</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_tertiary">#666666</color>
+    <dimen name="border_md">1.5dp</dimen>
+    <dimen name="border_thick">2dp</dimen>
+    <dimen name="border_thin">1dp</dimen>
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="bottom_sheet_peek">300dp</dimen>
+    <dimen name="button_height">52dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+    <dimen name="card_margin">12dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="corner_lg">16dp</dimen>
+    <dimen name="corner_md">12dp</dimen>
+    <dimen name="corner_round">50dp</dimen>
+    <dimen name="corner_sm">8dp</dimen>
+    <dimen name="corner_xl">20dp</dimen>
+    <dimen name="corner_xs">4dp</dimen>
+    <dimen name="edittext_height">56dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="icon_hero">64dp</dimen>
+    <dimen name="icon_lg">32dp</dimen>
+    <dimen name="icon_md">24dp</dimen>
+    <dimen name="icon_sm">20dp</dimen>
+    <dimen name="icon_xl">48dp</dimen>
+    <dimen name="list_item_height">88dp</dimen>
+    <dimen name="progress_height">6dp</dimen>
+    <dimen name="progress_height_thick">10dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+    <dimen name="splash_logo_size">96dp</dimen>
+    <dimen name="summary_card_height">110dp</dimen>
+    <dimen name="text_body">15sp</dimen>
+    <dimen name="text_display">48sp</dimen>
+    <dimen name="text_hero">36sp</dimen>
+    <dimen name="text_lg">16sp</dimen>
+    <dimen name="text_md">14sp</dimen>
+    <dimen name="text_sm">12sp</dimen>
+    <dimen name="text_title">26sp</dimen>
+    <dimen name="text_xl">18sp</dimen>
+    <dimen name="text_xs">10sp</dimen>
+    <dimen name="text_xxl">22sp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <string name="about_description">This application is a specialized financial node tracker designed for high-stakes debt management in the sprawl. Remember the golden rule of the streets:</string>
+    <string name="about_dev">DEVELOPED BY: THE BUMBAY OPERATIVE</string>
+    <string name="about_quote">"Pag Utang Tawag Sakin Boss, Pag Singil na Tawag Sakin Bantot"</string>
+    <string name="about_title">ABOUT THE MATRIX</string>
+    <string name="about_version">SYSTEM VERSION: 2.0.7-CYBER</string>
+    <string name="active_debts_label">ACTIVE NODES</string>
+    <string name="add_debt_title">NEW DEBT NODE</string>
+    <string name="analytics_title">DEBT ANALYTICS</string>
+    <string name="app_name">PUTSB-PSNTSB</string>
+    <string name="app_tagline">"Pag Utang Tawag Sakin Boss, Pag Singil na Tawag Sakin Bantot"</string>
+    <string name="btn_cancel">ABORT</string>
+    <string name="btn_delete">DELETE NODE</string>
+    <string name="btn_edit">EDIT NODE</string>
+    <string name="btn_mark_paid">MARK SETTLED</string>
+    <string name="btn_partial_pay">PARTIAL PAYMENT</string>
+    <string name="btn_save_debt">INITIALIZE NODE</string>
+    <string name="chart_breakdown">BREAKDOWN BY TYPE</string>
+    <string name="chart_timeline">DEBT TIMELINE</string>
+    <string name="currency_symbol">₱</string>
+    <string name="debt_detail_title">DEBT NODE DETAILS</string>
+    <string name="debt_type_lent">OWES ME</string>
+    <string name="debt_type_owe">I OWE</string>
+    <string name="dialog_cancel">CANCEL</string>
+    <string name="dialog_confirm">CONFIRM</string>
+    <string name="dialog_delete_message">This debt record will be permanently erased from the matrix. Continue?</string>
+    <string name="dialog_delete_title">DELETE NODE?</string>
+    <string name="dialog_partial_hint">Enter payment amount…</string>
+    <string name="dialog_partial_title">PARTIAL PAYMENT</string>
+    <string name="dialog_settle_message">Mark this debt as fully settled?</string>
+    <string name="dialog_settle_title">SETTLE DEBT?</string>
+    <string name="edit_debt_title">MODIFY NODE</string>
+    <string name="empty_debts_subtitle">The matrix is clean. Add your first debt node to begin tracking.</string>
+    <string name="empty_debts_title">NO DEBT NODES DETECTED</string>
+    <string name="empty_lent_title">NO RECEIVABLES FOUND</string>
+    <string name="empty_owed_title">NO OUTSTANDING DEBTS</string>
+    <string name="error_amount_invalid">Enter a valid amount</string>
+    <string name="error_amount_required">Amount is required</string>
+    <string name="error_amount_zero">Amount must be greater than zero</string>
+    <string name="error_name_required">Entity name is required</string>
+    <string name="error_payment_exceeds">Payment exceeds remaining balance</string>
+    <string name="hint_amount">0.00</string>
+    <string name="hint_description">What is this debt for?</string>
+    <string name="hint_person_name">Enter entity name…</string>
+    <string name="label_amount">AMOUNT (₱)</string>
+    <string name="label_created">CREATED</string>
+    <string name="label_debt_type">DEBT TYPE</string>
+    <string name="label_description">DESCRIPTION</string>
+    <string name="label_due">DUE DATE</string>
+    <string name="label_due_date">DUE DATE</string>
+    <string name="label_paid">PAID AMOUNT</string>
+    <string name="label_person_name">ENTITY NAME</string>
+    <string name="label_remaining">REMAINING</string>
+    <string name="label_status">STATUS</string>
+    <string name="nav_about">About</string>
+    <string name="nav_analytics">Analytics</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_lent">Owes Me</string>
+    <string name="nav_owed">I Owe</string>
+    <string name="net_balance_label">NET BALANCE</string>
+    <string name="sort_amount_high">Amount (High)</string>
+    <string name="sort_amount_low">Amount (Low)</string>
+    <string name="sort_date_newest">Date (Newest)</string>
+    <string name="sort_date_oldest">Date (Oldest)</string>
+    <string name="sort_name_az">Name (A-Z)</string>
+    <string name="sort_overdue_first">Overdue First</string>
+    <string name="splash_initializing">INITIALIZING DEBT MATRIX…</string>
+    <string name="splash_ready">SYSTEM ONLINE</string>
+    <string name="splash_scanning">SCANNING FINANCIAL NODES…</string>
+    <string name="status_active">ACTIVE</string>
+    <string name="status_overdue">OVERDUE</string>
+    <string name="status_partial">PARTIAL</string>
+    <string name="status_settled">SETTLED</string>
+    <string name="success_debt_added">Debt node initialized</string>
+    <string name="success_debt_deleted">Node deleted</string>
+    <string name="success_debt_settled">Debt settled</string>
+    <string name="success_debt_updated">Node updated</string>
+    <string name="success_payment_recorded">Payment recorded</string>
+    <string name="top_creditors">TOP CREDITORS</string>
+    <string name="top_debtors">TOP DEBTORS</string>
+    <string name="total_debt_label">TOTAL DEBT EXPOSURE</string>
+    <string name="total_lent_label">TOTAL RECEIVABLES</string>
+    <style name="ShapeAppearance.DebtTracker.Large" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+    <style name="ShapeAppearance.DebtTracker.Medium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+    <style name="ShapeAppearance.DebtTracker.Small" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="TextAppearance.DebtTracker.Amount" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textColor">@color/cyber_gold</item>
+        <item name="android:textSize">@dimen/text_xxl</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+    <style name="TextAppearance.DebtTracker.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="TextAppearance.DebtTracker.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+    <style name="TextAppearance.DebtTracker.Hero" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textColor">@color/cyber_gold</item>
+        <item name="android:textSize">@dimen/text_hero</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+    <style name="TextAppearance.DebtTracker.Label" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/cyber_gold</item>
+        <item name="android:textSize">@dimen/text_xs</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="TextAppearance.DebtTracker.Subtitle" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/text_xl</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+    <style name="TextAppearance.DebtTracker.Title" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Theme.DebtTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/cyber_gold</item>
+        <item name="colorPrimaryDark">@color/cyber_gold_dark</item>
+        <item name="colorPrimaryVariant">@color/cyber_gold_dark</item>
+        <item name="colorOnPrimary">@color/text_on_gold</item>
+        <item name="colorSecondary">@color/neon_amber</item>
+        <item name="colorSecondaryVariant">@color/cyber_gold_dark</item>
+        <item name="colorOnSecondary">@color/text_on_gold</item>
+
+        
+        <item name="android:colorBackground">@color/cyber_black</item>
+        <item name="colorSurface">@color/cyber_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorError">@color/neon_red_alert</item>
+        <item name="colorOnError">@color/text_primary</item>
+
+        
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <item name="android:navigationBarColor">@color/nav_bar_color</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        
+        <item name="android:windowBackground">@color/cyber_black</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimation.Cyber</item>
+
+        
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorTertiary">@color/text_tertiary</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+
+        
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.DebtTracker.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.DebtTracker.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.DebtTracker.Large</item>
+
+        
+        <item name="textAppearanceHeadline1">@style/TextAppearance.DebtTracker.Hero</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.DebtTracker.Title</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.DebtTracker.Subtitle</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.DebtTracker.Body</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.DebtTracker.Caption</item>
+
+        
+        <item name="materialCardViewStyle">@style/Widget.DebtTracker.CardView</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.DebtTracker.FAB</item>
+        <item name="bottomNavigationStyle">@style/Widget.DebtTracker.BottomNavigation</item>
+        <item name="toolbarStyle">@style/Widget.DebtTracker.Toolbar</item>
+        <item name="textInputStyle">@style/Widget.DebtTracker.TextInputLayout</item>
+        <item name="materialButtonStyle">@style/Widget.DebtTracker.Button</item>
+        <item name="appBarLayoutStyle">@style/Widget.DebtTracker.AppBarLayout</item>
+        <item name="popupMenuStyle">@style/Widget.DebtTracker.PopupMenu</item>
+        <item name="android:popupMenuStyle">@style/Widget.DebtTracker.PopupMenu</item>
+    </style>
+    <style name="Theme.DebtTracker.Dialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@color/cyber_surface</item>
+        <item name="colorPrimary">@color/cyber_gold</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorAlertDialogListItem">@color/text_primary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.DebtTracker.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.DebtTracker.Button.Ghost</item>
+        <item name="android:colorBackground">@color/cyber_surface</item>
+    </style>
+    <style name="Theme.DebtTracker.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/cyber_black_deep</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_animated_icon</item>
+        <item name="windowSplashScreenAnimationDuration">1200</item>
+        <item name="postSplashScreenTheme">@style/Theme.DebtTracker</item>
+        <item name="android:statusBarColor">@color/cyber_black_deep</item>
+        <item name="android:navigationBarColor">@color/cyber_black_deep</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Widget.DebtTracker.AppBarLayout" parent="Widget.Design.AppBarLayout">
+        <item name="android:background">@color/cyber_black</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <style name="Widget.DebtTracker.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/cyber_surface</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="itemRippleColor">@color/cyber_gold_alpha15</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <style name="Widget.DebtTracker.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/cyber_gold</item>
+        <item name="android:textColor">@color/text_on_gold</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="elevation">0dp</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+    <style name="Widget.DebtTracker.Button.Danger" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/neon_red_alert</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/neon_red_alert</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="rippleColor">@color/glow_red</item>
+    </style>
+    <style name="Widget.DebtTracker.Button.Ghost" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="rippleColor">@color/cyber_gold_alpha15</item>
+    </style>
+    <style name="Widget.DebtTracker.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/cyber_gold</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/cyber_gold</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="rippleColor">@color/cyber_gold_alpha15</item>
+    </style>
+    <style name="Widget.DebtTracker.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/cyber_card</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="strokeColor">@color/cyber_card_border</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="Widget.DebtTracker.CardView.Debt" parent="Widget.DebtTracker.CardView">
+        <item name="strokeColor">@color/debt_owed_dim</item>
+    </style>
+    <style name="Widget.DebtTracker.CardView.Gold" parent="Widget.DebtTracker.CardView">
+        <item name="strokeColor">@color/cyber_gold_alpha30</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="Widget.DebtTracker.CardView.Lent" parent="Widget.DebtTracker.CardView">
+        <item name="strokeColor">@color/debt_lent_dim</item>
+    </style>
+    <style name="Widget.DebtTracker.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+        <item name="chipStrokeColor">@color/cyber_gold_alpha30</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="checkedIconTint">@color/text_on_gold</item>
+        <item name="chipCornerRadius">8dp</item>
+    </style>
+    <style name="Widget.DebtTracker.FAB" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="backgroundTint">@color/cyber_gold</item>
+        <item name="tint">@color/text_on_gold</item>
+        <item name="android:textColor">@color/text_on_gold</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="elevation">8dp</item>
+    </style>
+    <style name="Widget.DebtTracker.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
+        <item name="android:popupBackground">@drawable/popup_menu_bg</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="Widget.DebtTracker.ProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_cyber</item>
+        <item name="android:minHeight">6dp</item>
+        <item name="android:maxHeight">6dp</item>
+    </style>
+    <style name="Widget.DebtTracker.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="thumbTint">@color/switch_thumb_color</item>
+        <item name="trackTint">@color/switch_track_color</item>
+    </style>
+    <style name="Widget.DebtTracker.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/cyber_surface_raised</item>
+        <item name="boxStrokeColor">@color/edittext_stroke_color</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">@color/edittext_hint_color</item>
+        <item name="android:textColorHint">@color/text_tertiary</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="counterTextColor">@color/text_tertiary</item>
+        <item name="errorTextColor">@color/neon_red_alert</item>
+        <item name="errorIconTint">@color/neon_red_alert</item>
+        <item name="startIconTint">@color/cyber_gold</item>
+        <item name="endIconTint">@color/cyber_gold</item>
+        <item name="prefixTextColor">@color/text_primary</item>
+        <item name="suffixTextColor">@color/text_primary</item>
+    </style>
+    <style name="Widget.DebtTracker.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/cyber_black</item>
+        <item name="titleTextColor">@color/cyber_gold</item>
+        <item name="subtitleTextColor">@color/text_secondary</item>
+        <item name="navigationIconTint">@color/cyber_gold</item>
+    </style>
+    <style name="WindowAnimation.Cyber" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+    <declare-styleable name="CyberCardView">
+        <attr format="color" name="glowColor"/>
+        <attr format="dimension" name="glowRadius"/>
+        <attr format="dimension" name="cornerRadiusCustom"/>
+        <attr format="color" name="borderColor"/>
+        <attr format="dimension" name="borderWidth"/>
+    </declare-styleable>
+    <declare-styleable name="CyberProgressBar">
+        <attr format="color" name="progressColor"/>
+        <attr format="color" name="trackColor"/>
+        <attr format="boolean" name="animateOnAttach"/>
+    </declare-styleable>
+    <declare-styleable name="GlowTextView">
+        <attr name="glowColor"/>
+        <attr name="glowRadius"/>
+    </declare-styleable>
+</resources>

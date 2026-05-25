@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer hexagon ring -->
+    <path
+        android:pathData="M54,8 L92,30 L92,78 L54,100 L16,78 L16,30 Z"
+        android:strokeColor="#FFD700"
+        android:strokeWidth="2"
+        android:fillColor="#1AFFD700" />
+
+    <!-- Inner hexagon -->
+    <path
+        android:pathData="M54,22 L78,36 L78,72 L54,86 L30,72 L30,36 Z"
+        android:strokeColor="#FFD700"
+        android:strokeWidth="1.5"
+        android:fillColor="#0AFFD700" />
+
+    <!-- Center currency symbol -->
+    <path
+        android:pathData="M54,34 L54,40 M54,68 L54,74 M46,44 C46,40 62,38 62,48 C62,54 46,54 46,62 C46,72 62,70 62,66"
+        android:strokeColor="#FFD700"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Corner accent dots -->
+    <path android:fillColor="#FFD700" android:pathData="M 54, 8 m -2.5, 0 a 2.5, 2.5 0 1, 1 5, 0 a 2.5, 2.5 0 1, 1 -5, 0" />
+    <path android:fillColor="#FFD700" android:pathData="M 92, 30 m -2.5, 0 a 2.5, 2.5 0 1, 1 5, 0 a 2.5, 2.5 0 1, 1 -5, 0" />
+    <path android:fillColor="#FFD700" android:pathData="M 92, 78 m -2.5, 0 a 2.5, 2.5 0 1, 1 5, 0 a 2.5, 2.5 0 1, 1 -5, 0" />
+    <path android:fillColor="#FFD700" android:pathData="M 54, 100 m -2.5, 0 a 2.5, 2.5 0 1, 1 5, 0 a 2.5, 2.5 0 1, 1 -5, 0" />
+    <path android:fillColor="#FFD700" android:pathData="M 16, 78 m -2.5, 0 a 2.5, 2.5 0 1, 1 5, 0 a 2.5, 2.5 0 1, 1 -5, 0" />
+    <path android:fillColor="#FFD700" android:pathData="M 16, 30 m -2.5, 0 a 2.5, 2.5 0 1, 1 5, 0 a 2.5, 2.5 0 1, 1 -5, 0" />
+</vector>

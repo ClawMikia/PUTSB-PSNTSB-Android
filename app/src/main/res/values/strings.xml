@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PUTSB-PSNTSB</string>
+    <string name="app_tagline">"Pag Utang Tawag Sakin Boss, Pag Singil na Tawag Sakin Bantot"</string>
+
+    <string name="nav_about">About</string>
+    <string name="about_title">ABOUT THE MATRIX</string>
+    <string name="about_description">This application is a specialized financial node tracker designed for high-stakes debt management in the sprawl. Remember the golden rule of the streets:</string>
+    <string name="about_quote">"Pag Utang Tawag Sakin Boss, Pag Singil na Tawag Sakin Bantot"</string>
+    <string name="about_version">SYSTEM VERSION: 2.0.7-CYBER</string>
+    <string name="about_dev">DEVELOPED BY: THE BUMBAY OPERATIVE</string>
+
+    <!-- Dashboard -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_owed">I Owe</string>
+    <string name="nav_lent">Owes Me</string>
+    <string name="nav_analytics">Analytics</string>
+
+    <string name="total_debt_label">TOTAL DEBT EXPOSURE</string>
+    <string name="total_lent_label">TOTAL RECEIVABLES</string>
+    <string name="net_balance_label">NET BALANCE</string>
+    <string name="active_debts_label">ACTIVE NODES</string>
+
+    <!-- Debt Types -->
+    <string name="debt_type_owe">I OWE</string>
+    <string name="debt_type_lent">OWES ME</string>
+
+    <!-- Add Debt -->
+    <string name="add_debt_title">NEW DEBT NODE</string>
+    <string name="edit_debt_title">MODIFY NODE</string>
+    <string name="label_person_name">ENTITY NAME</string>
+    <string name="label_amount">AMOUNT (₱)</string>
+    <string name="label_description">DESCRIPTION</string>
+    <string name="label_due_date">DUE DATE</string>
+    <string name="label_debt_type">DEBT TYPE</string>
+    <string name="hint_person_name">Enter entity name…</string>
+    <string name="hint_amount">0.00</string>
+    <string name="hint_description">What is this debt for?</string>
+    <string name="btn_save_debt">INITIALIZE NODE</string>
+    <string name="btn_cancel">ABORT</string>
+    <string name="btn_mark_paid">MARK SETTLED</string>
+    <string name="btn_partial_pay">PARTIAL PAYMENT</string>
+    <string name="btn_delete">DELETE NODE</string>
+    <string name="btn_edit">EDIT NODE</string>
+
+    <!-- Detail -->
+    <string name="debt_detail_title">DEBT NODE DETAILS</string>
+    <string name="label_status">STATUS</string>
+    <string name="label_created">CREATED</string>
+    <string name="label_due">DUE DATE</string>
+    <string name="label_paid">PAID AMOUNT</string>
+    <string name="label_remaining">REMAINING</string>
+    <string name="status_active">ACTIVE</string>
+    <string name="status_settled">SETTLED</string>
+    <string name="status_overdue">OVERDUE</string>
+    <string name="status_partial">PARTIAL</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">DELETE NODE?</string>
+    <string name="dialog_delete_message">This debt record will be permanently erased from the matrix. Continue?</string>
+    <string name="dialog_settle_title">SETTLE DEBT?</string>
+    <string name="dialog_settle_message">Mark this debt as fully settled?</string>
+    <string name="dialog_partial_title">PARTIAL PAYMENT</string>
+    <string name="dialog_partial_hint">Enter payment amount…</string>
+    <string name="dialog_confirm">CONFIRM</string>
+    <string name="dialog_cancel">CANCEL</string>
+
+    <!-- Empty State -->
+    <string name="empty_debts_title">NO DEBT NODES DETECTED</string>
+    <string name="empty_debts_subtitle">The matrix is clean. Add your first debt node to begin tracking.</string>
+    <string name="empty_owed_title">NO OUTSTANDING DEBTS</string>
+    <string name="empty_lent_title">NO RECEIVABLES FOUND</string>
+
+    <!-- Analytics -->
+    <string name="analytics_title">DEBT ANALYTICS</string>
+    <string name="chart_breakdown">BREAKDOWN BY TYPE</string>
+    <string name="chart_timeline">DEBT TIMELINE</string>
+    <string name="top_creditors">TOP CREDITORS</string>
+    <string name="top_debtors">TOP DEBTORS</string>
+
+    <!-- Errors -->
+    <string name="error_name_required">Entity name is required</string>
+    <string name="error_amount_required">Amount is required</string>
+    <string name="error_amount_invalid">Enter a valid amount</string>
+    <string name="error_amount_zero">Amount must be greater than zero</string>
+    <string name="error_payment_exceeds">Payment exceeds remaining balance</string>
+
+    <!-- Success -->
+    <string name="success_debt_added">Debt node initialized</string>
+    <string name="success_debt_updated">Node updated</string>
+    <string name="success_debt_settled">Debt settled</string>
+    <string name="success_debt_deleted">Node deleted</string>
+    <string name="success_payment_recorded">Payment recorded</string>
+
+    <!-- Sort -->
+    <string name="sort_date_newest">Date (Newest)</string>
+    <string name="sort_date_oldest">Date (Oldest)</string>
+    <string name="sort_amount_high">Amount (High)</string>
+    <string name="sort_amount_low">Amount (Low)</string>
+    <string name="sort_name_az">Name (A-Z)</string>
+    <string name="sort_overdue_first">Overdue First</string>
+
+    <!-- Currency -->
+    <string name="currency_symbol">₱</string>
+
+    <!-- Splash -->
+    <string name="splash_initializing">INITIALIZING DEBT MATRIX…</string>
+    <string name="splash_scanning">SCANNING FINANCIAL NODES…</string>
+    <string name="splash_ready">SYSTEM ONLINE</string>
+</resources>

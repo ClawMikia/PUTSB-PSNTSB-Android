@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.cyberpunk.debttracker.ui.dashboard.DashboardFragment"
+        android:label="Dashboard" />
+
+    <fragment
+        android:id="@+id/owedFragment"
+        android:name="com.cyberpunk.debttracker.ui.dashboard.OwedFragment"
+        android:label="I Owe" />
+
+    <fragment
+        android:id="@+id/lentFragment"
+        android:name="com.cyberpunk.debttracker.ui.dashboard.LentFragment"
+        android:label="Owes Me" />
+
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="com.cyberpunk.debttracker.ui.dashboard.AnalyticsFragment"
+        android:label="Analytics" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.cyberpunk.debttracker.ui.about.AboutFragment"
+        android:label="About" />
+
+</navigation>

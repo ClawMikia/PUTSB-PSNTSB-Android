@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DebtTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/cyber_gold</item>
+        <item name="colorPrimaryDark">@color/cyber_gold_dark</item>
+        <item name="colorPrimaryVariant">@color/cyber_gold_dark</item>
+        <item name="colorOnPrimary">@color/text_on_gold</item>
+        <item name="colorSecondary">@color/neon_amber</item>
+        <item name="colorSecondaryVariant">@color/cyber_gold_dark</item>
+        <item name="colorOnSecondary">@color/text_on_gold</item>
+        <item name="android:colorBackground">@color/cyber_black</item>
+        <item name="colorSurface">@color/cyber_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorError">@color/neon_red_alert</item>
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <item name="android:navigationBarColor">@color/nav_bar_color</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowBackground">@color/cyber_black</item>
+
+        
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorTertiary">@color/text_tertiary</item>
+
+        
+        <item name="popupMenuStyle">@style/Widget.DebtTracker.PopupMenu</item>
+        <item name="android:popupMenuStyle">@style/Widget.DebtTracker.PopupMenu</item>
+    </style>
+</resources>

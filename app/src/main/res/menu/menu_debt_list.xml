@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/sort_date_newest"   android:title="@string/sort_date_newest" />
+    <item android:id="@+id/sort_date_oldest"   android:title="@string/sort_date_oldest" />
+    <item android:id="@+id/sort_amount_high"   android:title="@string/sort_amount_high" />
+    <item android:id="@+id/sort_amount_low"    android:title="@string/sort_amount_low" />
+    <item android:id="@+id/sort_name_az"       android:title="@string/sort_name_az" />
+    <item android:id="@+id/sort_overdue_first" android:title="@string/sort_overdue_first" />
+</menu>

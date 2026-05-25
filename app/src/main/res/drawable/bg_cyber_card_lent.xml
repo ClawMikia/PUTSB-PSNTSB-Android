@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <solid android:color="@color/cyber_card" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/debt_lent_dim" />
+        </shape>
+    </item>
+    <!-- Left accent stripe -->
+    <item android:gravity="left" android:width="4dp">
+        <shape android:shape="rectangle">
+            <corners android:topLeftRadius="14dp" android:bottomLeftRadius="14dp" />
+            <solid android:color="@color/debt_lent" />
+        </shape>
+    </item>
+</layer-list>
