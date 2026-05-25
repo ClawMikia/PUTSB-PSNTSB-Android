@@ -19,7 +19,8 @@ import javax.inject.Provider;
     "unchecked",
     "rawtypes",
     "KotlinInternal",
-    "KotlinInternalInJava"
+    "KotlinInternalInJava",
+    "cast"
 })
 public final class DebtDetailViewModel_Factory implements Factory<DebtDetailViewModel> {
   private final Provider<DebtRepository> repositoryProvider;

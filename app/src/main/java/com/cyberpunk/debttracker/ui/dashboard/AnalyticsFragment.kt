@@ -31,7 +31,9 @@ class AnalyticsFragment : Fragment() {
     private lateinit var topContactAdapter: TopContactAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentAnalyticsBinding.inflate(inflater, container, false)
         return binding.root
@@ -172,8 +174,10 @@ class AnalyticsFragment : Fragment() {
             val owedContacts = viewModel.getTopOwedContacts()
             val lentContacts = viewModel.getTopLentContacts()
             val all = (owedContacts + lentContacts)
+                .asSequence()
                 .sortedByDescending { it.total }
                 .take(5)
+                .toList()
             topContactAdapter.submitList(all)
         }
     }

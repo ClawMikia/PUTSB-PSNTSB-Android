@@ -100,7 +100,7 @@ class LentFragment : Fragment() {
 
                 launch {
                     viewModel.totalLent.collect { total ->
-                        binding.tvTotal.text = "Total: ${total.toCurrencyString()}"
+                        binding.tvTotal.text = getString(R.string.total_amount_label, total.toCurrencyString())
                     }
                 }
             }

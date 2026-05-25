@@ -8,7 +8,7 @@ import com.cyberpunk.debttracker.data.model.Debt
 @Database(
     entities = [Debt::class],
     version = 1,
-    exportSchema = true
+    exportSchema = true,
 )
 @TypeConverters(Converters::class)
 abstract class DebtDatabase : RoomDatabase() {

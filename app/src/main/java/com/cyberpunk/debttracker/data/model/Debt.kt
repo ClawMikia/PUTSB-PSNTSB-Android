@@ -15,46 +15,44 @@ data class Debt(
     @ColumnInfo(name = "person_name")
     val personName: String,
 
-    @ColumnInfo(name = "amount")
     val amount: Double,
 
     @ColumnInfo(name = "paid_amount")
     val paidAmount: Double = 0.0,
 
-    @ColumnInfo(name = "description")
     val description: String = "",
+
+    @ColumnInfo(name = "due_date")
+    val dueDate: Long? = null,
 
     @ColumnInfo(name = "debt_type")
     val debtType: DebtType,
 
-    @ColumnInfo(name = "status")
     val status: DebtStatus = DebtStatus.ACTIVE,
-
-    @ColumnInfo(name = "due_date")
-    val dueDate: Long? = null,
 
     @ColumnInfo(name = "created_at")
     val createdAt: Long = System.currentTimeMillis(),
 
     @ColumnInfo(name = "updated_at")
-    val updatedAt: Long = System.currentTimeMillis()
+    val updatedAt: Long = System.currentTimeMillis(),
 ) : Parcelable {
 
-    val remaining: Double get() = (amount - paidAmount).coerceAtLeast(0.0)
-    val progressPercent: Int get() = if (amount <= 0) 0 else ((paidAmount / amount) * 100).toInt().coerceIn(0, 100)
-    val isOverdue: Boolean get() = dueDate != null && dueDate < System.currentTimeMillis() && status == DebtStatus.ACTIVE
+    val remaining: Double get() = amount - paidAmount
     val isSettled: Boolean get() = status == DebtStatus.SETTLED || paidAmount >= amount
-    val avatarLetter: String get() = personName.trim().firstOrNull()?.uppercaseChar()?.toString() ?: "?"
+    val isOverdue: Boolean
+        get() = (dueDate != null) && (dueDate < System.currentTimeMillis()) && (status == DebtStatus.ACTIVE)
+
+    val progressPercent: Int get() = if (amount > 0) ((paidAmount / amount) * 100).toInt() else 0
+    val avatarLetter: String get() = if (personName.isNotEmpty()) personName.take(1).uppercase() else "?"
 }
 
 enum class DebtType {
-    I_OWE,   // I owe someone money
-    OWES_ME  // Someone owes me money
+    I_OWE,
+    OWES_ME
 }
 
 enum class DebtStatus {
     ACTIVE,
     PARTIAL,
-    SETTLED,
-    OVERDUE
+    SETTLED
 }

@@ -103,7 +103,7 @@ class DashboardFragment : Fragment() {
                 launch {
                     viewModel.netBalance.collect { net ->
                         val symbol = if (net >= 0) "+" else ""
-                        binding.tvNetBalance.text = "$symbol${net.toCurrencyString()}"
+                        binding.tvNetBalance.text = getString(R.string.net_balance_format, symbol, net.toCurrencyString())
                         binding.tvNetBalance.setTextColor(
                             ContextCompat.getColor(
                                 requireContext(),
@@ -127,14 +127,14 @@ class DashboardFragment : Fragment() {
 
                 launch {
                     viewModel.activeCount.collect { count ->
-                        binding.tvActiveCount.text = "$count ACTIVE NODES"
+                        binding.tvActiveCount.text = getString(R.string.active_nodes_count, count)
                     }
                 }
 
                 launch {
                     viewModel.overdueCount.collect { count ->
                         if (count > 0) {
-                            binding.tvOverdueCount.text = "$count OVERDUE"
+                            binding.tvOverdueCount.text = getString(R.string.overdue_nodes_count, count)
                             binding.tvOverdueCount.visible()
                         } else {
                             binding.tvOverdueCount.gone()

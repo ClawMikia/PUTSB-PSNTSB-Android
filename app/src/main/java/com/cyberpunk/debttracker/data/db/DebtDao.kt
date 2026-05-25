@@ -24,17 +24,8 @@ interface DebtDao {
 
     // ─── Queries ───────────────────────────────────────────────────────────────
 
-    @Query("SELECT * FROM debts ORDER BY created_at DESC")
-    fun getAllDebts(): Flow<List<Debt>>
-
-    @Query("SELECT * FROM debts WHERE debt_type = :type ORDER BY created_at DESC")
-    fun getDebtsByType(type: DebtType): Flow<List<Debt>>
-
     @Query("SELECT * FROM debts WHERE id = :id LIMIT 1")
     suspend fun getDebtById(id: Long): Debt?
-
-    @Query("SELECT * FROM debts WHERE status != 'SETTLED' ORDER BY created_at DESC")
-    fun getActiveDebts(): Flow<List<Debt>>
 
     @Query("SELECT * FROM debts WHERE debt_type = 'I_OWE' AND status != 'SETTLED' ORDER BY created_at DESC")
     fun getActiveOwed(): Flow<List<Debt>>
@@ -79,24 +70,28 @@ interface DebtDao {
     @Query("SELECT * FROM debts ORDER BY person_name ASC")
     fun getAllSortedByNameAsc(): Flow<List<Debt>>
 
-    @Query("""
+    @Query(
+        """
         SELECT * FROM debts 
         ORDER BY 
             CASE WHEN due_date < :now AND status = 'ACTIVE' THEN 0 ELSE 1 END,
             created_at DESC
-    """)
+        """,
+    )
     fun getAllSortedOverdueFirst(now: Long = System.currentTimeMillis()): Flow<List<Debt>>
 
     // ─── Analytics ────────────────────────────────────────────────────────────
 
-    @Query("""
+    @Query(
+        """
         SELECT person_name, SUM(amount - paid_amount) as total
         FROM debts
         WHERE debt_type = :type AND status != 'SETTLED'
         GROUP BY person_name
         ORDER BY total DESC
         LIMIT 5
-    """)
+        """,
+    )
     suspend fun getTopContactsByType(type: DebtType): List<ContactSummary>
 
     @Query("SELECT * FROM debts WHERE created_at >= :from ORDER BY created_at ASC")
@@ -104,6 +99,7 @@ interface DebtDao {
 }
 
 data class ContactSummary(
-    val person_name: String,
-    val total: Double
+    @ColumnInfo(name = "person_name")
+    val personName: String,
+    val total: Double,
 )

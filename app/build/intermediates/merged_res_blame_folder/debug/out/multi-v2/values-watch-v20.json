@@ -4,7 +4,7 @@
             "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-55:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "D:\\.gradle\\caches\\transforms-3\\172fbe719ebead7eb2556082b367bbd8\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "D:\\.gradle\\caches\\transforms-3\\1d8f4c089b81ac71b1ae68c02fbac295\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "D:\\.gradle\\caches\\transforms-3\\79a0dc0c3b7bae95b6b115314c21e61b\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "D:\\.gradle\\caches\\transforms-3\\9dd7aa32bcd56f51a4e4f0e20fe7cddf\\transformed\\appcompat-1.7.0\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

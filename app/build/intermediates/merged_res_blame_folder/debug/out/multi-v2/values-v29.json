@@ -4,7 +4,7 @@
             "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-55:/values-v29/values-v29.xml",
             "map": [
                 {
-                    "source": "D:\\.gradle\\caches\\transforms-3\\172fbe719ebead7eb2556082b367bbd8\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-v29\\values-v29.xml",
+                    "source": "D:\\.gradle\\caches\\transforms-3\\1d8f4c089b81ac71b1ae68c02fbac295\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-v29\\values-v29.xml",
                     "from": {
                         "startLines": "2,7",
                         "startColumns": "4,4",

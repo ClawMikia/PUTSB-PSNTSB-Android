@@ -96,6 +96,7 @@
     <string name="about_title">ABOUT THE MATRIX</string>
     <string name="about_version">SYSTEM VERSION: 2.0.7-CYBER</string>
     <string name="active_debts_label">ACTIVE NODES</string>
+    <string name="active_nodes_count">%1$d ACTIVE NODES</string>
     <string name="add_debt_title">NEW DEBT NODE</string>
     <string name="analytics_title">DEBT ANALYTICS</string>
     <string name="app_name">PUTSB-PSNTSB</string>
@@ -120,6 +121,10 @@
     <string name="dialog_partial_title">PARTIAL PAYMENT</string>
     <string name="dialog_settle_message">Mark this debt as fully settled?</string>
     <string name="dialog_settle_title">SETTLE DEBT?</string>
+    <string name="due_date_label">Due %1$s</string>
+    <string name="due_in_days">Due in %1$dd</string>
+    <string name="due_today">Due today</string>
+    <string name="due_tomorrow">Due tomorrow</string>
     <string name="edit_debt_title">MODIFY NODE</string>
     <string name="empty_debts_subtitle">The matrix is clean. Add your first debt node to begin tracking.</string>
     <string name="empty_debts_title">NO DEBT NODES DETECTED</string>
@@ -148,7 +153,12 @@
     <string name="nav_dashboard">Dashboard</string>
     <string name="nav_lent">Owes Me</string>
     <string name="nav_owed">I Owe</string>
+    <string name="net_balance_format">%1$s%2$s</string>
     <string name="net_balance_label">NET BALANCE</string>
+    <string name="overdue_by_days">Overdue by %1$dd</string>
+    <string name="overdue_nodes_count">%1$d OVERDUE</string>
+    <string name="progress_percent">%1$d%%</string>
+    <string name="rank_format">#%1$d</string>
     <string name="sort_amount_high">Amount (High)</string>
     <string name="sort_amount_low">Amount (Low)</string>
     <string name="sort_date_newest">Date (Newest)</string>
@@ -169,6 +179,7 @@
     <string name="success_payment_recorded">Payment recorded</string>
     <string name="top_creditors">TOP CREDITORS</string>
     <string name="top_debtors">TOP DEBTORS</string>
+    <string name="total_amount_label">Total: %1$s</string>
     <string name="total_debt_label">TOTAL DEBT EXPOSURE</string>
     <string name="total_lent_label">TOTAL RECEIVABLES</string>
     <style name="ShapeAppearance.DebtTracker.Large" parent="ShapeAppearance.MaterialComponents.LargeComponent">

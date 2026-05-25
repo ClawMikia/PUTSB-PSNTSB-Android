@@ -4,11 +4,11 @@ import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.IntentCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -41,7 +41,7 @@ class DebtDetailActivity : AppCompatActivity() {
         binding = ActivityDebtDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        debt = intent.getParcelableExtra(EXTRA_DEBT)
+        debt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
 
         setupToolbar()
         renderDebt()
@@ -104,7 +104,7 @@ class DebtDetailActivity : AppCompatActivity() {
 
         // Progress
         binding.progressPayment.progress = d.progressPercent
-        binding.tvProgressPct.text = "${d.progressPercent}%"
+        binding.tvProgressPct.text = getString(R.string.progress_percent, d.progressPercent)
         binding.tvPaidAmount.text = d.paidAmount.toCurrencyString()
         binding.tvRemaining.text = d.remaining.toCurrencyString()
 
@@ -173,7 +173,7 @@ class DebtDetailActivity : AppCompatActivity() {
             .setView(dialogView)
             .setPositiveButton(getString(R.string.dialog_confirm)) { _, _ ->
                 val amount = et.text?.toString()?.toDoubleOrNull()
-                if (amount == null || amount <= 0) {
+                if ((amount == null) || (amount <= 0)) {
                     til?.error = getString(R.string.error_amount_invalid)
                 } else if (amount > d.remaining) {
                     til?.error = getString(R.string.error_payment_exceeds)

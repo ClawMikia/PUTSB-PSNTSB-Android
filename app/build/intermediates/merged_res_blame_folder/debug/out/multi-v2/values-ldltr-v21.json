@@ -4,7 +4,7 @@
             "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-55:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "D:\\.gradle\\caches\\transforms-3\\79a0dc0c3b7bae95b6b115314c21e61b\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "D:\\.gradle\\caches\\transforms-3\\9dd7aa32bcd56f51a4e4f0e20fe7cddf\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

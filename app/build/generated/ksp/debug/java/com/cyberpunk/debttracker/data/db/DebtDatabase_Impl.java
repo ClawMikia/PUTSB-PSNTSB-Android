@@ -34,7 +34,7 @@ public final class DebtDatabase_Impl extends DebtDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `debts` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `person_name` TEXT NOT NULL, `amount` REAL NOT NULL, `paid_amount` REAL NOT NULL, `description` TEXT NOT NULL, `debt_type` TEXT NOT NULL, `status` TEXT NOT NULL, `due_date` INTEGER, `created_at` INTEGER NOT NULL, `updated_at` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `debts` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `person_name` TEXT NOT NULL, `amount` REAL NOT NULL, `paid_amount` REAL NOT NULL, `description` TEXT NOT NULL, `due_date` INTEGER, `debt_type` TEXT NOT NULL, `status` TEXT NOT NULL, `created_at` INTEGER NOT NULL, `updated_at` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
         db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9b0376ae1a736defa630a02259746232')");
       }
@@ -91,9 +91,9 @@ public final class DebtDatabase_Impl extends DebtDatabase {
         _columnsDebts.put("amount", new TableInfo.Column("amount", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDebts.put("paid_amount", new TableInfo.Column("paid_amount", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDebts.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsDebts.put("due_date", new TableInfo.Column("due_date", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDebts.put("debt_type", new TableInfo.Column("debt_type", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDebts.put("status", new TableInfo.Column("status", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsDebts.put("due_date", new TableInfo.Column("due_date", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDebts.put("created_at", new TableInfo.Column("created_at", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDebts.put("updated_at", new TableInfo.Column("updated_at", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysDebts = new HashSet<TableInfo.ForeignKey>(0);
@@ -107,7 +107,7 @@ public final class DebtDatabase_Impl extends DebtDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "9b0376ae1a736defa630a02259746232", "8e3635592c2c06759371692224316bd3");
+    }, "9b0376ae1a736defa630a02259746232", "df388f8cb970e40e94a135da4b51c919");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

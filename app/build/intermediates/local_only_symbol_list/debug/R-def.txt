@@ -268,6 +268,7 @@ string about_quote
 string about_title
 string about_version
 string active_debts_label
+string active_nodes_count
 string add_debt_title
 string analytics_title
 string app_name
@@ -292,6 +293,10 @@ string dialog_partial_hint
 string dialog_partial_title
 string dialog_settle_message
 string dialog_settle_title
+string due_date_label
+string due_in_days
+string due_today
+string due_tomorrow
 string edit_debt_title
 string empty_debts_subtitle
 string empty_debts_title
@@ -320,7 +325,12 @@ string nav_analytics
 string nav_dashboard
 string nav_lent
 string nav_owed
+string net_balance_format
 string net_balance_label
+string overdue_by_days
+string overdue_nodes_count
+string progress_percent
+string rank_format
 string sort_amount_high
 string sort_amount_low
 string sort_date_newest
@@ -341,6 +351,7 @@ string success_debt_updated
 string success_payment_recorded
 string top_creditors
 string top_debtors
+string total_amount_label
 string total_debt_label
 string total_lent_label
 style ShapeAppearance.DebtTracker.Large

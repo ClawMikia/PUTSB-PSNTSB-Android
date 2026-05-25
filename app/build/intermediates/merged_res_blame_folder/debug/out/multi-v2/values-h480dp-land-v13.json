@@ -4,7 +4,7 @@
             "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-55:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "D:\\.gradle\\caches\\transforms-3\\034e16808525354ff886e2ab01b6c3ca\\transformed\\material-1.11.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "D:\\.gradle\\caches\\transforms-3\\32015c8e01bb022521e4e4c8fa141866\\transformed\\material-1.12.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

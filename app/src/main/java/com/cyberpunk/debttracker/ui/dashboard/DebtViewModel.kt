@@ -14,13 +14,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DebtViewModel @Inject constructor(
-    private val repository: DebtRepository
+    private val repository: DebtRepository,
 ) : ViewModel() {
 
     // ─── Sort state ───────────────────────────────────────────────────────────
 
     private val _sortOrder = MutableStateFlow(SortOrder.DATE_NEWEST)
-    val sortOrder: StateFlow<SortOrder> = _sortOrder.asStateFlow()
 
     // ─── All debts (sorted) ───────────────────────────────────────────────────
 
@@ -63,44 +62,10 @@ class DebtViewModel @Inject constructor(
     val totalCount: StateFlow<Int> = repository.getTotalCount()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
-    // ─── UI events ────────────────────────────────────────────────────────────
-
-    private val _uiEvent = MutableSharedFlow<UiEvent>()
-    val uiEvent: SharedFlow<UiEvent> = _uiEvent.asSharedFlow()
-
     // ─── Actions ──────────────────────────────────────────────────────────────
 
     fun setSortOrder(order: SortOrder) {
         _sortOrder.value = order
-    }
-
-    fun insertDebt(debt: Debt) = viewModelScope.launch {
-        repository.insert(debt)
-        _uiEvent.emit(UiEvent.DebtAdded)
-    }
-
-    fun updateDebt(debt: Debt) = viewModelScope.launch {
-        repository.update(debt)
-        _uiEvent.emit(UiEvent.DebtUpdated)
-    }
-
-    fun deleteDebt(debt: Debt) = viewModelScope.launch {
-        repository.delete(debt)
-        _uiEvent.emit(UiEvent.DebtDeleted)
-    }
-
-    fun markSettled(debt: Debt) = viewModelScope.launch {
-        repository.markSettled(debt)
-        _uiEvent.emit(UiEvent.DebtSettled)
-    }
-
-    fun addPayment(debt: Debt, amount: Double) = viewModelScope.launch {
-        if (amount <= 0 || amount > debt.remaining) {
-            _uiEvent.emit(UiEvent.Error("Invalid payment amount"))
-            return@launch
-        }
-        repository.addPayment(debt, amount)
-        _uiEvent.emit(UiEvent.PaymentRecorded)
     }
 
     // ─── Analytics data ───────────────────────────────────────────────────────
@@ -108,13 +73,4 @@ class DebtViewModel @Inject constructor(
     suspend fun getTopOwedContacts() = repository.getTopOwedContacts()
     suspend fun getTopLentContacts() = repository.getTopLentContacts()
     suspend fun getDebtsFrom(from: Long) = repository.getDebtsFrom(from)
-}
-
-sealed class UiEvent {
-    object DebtAdded       : UiEvent()
-    object DebtUpdated     : UiEvent()
-    object DebtDeleted     : UiEvent()
-    object DebtSettled     : UiEvent()
-    object PaymentRecorded : UiEvent()
-    data class Error(val message: String) : UiEvent()
 }

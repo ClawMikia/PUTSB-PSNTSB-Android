@@ -26,21 +26,21 @@ class TopContactAdapter :
         holder.bind(getItem(position), position + 1)
     }
 
-    inner class ViewHolder(private val binding: ItemTopContactBinding) :
+    class ViewHolder(private val binding: ItemTopContactBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(contact: ContactSummary, rank: Int) {
             val ctx = binding.root.context
 
-            binding.tvRank.text = "#$rank"
+            binding.tvRank.text = ctx.getString(R.string.rank_format, rank)
 
-            val initial = contact.person_name.trim().firstOrNull()?.uppercaseChar()?.toString() ?: "?"
+            val initial = contact.personName.trim().firstOrNull()?.uppercaseChar()?.toString() ?: "?"
             binding.tvAvatar.text = initial
             binding.tvAvatar.setAvatarBackground(
                 ContextCompat.getColor(ctx, R.color.cyber_gold)
             )
 
-            binding.tvName.text = contact.person_name
+            binding.tvName.text = contact.personName
             binding.tvAmount.text = contact.total.toCurrencyString()
             binding.tvAmount.setTextColor(
                 ContextCompat.getColor(ctx, R.color.cyber_gold)
@@ -51,7 +51,7 @@ class TopContactAdapter :
     companion object {
         private val DIFF = object : DiffUtil.ItemCallback<ContactSummary>() {
             override fun areItemsTheSame(a: ContactSummary, b: ContactSummary) =
-                a.person_name == b.person_name
+                a.personName == b.personName
             override fun areContentsTheSame(a: ContactSummary, b: ContactSummary) = a == b
         }
     }

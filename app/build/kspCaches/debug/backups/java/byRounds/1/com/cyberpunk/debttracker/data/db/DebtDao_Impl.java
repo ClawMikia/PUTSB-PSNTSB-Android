@@ -55,7 +55,7 @@ public final class DebtDao_Impl implements DebtDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `debts` (`id`,`person_name`,`amount`,`paid_amount`,`description`,`debt_type`,`status`,`due_date`,`created_at`,`updated_at`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `debts` (`id`,`person_name`,`amount`,`paid_amount`,`description`,`due_date`,`debt_type`,`status`,`created_at`,`updated_at`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -66,15 +66,15 @@ public final class DebtDao_Impl implements DebtDao {
         statement.bindDouble(3, entity.getAmount());
         statement.bindDouble(4, entity.getPaidAmount());
         statement.bindString(5, entity.getDescription());
-        final String _tmp = __converters.fromDebtType(entity.getDebtType());
-        statement.bindString(6, _tmp);
-        final String _tmp_1 = __converters.fromDebtStatus(entity.getStatus());
-        statement.bindString(7, _tmp_1);
         if (entity.getDueDate() == null) {
-          statement.bindNull(8);
+          statement.bindNull(6);
         } else {
-          statement.bindLong(8, entity.getDueDate());
+          statement.bindLong(6, entity.getDueDate());
         }
+        final String _tmp = __converters.fromDebtType(entity.getDebtType());
+        statement.bindString(7, _tmp);
+        final String _tmp_1 = __converters.fromDebtStatus(entity.getStatus());
+        statement.bindString(8, _tmp_1);
         statement.bindLong(9, entity.getCreatedAt());
         statement.bindLong(10, entity.getUpdatedAt());
       }
@@ -96,7 +96,7 @@ public final class DebtDao_Impl implements DebtDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `debts` SET `id` = ?,`person_name` = ?,`amount` = ?,`paid_amount` = ?,`description` = ?,`debt_type` = ?,`status` = ?,`due_date` = ?,`created_at` = ?,`updated_at` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `debts` SET `id` = ?,`person_name` = ?,`amount` = ?,`paid_amount` = ?,`description` = ?,`due_date` = ?,`debt_type` = ?,`status` = ?,`created_at` = ?,`updated_at` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -107,15 +107,15 @@ public final class DebtDao_Impl implements DebtDao {
         statement.bindDouble(3, entity.getAmount());
         statement.bindDouble(4, entity.getPaidAmount());
         statement.bindString(5, entity.getDescription());
-        final String _tmp = __converters.fromDebtType(entity.getDebtType());
-        statement.bindString(6, _tmp);
-        final String _tmp_1 = __converters.fromDebtStatus(entity.getStatus());
-        statement.bindString(7, _tmp_1);
         if (entity.getDueDate() == null) {
-          statement.bindNull(8);
+          statement.bindNull(6);
         } else {
-          statement.bindLong(8, entity.getDueDate());
+          statement.bindLong(6, entity.getDueDate());
         }
+        final String _tmp = __converters.fromDebtType(entity.getDebtType());
+        statement.bindString(7, _tmp);
+        final String _tmp_1 = __converters.fromDebtStatus(entity.getStatus());
+        statement.bindString(8, _tmp_1);
         statement.bindLong(9, entity.getCreatedAt());
         statement.bindLong(10, entity.getUpdatedAt());
         statement.bindLong(11, entity.getId());
@@ -211,143 +211,6 @@ public final class DebtDao_Impl implements DebtDao {
   }
 
   @Override
-  public Flow<List<Debt>> getAllDebts() {
-    final String _sql = "SELECT * FROM debts ORDER BY created_at DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return CoroutinesRoom.createFlow(__db, false, new String[] {"debts"}, new Callable<List<Debt>>() {
-      @Override
-      @NonNull
-      public List<Debt> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfPersonName = CursorUtil.getColumnIndexOrThrow(_cursor, "person_name");
-          final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
-          final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
-          final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
-          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
-          final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
-          while (_cursor.moveToNext()) {
-            final Debt _item;
-            final long _tmpId;
-            _tmpId = _cursor.getLong(_cursorIndexOfId);
-            final String _tmpPersonName;
-            _tmpPersonName = _cursor.getString(_cursorIndexOfPersonName);
-            final double _tmpAmount;
-            _tmpAmount = _cursor.getDouble(_cursorIndexOfAmount);
-            final double _tmpPaidAmount;
-            _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
-            final String _tmpDescription;
-            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            final DebtType _tmpDebtType;
-            final String _tmp;
-            _tmp = _cursor.getString(_cursorIndexOfDebtType);
-            _tmpDebtType = __converters.toDebtType(_tmp);
-            final DebtStatus _tmpStatus;
-            final String _tmp_1;
-            _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
-            _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
-            final long _tmpCreatedAt;
-            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
-            final long _tmpUpdatedAt;
-            _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-        }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
-  }
-
-  @Override
-  public Flow<List<Debt>> getDebtsByType(final DebtType type) {
-    final String _sql = "SELECT * FROM debts WHERE debt_type = ? ORDER BY created_at DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    final String _tmp = __converters.fromDebtType(type);
-    _statement.bindString(_argIndex, _tmp);
-    return CoroutinesRoom.createFlow(__db, false, new String[] {"debts"}, new Callable<List<Debt>>() {
-      @Override
-      @NonNull
-      public List<Debt> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfPersonName = CursorUtil.getColumnIndexOrThrow(_cursor, "person_name");
-          final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
-          final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
-          final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
-          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
-          final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
-          while (_cursor.moveToNext()) {
-            final Debt _item;
-            final long _tmpId;
-            _tmpId = _cursor.getLong(_cursorIndexOfId);
-            final String _tmpPersonName;
-            _tmpPersonName = _cursor.getString(_cursorIndexOfPersonName);
-            final double _tmpAmount;
-            _tmpAmount = _cursor.getDouble(_cursorIndexOfAmount);
-            final double _tmpPaidAmount;
-            _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
-            final String _tmpDescription;
-            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            final DebtType _tmpDebtType;
-            final String _tmp_1;
-            _tmp_1 = _cursor.getString(_cursorIndexOfDebtType);
-            _tmpDebtType = __converters.toDebtType(_tmp_1);
-            final DebtStatus _tmpStatus;
-            final String _tmp_2;
-            _tmp_2 = _cursor.getString(_cursorIndexOfStatus);
-            _tmpStatus = __converters.toDebtStatus(_tmp_2);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
-            final long _tmpCreatedAt;
-            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
-            final long _tmpUpdatedAt;
-            _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-        }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
-  }
-
-  @Override
   public Object getDebtById(final long id, final Continuation<? super Debt> $completion) {
     final String _sql = "SELECT * FROM debts WHERE id = ? LIMIT 1";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
@@ -365,9 +228,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final Debt _result;
@@ -382,6 +245,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -390,17 +259,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _result = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _result = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
           } else {
             _result = null;
           }
@@ -411,73 +274,6 @@ public final class DebtDao_Impl implements DebtDao {
         }
       }
     }, $completion);
-  }
-
-  @Override
-  public Flow<List<Debt>> getActiveDebts() {
-    final String _sql = "SELECT * FROM debts WHERE status != 'SETTLED' ORDER BY created_at DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return CoroutinesRoom.createFlow(__db, false, new String[] {"debts"}, new Callable<List<Debt>>() {
-      @Override
-      @NonNull
-      public List<Debt> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfPersonName = CursorUtil.getColumnIndexOrThrow(_cursor, "person_name");
-          final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
-          final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
-          final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
-          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
-          final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
-          while (_cursor.moveToNext()) {
-            final Debt _item;
-            final long _tmpId;
-            _tmpId = _cursor.getLong(_cursorIndexOfId);
-            final String _tmpPersonName;
-            _tmpPersonName = _cursor.getString(_cursorIndexOfPersonName);
-            final double _tmpAmount;
-            _tmpAmount = _cursor.getDouble(_cursorIndexOfAmount);
-            final double _tmpPaidAmount;
-            _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
-            final String _tmpDescription;
-            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            final DebtType _tmpDebtType;
-            final String _tmp;
-            _tmp = _cursor.getString(_cursorIndexOfDebtType);
-            _tmpDebtType = __converters.toDebtType(_tmp);
-            final DebtStatus _tmpStatus;
-            final String _tmp_1;
-            _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
-            _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
-            final long _tmpCreatedAt;
-            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
-            final long _tmpUpdatedAt;
-            _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-        }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
   }
 
   @Override
@@ -495,9 +291,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -513,6 +309,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -521,17 +323,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -562,9 +358,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -580,6 +376,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -588,17 +390,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -825,9 +621,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -843,6 +639,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -851,17 +653,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -892,9 +688,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -910,6 +706,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -918,17 +720,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -959,9 +755,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -977,6 +773,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -985,17 +787,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -1026,9 +822,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -1044,6 +840,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -1052,17 +854,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -1093,9 +889,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -1111,6 +907,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -1119,17 +921,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -1152,7 +948,7 @@ public final class DebtDao_Impl implements DebtDao {
             + "        ORDER BY \n"
             + "            CASE WHEN due_date < ? AND status = 'ACTIVE' THEN 0 ELSE 1 END,\n"
             + "            created_at DESC\n"
-            + "    ";
+            + "        ";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, now);
@@ -1167,9 +963,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -1185,6 +981,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -1193,17 +995,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -1229,7 +1025,7 @@ public final class DebtDao_Impl implements DebtDao {
             + "        GROUP BY person_name\n"
             + "        ORDER BY total DESC\n"
             + "        LIMIT 5\n"
-            + "    ";
+            + "        ";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     final String _tmp = __converters.fromDebtType(type);
@@ -1246,11 +1042,11 @@ public final class DebtDao_Impl implements DebtDao {
           final List<ContactSummary> _result = new ArrayList<ContactSummary>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final ContactSummary _item;
-            final String _tmpPerson_name;
-            _tmpPerson_name = _cursor.getString(_cursorIndexOfPersonName);
+            final String _tmpPersonName;
+            _tmpPersonName = _cursor.getString(_cursorIndexOfPersonName);
             final double _tmpTotal;
             _tmpTotal = _cursor.getDouble(_cursorIndexOfTotal);
-            _item = new ContactSummary(_tmpPerson_name,_tmpTotal);
+            _item = new ContactSummary(_tmpPersonName,_tmpTotal);
             _result.add(_item);
           }
           return _result;
@@ -1280,9 +1076,9 @@ public final class DebtDao_Impl implements DebtDao {
           final int _cursorIndexOfAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "amount");
           final int _cursorIndexOfPaidAmount = CursorUtil.getColumnIndexOrThrow(_cursor, "paid_amount");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfDebtType = CursorUtil.getColumnIndexOrThrow(_cursor, "debt_type");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
-          final int _cursorIndexOfDueDate = CursorUtil.getColumnIndexOrThrow(_cursor, "due_date");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "created_at");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
           final List<Debt> _result = new ArrayList<Debt>(_cursor.getCount());
@@ -1298,6 +1094,12 @@ public final class DebtDao_Impl implements DebtDao {
             _tmpPaidAmount = _cursor.getDouble(_cursorIndexOfPaidAmount);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final Long _tmpDueDate;
+            if (_cursor.isNull(_cursorIndexOfDueDate)) {
+              _tmpDueDate = null;
+            } else {
+              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
+            }
             final DebtType _tmpDebtType;
             final String _tmp;
             _tmp = _cursor.getString(_cursorIndexOfDebtType);
@@ -1306,17 +1108,11 @@ public final class DebtDao_Impl implements DebtDao {
             final String _tmp_1;
             _tmp_1 = _cursor.getString(_cursorIndexOfStatus);
             _tmpStatus = __converters.toDebtStatus(_tmp_1);
-            final Long _tmpDueDate;
-            if (_cursor.isNull(_cursorIndexOfDueDate)) {
-              _tmpDueDate = null;
-            } else {
-              _tmpDueDate = _cursor.getLong(_cursorIndexOfDueDate);
-            }
             final long _tmpCreatedAt;
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             final long _tmpUpdatedAt;
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
-            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDebtType,_tmpStatus,_tmpDueDate,_tmpCreatedAt,_tmpUpdatedAt);
+            _item = new Debt(_tmpId,_tmpPersonName,_tmpAmount,_tmpPaidAmount,_tmpDescription,_tmpDueDate,_tmpDebtType,_tmpStatus,_tmpCreatedAt,_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;

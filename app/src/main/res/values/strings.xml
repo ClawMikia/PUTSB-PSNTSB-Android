@@ -92,6 +92,21 @@
     <string name="success_debt_deleted">Node deleted</string>
     <string name="success_payment_recorded">Payment recorded</string>
 
+    <!-- Formatting -->
+    <string name="progress_percent">%1$d%%</string>
+    <string name="total_amount_label">Total: %1$s</string>
+    <string name="active_nodes_count">%1$d ACTIVE NODES</string>
+    <string name="overdue_nodes_count">%1$d OVERDUE</string>
+    <string name="net_balance_format">%1$s%2$s</string>
+    <string name="rank_format">#%1$d</string>
+
+    <!-- Date Labels -->
+    <string name="overdue_by_days">Overdue by %1$dd</string>
+    <string name="due_today">Due today</string>
+    <string name="due_tomorrow">Due tomorrow</string>
+    <string name="due_in_days">Due in %1$dd</string>
+    <string name="due_date_label">Due %1$s</string>
+
     <!-- Sort -->
     <string name="sort_date_newest">Date (Newest)</string>
     <string name="sort_date_oldest">Date (Oldest)</string>

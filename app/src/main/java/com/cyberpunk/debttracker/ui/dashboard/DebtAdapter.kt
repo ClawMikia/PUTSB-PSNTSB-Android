@@ -15,7 +15,7 @@ import com.cyberpunk.debttracker.databinding.ItemDebtBinding
 import com.cyberpunk.debttracker.util.*
 
 class DebtAdapter(
-    private val onItemClick: (Debt) -> Unit
+    private val onItemClick: (Debt) -> Unit,
 ) : ListAdapter<Debt, DebtAdapter.DebtViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DebtViewHolder {

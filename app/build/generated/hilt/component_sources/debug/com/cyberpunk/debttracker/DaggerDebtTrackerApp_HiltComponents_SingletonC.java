@@ -13,17 +13,17 @@ import com.cyberpunk.debttracker.di.DatabaseModule_ProvideDebtDaoFactory;
 import com.cyberpunk.debttracker.di.DatabaseModule_ProvideDebtDatabaseFactory;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtActivity;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel;
-import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.AnalyticsFragment;
 import com.cyberpunk.debttracker.ui.dashboard.DashboardFragment;
 import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel;
-import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.LentFragment;
 import com.cyberpunk.debttracker.ui.dashboard.MainActivity;
 import com.cyberpunk.debttracker.ui.dashboard.OwedFragment;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel;
-import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel_HiltModules;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.ViewModelLifecycle;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
@@ -41,10 +41,12 @@ import dagger.hilt.android.internal.modules.ApplicationContextModule;
 import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.DoubleCheck;
+import dagger.internal.IdentifierNameString;
+import dagger.internal.KeepFieldType;
+import dagger.internal.LazyClassKeyMap;
 import dagger.internal.MapBuilder;
 import dagger.internal.Preconditions;
 import dagger.internal.Provider;
-import dagger.internal.SetBuilder;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
@@ -59,7 +61,8 @@ import javax.annotation.processing.Generated;
     "unchecked",
     "rawtypes",
     "KotlinInternal",
-    "KotlinInternalInJava"
+    "KotlinInternalInJava",
+    "cast"
 })
 public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
   private DaggerDebtTrackerApp_HiltComponents_SingletonC() {
@@ -404,8 +407,8 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     }
 
     @Override
-    public Set<String> getViewModelKeys() {
-      return SetBuilder.<String>newSetBuilder(3).add(AddDebtViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(DebtDetailViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(DebtViewModel_HiltModules_KeyModule_ProvideFactory.provide()).build();
+    public Map<Class<?>, Boolean> getViewModelKeys() {
+      return LazyClassKeyMap.<Boolean>of(MapBuilder.<String, Boolean>newMapBuilder(3).put(LazyClassKeyProvider.com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel, AddDebtViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel, DebtDetailViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_cyberpunk_debttracker_ui_dashboard_DebtViewModel, DebtViewModel_HiltModules.KeyModule.provide()).build());
     }
 
     @Override
@@ -421,6 +424,24 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     @Override
     public ViewComponentBuilder viewComponentBuilder() {
       return new ViewCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
+
+      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
+
+      static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
+
+      @KeepFieldType
+      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
+
+      @KeepFieldType
+      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
+
+      @KeepFieldType
+      AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
     }
   }
 
@@ -456,13 +477,31 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     }
 
     @Override
-    public Map<String, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
-      return MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(3).put("com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel", ((Provider) addDebtViewModelProvider)).put("com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel", ((Provider) debtDetailViewModelProvider)).put("com.cyberpunk.debttracker.ui.dashboard.DebtViewModel", ((Provider) debtViewModelProvider)).build();
+    public Map<Class<?>, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
+      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(3).put(LazyClassKeyProvider.com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel, ((Provider) addDebtViewModelProvider)).put(LazyClassKeyProvider.com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel, ((Provider) debtDetailViewModelProvider)).put(LazyClassKeyProvider.com_cyberpunk_debttracker_ui_dashboard_DebtViewModel, ((Provider) debtViewModelProvider)).build());
     }
 
     @Override
-    public Map<String, Object> getHiltViewModelAssistedMap() {
-      return Collections.<String, Object>emptyMap();
+    public Map<Class<?>, Object> getHiltViewModelAssistedMap() {
+      return Collections.<Class<?>, Object>emptyMap();
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
+
+      static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
+
+      static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
+
+      @KeepFieldType
+      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
+
+      @KeepFieldType
+      AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
+
+      @KeepFieldType
+      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {

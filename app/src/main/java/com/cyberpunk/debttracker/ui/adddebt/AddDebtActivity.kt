@@ -2,9 +2,9 @@ package com.cyberpunk.debttracker.ui.adddebt
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.IntentCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -36,7 +36,7 @@ class AddDebtActivity : AppCompatActivity() {
         binding = ActivityAddDebtBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        existingDebt = intent.getParcelableExtra(EXTRA_DEBT)
+        existingDebt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
 
         setupToolbar()
         setupClickListeners()
@@ -66,7 +66,7 @@ class AddDebtActivity : AppCompatActivity() {
                 amountStr      = binding.etAmount.text?.toString() ?: "",
                 description    = binding.etDescription.text?.toString() ?: "",
                 debtType       = debtType,
-                dueDateMs      = selectedDueDateMs
+                dueDateMs      = selectedDueDateMs,
             )
         }
 
@@ -109,7 +109,7 @@ class AddDebtActivity : AppCompatActivity() {
             },
             cal.get(Calendar.YEAR),
             cal.get(Calendar.MONTH),
-            cal.get(Calendar.DAY_OF_MONTH)
+            cal.get(Calendar.DAY_OF_MONTH),
         ).show()
     }
 

@@ -11,12 +11,11 @@ import javax.inject.Singleton
 
 @Singleton
 class DebtRepository @Inject constructor(
-    private val debtDao: DebtDao
+    private val debtDao: DebtDao,
 ) {
 
     // ─── Flows ─────────────────────────────────────────────────────────────────
 
-    fun getAllDebts(): Flow<List<Debt>> = debtDao.getAllDebts()
     fun getActiveOwed(): Flow<List<Debt>> = debtDao.getActiveOwed()
     fun getActiveLent(): Flow<List<Debt>> = debtDao.getActiveLent()
     fun getTotalOwed(): Flow<Double?> = debtDao.getTotalOwed()
@@ -44,9 +43,6 @@ class DebtRepository @Inject constructor(
     )
 
     suspend fun delete(debt: Debt) = debtDao.delete(debt)
-    suspend fun deleteById(id: Long) = debtDao.deleteById(id)
-
-    suspend fun getDebtById(id: Long): Debt? = debtDao.getDebtById(id)
 
     suspend fun markSettled(debt: Debt) {
         debtDao.update(

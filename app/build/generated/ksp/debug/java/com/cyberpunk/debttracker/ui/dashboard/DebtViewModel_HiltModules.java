@@ -10,9 +10,7 @@ import dagger.hilt.android.components.ViewModelComponent;
 import dagger.hilt.android.internal.lifecycle.HiltViewModelMap;
 import dagger.hilt.codegen.OriginatingElement;
 import dagger.multibindings.IntoMap;
-import dagger.multibindings.IntoSet;
-import dagger.multibindings.StringKey;
-import java.lang.String;
+import dagger.multibindings.LazyClassKey;
 import javax.annotation.processing.Generated;
 
 @Generated("dagger.hilt.android.processor.internal.viewmodel.ViewModelProcessor")
@@ -31,7 +29,7 @@ public final class DebtViewModel_HiltModules {
 
     @Binds
     @IntoMap
-    @StringKey("com.cyberpunk.debttracker.ui.dashboard.DebtViewModel")
+    @LazyClassKey(DebtViewModel.class)
     @HiltViewModelMap
     public abstract ViewModel binds(DebtViewModel vm);
   }
@@ -43,10 +41,11 @@ public final class DebtViewModel_HiltModules {
     }
 
     @Provides
-    @IntoSet
+    @IntoMap
+    @LazyClassKey(DebtViewModel.class)
     @HiltViewModelMap.KeySet
-    public static String provide() {
-      return "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
+    public static boolean provide() {
+      return true;
     }
   }
 }
