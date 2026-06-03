@@ -95,6 +95,8 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array reminder_frequency_entries
+array reminder_frequency_values
 attr SharedValue
 attr SharedValueId
 attr action
@@ -1473,7 +1475,11 @@ attr yearTodayStyle
 bool abc_action_bar_embed_tabs
 bool abc_config_actionMenuItemAllCaps
 bool config_materialPreferenceIconSpaceReserved
+bool enable_system_alarm_service_default
+bool enable_system_foreground_service_default
+bool enable_system_job_service_default
 bool mtrl_btn_textappearance_all_caps
+bool workmanager_test_configuration
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
 color abc_btn_colored_borderless_text_material
@@ -3255,6 +3261,7 @@ drawable bg_dialog_cyber
 drawable bg_edittext_cyber
 drawable bg_fab_gold
 drawable bg_ripple_gold
+drawable bg_splash_gradient
 drawable bg_splash_screen
 drawable bg_status_badge
 drawable bg_status_badge_green
@@ -3510,6 +3517,10 @@ id btn_cancel
 id btn_delete
 id btn_delete_debt
 id btn_edit
+id btn_freq_daily
+id btn_freq_hourly
+id btn_freq_none
+id btn_freq_weekly
 id btn_mark_settled
 id btn_partial_pay
 id btn_save
@@ -3518,6 +3529,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id card_about
 id card_hero
 id card_i_owe
 id card_net_balance
@@ -3856,6 +3868,7 @@ id seekbar_value
 id select_dialog_listview
 id selected
 id selection_type
+id settingsFragment
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3946,6 +3959,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggle_frequency
 id toolbar
 id top
 id topPanel
@@ -3969,6 +3983,7 @@ id tv_avatar_detail
 id tv_created_date
 id tv_description
 id tv_due_date
+id tv_meme_credit
 id tv_name
 id tv_net_balance
 id tv_net_balance_label
@@ -4158,6 +4173,7 @@ layout fragment_analytics
 layout fragment_dashboard
 layout fragment_lent
 layout fragment_owed
+layout fragment_settings
 layout image_frame
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
@@ -4401,6 +4417,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string meme_credit
 string mtrl_badge_numberless_content_description
 string mtrl_checkbox_button_icon_path_checked
 string mtrl_checkbox_button_icon_path_group_name
@@ -4470,6 +4487,7 @@ string nav_app_bar_open_drawer_description
 string nav_dashboard
 string nav_lent
 string nav_owed
+string nav_settings
 string net_balance_format
 string net_balance_label
 string not_set
@@ -4480,13 +4498,21 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pref_reminder_frequency_summary
+string pref_reminder_frequency_title
 string preference_copied
 string progress_percent
 string rank_format
+string reminder_freq_daily
+string reminder_freq_hourly
+string reminder_freq_none
+string reminder_freq_weekly
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
+string settings_footer
+string settings_title
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string sort_amount_high
@@ -5905,3 +5931,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml preferences

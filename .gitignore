@@ -1,15 +1,40 @@
+# Built variants
+**/build/
+
+# Android Studio
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# Kotlin
+.kotlin/
+.apple/
+
+# Keystore files (Keep your signing keys private!)
+*.jks
+*.keystore
+*.p12
+
+# Google Services (Firebase)
+google-services.json
+
+# Secrets & Local Config
+secrets.properties
 local.properties
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*~
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache

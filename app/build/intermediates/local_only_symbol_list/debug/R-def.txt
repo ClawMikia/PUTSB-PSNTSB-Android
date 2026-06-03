@@ -10,6 +10,8 @@ anim slide_in_right
 anim slide_out_left
 anim slide_out_right
 anim slide_up
+array reminder_frequency_entries
+array reminder_frequency_values
 attr? animateOnAttach
 attr? borderColor
 attr? borderWidth
@@ -126,6 +128,7 @@ drawable bg_dialog_cyber
 drawable bg_edittext_cyber
 drawable bg_fab_gold
 drawable bg_ripple_gold
+drawable bg_splash_gradient
 drawable bg_splash_screen
 drawable bg_status_badge
 drawable bg_status_badge_green
@@ -169,10 +172,15 @@ id btn_cancel
 id btn_delete
 id btn_delete_debt
 id btn_edit
+id btn_freq_daily
+id btn_freq_hourly
+id btn_freq_none
+id btn_freq_weekly
 id btn_mark_settled
 id btn_partial_pay
 id btn_save
 id btn_sort
+id card_about
 id card_hero
 id card_i_owe
 id card_net_balance
@@ -203,6 +211,7 @@ id progress_payment
 id recycler_debts
 id recycler_top_contacts
 id row_due_date
+id settingsFragment
 id sort_amount_high
 id sort_amount_low
 id sort_date_newest
@@ -214,6 +223,7 @@ id til_description
 id til_due_date
 id til_payment
 id til_person_name
+id toggle_frequency
 id toolbar
 id tv_active_count
 id tv_amount
@@ -223,6 +233,7 @@ id tv_avatar_detail
 id tv_created_date
 id tv_description
 id tv_due_date
+id tv_meme_credit
 id tv_name
 id tv_net_balance
 id tv_net_balance_label
@@ -254,6 +265,7 @@ layout fragment_analytics
 layout fragment_dashboard
 layout fragment_lent
 layout fragment_owed
+layout fragment_settings
 layout item_debt
 layout item_top_contact
 menu bottom_nav_menu
@@ -320,17 +332,27 @@ string label_paid
 string label_person_name
 string label_remaining
 string label_status
+string meme_credit
 string nav_about
 string nav_analytics
 string nav_dashboard
 string nav_lent
 string nav_owed
+string nav_settings
 string net_balance_format
 string net_balance_label
 string overdue_by_days
 string overdue_nodes_count
+string pref_reminder_frequency_summary
+string pref_reminder_frequency_title
 string progress_percent
 string rank_format
+string reminder_freq_daily
+string reminder_freq_hourly
+string reminder_freq_none
+string reminder_freq_weekly
+string settings_footer
+string settings_title
 string sort_amount_high
 string sort_amount_low
 string sort_date_newest
@@ -390,3 +412,4 @@ styleable CyberProgressBar progressColor trackColor animateOnAttach
 styleable GlowTextView glowColor glowRadius
 xml backup_rules
 xml data_extraction_rules
+xml preferences

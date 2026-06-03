@@ -17,8 +17,10 @@ import dagger.hilt.processor.internal.definecomponent.codegen._dagger_hilt_andro
 import dagger.hilt.processor.internal.definecomponent.codegen._dagger_hilt_android_internal_builders_ViewModelComponentBuilder;
 import dagger.hilt.processor.internal.definecomponent.codegen._dagger_hilt_android_internal_builders_ViewWithFragmentComponentBuilder;
 import dagger.hilt.processor.internal.definecomponent.codegen._dagger_hilt_components_SingletonComponent;
+import hilt_aggregated_deps._androidx_hilt_work_HiltWrapper_WorkerFactoryModule;
 import hilt_aggregated_deps._com_cyberpunk_debttracker_DebtTrackerApp_GeneratedInjector;
 import hilt_aggregated_deps._com_cyberpunk_debttracker_di_DatabaseModule;
+import hilt_aggregated_deps._com_cyberpunk_debttracker_notification_OverdueReminderWorker_HiltModule;
 import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_adddebt_AddDebtActivity_GeneratedInjector;
 import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel_HiltModules_BindsModule;
 import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel_HiltModules_KeyModule;
@@ -32,6 +34,7 @@ import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_dashboard_OwedFragment
 import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_debtdetail_DebtDetailActivity_GeneratedInjector;
 import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel_HiltModules_BindsModule;
 import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel_HiltModules_KeyModule;
+import hilt_aggregated_deps._com_cyberpunk_debttracker_ui_settings_SettingsFragment_GeneratedInjector;
 import hilt_aggregated_deps._dagger_hilt_android_flags_FragmentGetContextFix_FragmentGetContextFixEntryPoint;
 import hilt_aggregated_deps._dagger_hilt_android_flags_HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
 import hilt_aggregated_deps._dagger_hilt_android_internal_lifecycle_DefaultViewModelFactories_ActivityEntryPoint;
@@ -72,8 +75,10 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _dagger_hilt_components_SingletonComponent.class
     },
     aggregatedDeps = {
+        _androidx_hilt_work_HiltWrapper_WorkerFactoryModule.class,
         _com_cyberpunk_debttracker_DebtTrackerApp_GeneratedInjector.class,
         _com_cyberpunk_debttracker_di_DatabaseModule.class,
+        _com_cyberpunk_debttracker_notification_OverdueReminderWorker_HiltModule.class,
         _com_cyberpunk_debttracker_ui_adddebt_AddDebtActivity_GeneratedInjector.class,
         _com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel_HiltModules_BindsModule.class,
         _com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel_HiltModules_KeyModule.class,
@@ -87,6 +92,7 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _com_cyberpunk_debttracker_ui_debtdetail_DebtDetailActivity_GeneratedInjector.class,
         _com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel_HiltModules_BindsModule.class,
         _com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel_HiltModules_KeyModule.class,
+        _com_cyberpunk_debttracker_ui_settings_SettingsFragment_GeneratedInjector.class,
         _dagger_hilt_android_flags_FragmentGetContextFix_FragmentGetContextFixEntryPoint.class,
         _dagger_hilt_android_flags_HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class,
         _dagger_hilt_android_internal_lifecycle_DefaultViewModelFactories_ActivityEntryPoint.class,

@@ -49,10 +49,16 @@ class SplashActivity : AppCompatActivity() {
             .setDuration(400)
             .start()
 
+        binding.tvMemeCredit.animate()
+            .alpha(1f)
+            .setStartDelay(850)
+            .setDuration(400)
+            .start()
+
         // Step 4: Divider line expands
         binding.dividerLine.animate()
             .alpha(1f)
-            .setStartDelay(900)
+            .setStartDelay(1000)
             .setDuration(400)
             .start()
 

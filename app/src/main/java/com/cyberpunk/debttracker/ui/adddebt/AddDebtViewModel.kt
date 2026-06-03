@@ -1,11 +1,13 @@
 package com.cyberpunk.debttracker.ui.adddebt
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.cyberpunk.debttracker.data.model.Debt
 import com.cyberpunk.debttracker.data.model.DebtStatus
 import com.cyberpunk.debttracker.data.model.DebtType
 import com.cyberpunk.debttracker.data.repository.DebtRepository
+import com.cyberpunk.debttracker.util.NotificationHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -14,8 +16,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AddDebtViewModel @Inject constructor(
-    private val repository: DebtRepository
-) : ViewModel() {
+    private val repository: DebtRepository,
+    private val application: Application
+) : AndroidViewModel(application) {
 
     private val _result = MutableSharedFlow<AddDebtResult>()
     val result: SharedFlow<AddDebtResult> = _result
@@ -63,6 +66,9 @@ class AddDebtViewModel @Inject constructor(
                 updatedAt   = System.currentTimeMillis()
             )
             repository.update(updated)
+            if (updated.dueDate != null) {
+                NotificationHelper.scheduleDebtNotification(application, updated)
+            }
             _result.emit(AddDebtResult.Updated)
         } else {
             // Insert mode
@@ -74,7 +80,10 @@ class AddDebtViewModel @Inject constructor(
                 dueDate     = dueDateMs,
                 status      = DebtStatus.ACTIVE
             )
-            repository.insert(debt)
+            val id = repository.insert(debt)
+            if (debt.dueDate != null) {
+                NotificationHelper.scheduleDebtNotification(application, debt.copy(id = id))
+            }
             _result.emit(AddDebtResult.Saved)
         }
     }

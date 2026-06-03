@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cyber_black_deep">
+    android:background="@drawable/bg_splash_gradient">
 
     <ImageView
         android:id="@+id/iv_logo"
@@ -18,14 +18,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:alpha="0"
         android:fontFamily="sans-serif-black"
         android:letterSpacing="0.15"
@@ -41,58 +41,74 @@
         android:id="@+id/tv_tagline"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:alpha="0"
         android:fontFamily="sans-serif-medium"
         android:letterSpacing="0.25"
         android:text="@string/app_tagline"
         android:textColor="@color/cyber_metallic_mid"
         android:textSize="13sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/tv_meme_credit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_app_name"
-        app:layout_constraintBottom_toTopOf="@id/divider_line" />
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+
+    <TextView
+        android:id="@+id/tv_meme_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/meme_credit"
+        android:textColor="@color/cyber_gold_alpha60"
+        android:textSize="11sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/divider_line"
+        app:layout_constraintEnd_toEndOf="@id/tv_tagline"
+        app:layout_constraintTop_toBottomOf="@id/tv_tagline" />
 
     <View
         android:id="@+id/divider_line"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
         android:alpha="0"
         android:background="@color/cyber_gold_alpha60"
+        app:layout_constraintBottom_toTopOf="@id/tv_status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_tagline"
-        app:layout_constraintBottom_toTopOf="@id/tv_status" />
+        app:layout_constraintTop_toBottomOf="@id/tv_meme_credit" />
 
     <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:alpha="0"
         android:fontFamily="sans-serif"
         android:letterSpacing="0.12"
         android:text="@string/splash_initializing"
         android:textColor="@color/text_secondary"
         android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@id/progress_loading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider_line"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/divider_line" />
 
     <ProgressBar
         android:id="@+id/progress_loading"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="160dp"
         android:layout_height="2dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:alpha="0"
         android:indeterminate="true"
         android:indeterminateTint="@color/cyber_gold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_status" />

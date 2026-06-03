@@ -29,4 +29,9 @@
         android:name="com.cyberpunk.debttracker.ui.about.AboutFragment"
         android:label="About" />
 
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.cyberpunk.debttracker.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
 </navigation>

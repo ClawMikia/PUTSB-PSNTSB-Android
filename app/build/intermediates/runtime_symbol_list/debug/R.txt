@@ -94,6 +94,8 @@ int animator nav_default_enter_anim 0x7f020022
 int animator nav_default_exit_anim 0x7f020023
 int animator nav_default_pop_enter_anim 0x7f020024
 int animator nav_default_pop_exit_anim 0x7f020025
+int array reminder_frequency_entries 0x7f160000
+int array reminder_frequency_values 0x7f160001
 int attr SharedValue 0x7f030000
 int attr SharedValueId 0x7f030001
 int attr action 0x7f030002
@@ -1472,7 +1474,11 @@ int attr yearTodayStyle 0x7f03055e
 int bool abc_action_bar_embed_tabs 0x7f040000
 int bool abc_config_actionMenuItemAllCaps 0x7f040001
 int bool config_materialPreferenceIconSpaceReserved 0x7f040002
+int bool enable_system_alarm_service_default 0x7f040004
+int bool enable_system_foreground_service_default 0x7f040005
+int bool enable_system_job_service_default 0x7f040006
 int bool mtrl_btn_textappearance_all_caps 0x7f040003
+int bool workmanager_test_configuration 0x7f040007
 int color abc_background_cache_hint_selector_material_dark 0x7f050000
 int color abc_background_cache_hint_selector_material_light 0x7f050001
 int color abc_btn_colored_borderless_text_material 0x7f050002
@@ -3254,6 +3260,7 @@ int drawable bg_dialog_cyber 0x7f07007f
 int drawable bg_edittext_cyber 0x7f070080
 int drawable bg_fab_gold 0x7f070081
 int drawable bg_ripple_gold 0x7f070082
+int drawable bg_splash_gradient 0x7f070112
 int drawable bg_splash_screen 0x7f070083
 int drawable bg_status_badge 0x7f070084
 int drawable bg_status_badge_green 0x7f070085
@@ -3509,6 +3516,10 @@ int id btn_cancel 0x7f09006b
 int id btn_delete 0x7f09006c
 int id btn_delete_debt 0x7f09006d
 int id btn_edit 0x7f09006e
+int id btn_freq_daily 0x7f090269
+int id btn_freq_hourly 0x7f09026a
+int id btn_freq_none 0x7f09026b
+int id btn_freq_weekly 0x7f09026c
 int id btn_mark_settled 0x7f09006f
 int id btn_partial_pay 0x7f090070
 int id btn_save 0x7f090071
@@ -3517,6 +3528,7 @@ int id buttonPanel 0x7f090073
 int id cache_measures 0x7f090074
 int id callMeasure 0x7f090075
 int id cancel_button 0x7f090076
+int id card_about 0x7f09026d
 int id card_hero 0x7f090077
 int id card_i_owe 0x7f090078
 int id card_net_balance 0x7f090079
@@ -3855,6 +3867,7 @@ int id seekbar_value 0x7f0901c6
 int id select_dialog_listview 0x7f0901c7
 int id selected 0x7f0901c8
 int id selection_type 0x7f0901c9
+int id settingsFragment 0x7f090268
 int id sharedValueSet 0x7f0901ca
 int id sharedValueUnset 0x7f0901cb
 int id shortcut 0x7f0901cc
@@ -3945,6 +3958,7 @@ int id title 0x7f090220
 int id titleDividerNoCustom 0x7f090221
 int id title_template 0x7f090222
 int id toggle 0x7f090223
+int id toggle_frequency 0x7f09026e
 int id toolbar 0x7f090224
 int id top 0x7f090225
 int id topPanel 0x7f090226
@@ -3968,6 +3982,7 @@ int id tv_avatar_detail 0x7f090237
 int id tv_created_date 0x7f090238
 int id tv_description 0x7f090239
 int id tv_due_date 0x7f09023a
+int id tv_meme_credit 0x7f090267
 int id tv_name 0x7f09023b
 int id tv_net_balance 0x7f09023c
 int id tv_net_balance_label 0x7f09023d
@@ -4157,6 +4172,7 @@ int layout fragment_analytics 0x7f0c0033
 int layout fragment_dashboard 0x7f0c0034
 int layout fragment_lent 0x7f0c0035
 int layout fragment_owed 0x7f0c0036
+int layout fragment_settings 0x7f0c008a
 int layout image_frame 0x7f0c0037
 int layout ime_base_split_test_activity 0x7f0c0038
 int layout ime_secondary_split_test_activity 0x7f0c0039
@@ -4400,6 +4416,7 @@ int string material_timepicker_minute 0x7f120095
 int string material_timepicker_pm 0x7f120096
 int string material_timepicker_select_time 0x7f120097
 int string material_timepicker_text_input_mode_description 0x7f120098
+int string meme_credit 0x7f12010c
 int string mtrl_badge_numberless_content_description 0x7f120099
 int string mtrl_checkbox_button_icon_path_checked 0x7f12009a
 int string mtrl_checkbox_button_icon_path_group_name 0x7f12009b
@@ -4469,6 +4486,7 @@ int string nav_app_bar_open_drawer_description 0x7f1200da
 int string nav_dashboard 0x7f1200db
 int string nav_lent 0x7f1200dc
 int string nav_owed 0x7f1200dd
+int string nav_settings 0x7f12010d
 int string net_balance_format 0x7f1200de
 int string net_balance_label 0x7f1200df
 int string not_set 0x7f1200e0
@@ -4479,13 +4497,21 @@ int string path_password_eye 0x7f1200e4
 int string path_password_eye_mask_strike_through 0x7f1200e5
 int string path_password_eye_mask_visible 0x7f1200e6
 int string path_password_strike_through 0x7f1200e7
+int string pref_reminder_frequency_summary 0x7f12010e
+int string pref_reminder_frequency_title 0x7f12010f
 int string preference_copied 0x7f1200e8
 int string progress_percent 0x7f1200e9
 int string rank_format 0x7f12010b
+int string reminder_freq_daily 0x7f120110
+int string reminder_freq_hourly 0x7f120111
+int string reminder_freq_none 0x7f120112
+int string reminder_freq_weekly 0x7f120113
 int string search_menu_title 0x7f1200ea
 int string searchbar_scrolling_view_behavior 0x7f1200eb
 int string searchview_clear_text_content_description 0x7f1200ec
 int string searchview_navigation_content_description 0x7f1200ed
+int string settings_footer 0x7f120115
+int string settings_title 0x7f120114
 int string side_sheet_accessibility_pane_title 0x7f1200ee
 int string side_sheet_behavior 0x7f1200ef
 int string sort_amount_high 0x7f1200f0
@@ -8042,3 +8068,4 @@ int[] styleable include { 0x7f03013f }
 int styleable include_constraintSet 0
 int xml backup_rules 0x7f150000
 int xml data_extraction_rules 0x7f150001
+int xml preferences 0x7f150002

@@ -1,6 +1,8 @@
 package com.cyberpunk.debttracker;
 
+import androidx.hilt.work.HiltWrapper_WorkerFactoryModule;
 import com.cyberpunk.debttracker.di.DatabaseModule;
+import com.cyberpunk.debttracker.notification.OverdueReminderWorker_HiltModule;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.AnalyticsFragment_GeneratedInjector;
@@ -11,6 +13,7 @@ import com.cyberpunk.debttracker.ui.dashboard.MainActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.dashboard.OwedFragment_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel_HiltModules;
+import com.cyberpunk.debttracker.ui.settings.SettingsFragment_GeneratedInjector;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -139,7 +142,9 @@ public final class DebtTrackerApp_HiltComponents {
           DatabaseModule.class,
           ActivityRetainedCBuilderModule.class,
           ServiceCBuilderModule.class,
-          HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class
+          HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class,
+          HiltWrapper_WorkerFactoryModule.class,
+          OverdueReminderWorker_HiltModule.class
       }
   )
   @Singleton
@@ -238,6 +243,7 @@ public final class DebtTrackerApp_HiltComponents {
       DashboardFragment_GeneratedInjector,
       LentFragment_GeneratedInjector,
       OwedFragment_GeneratedInjector,
+      SettingsFragment_GeneratedInjector,
       FragmentComponent,
       DefaultViewModelFactories.FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,

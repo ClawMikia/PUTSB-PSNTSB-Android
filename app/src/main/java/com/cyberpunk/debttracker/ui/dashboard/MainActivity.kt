@@ -11,6 +11,9 @@ import com.cyberpunk.debttracker.databinding.ActivityMainBinding
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtActivity
 import dagger.hilt.android.AndroidEntryPoint
 
+import androidx.preference.PreferenceManager
+import com.cyberpunk.debttracker.util.ReminderManager
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +27,13 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigation()
         setupFab()
+        initReminders()
+    }
+
+    private fun initReminders() {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val freq = prefs.getString("overdue_reminder_frequency", "daily") ?: "daily"
+        ReminderManager.scheduleReminders(this, freq)
     }
 
     private fun setupNavigation() {

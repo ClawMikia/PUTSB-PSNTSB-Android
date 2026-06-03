@@ -34,6 +34,9 @@ public final class ActivitySplashBinding implements ViewBinding {
   public final TextView tvAppName;
 
   @NonNull
+  public final TextView tvMemeCredit;
+
+  @NonNull
   public final TextView tvStatus;
 
   @NonNull
@@ -44,12 +47,14 @@ public final class ActivitySplashBinding implements ViewBinding {
 
   private ActivitySplashBinding(@NonNull ConstraintLayout rootView, @NonNull View dividerLine,
       @NonNull ImageView ivLogo, @NonNull ProgressBar progressLoading, @NonNull TextView tvAppName,
-      @NonNull TextView tvStatus, @NonNull TextView tvTagline, @NonNull TextView tvVersion) {
+      @NonNull TextView tvMemeCredit, @NonNull TextView tvStatus, @NonNull TextView tvTagline,
+      @NonNull TextView tvVersion) {
     this.rootView = rootView;
     this.dividerLine = dividerLine;
     this.ivLogo = ivLogo;
     this.progressLoading = progressLoading;
     this.tvAppName = tvAppName;
+    this.tvMemeCredit = tvMemeCredit;
     this.tvStatus = tvStatus;
     this.tvTagline = tvTagline;
     this.tvVersion = tvVersion;
@@ -106,6 +111,12 @@ public final class ActivitySplashBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_meme_credit;
+      TextView tvMemeCredit = ViewBindings.findChildViewById(rootView, id);
+      if (tvMemeCredit == null) {
+        break missingId;
+      }
+
       id = R.id.tv_status;
       TextView tvStatus = ViewBindings.findChildViewById(rootView, id);
       if (tvStatus == null) {
@@ -125,7 +136,7 @@ public final class ActivitySplashBinding implements ViewBinding {
       }
 
       return new ActivitySplashBinding((ConstraintLayout) rootView, dividerLine, ivLogo,
-          progressLoading, tvAppName, tvStatus, tvTagline, tvVersion);
+          progressLoading, tvAppName, tvMemeCredit, tvStatus, tvTagline, tvVersion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-55:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-59:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "D:\\.gradle\\caches\\transforms-3\\32015c8e01bb022521e4e4c8fa141866\\transformed\\material-1.12.0\\res\\values-zh-rCN\\values-zh-rCN.xml",

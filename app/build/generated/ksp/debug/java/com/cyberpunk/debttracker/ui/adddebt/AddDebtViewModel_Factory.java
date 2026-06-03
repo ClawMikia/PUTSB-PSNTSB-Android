@@ -1,5 +1,6 @@
 package com.cyberpunk.debttracker.ui.adddebt;
 
+import android.app.Application;
 import com.cyberpunk.debttracker.data.repository.DebtRepository;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
@@ -25,20 +26,25 @@ import javax.inject.Provider;
 public final class AddDebtViewModel_Factory implements Factory<AddDebtViewModel> {
   private final Provider<DebtRepository> repositoryProvider;
 
-  public AddDebtViewModel_Factory(Provider<DebtRepository> repositoryProvider) {
+  private final Provider<Application> applicationProvider;
+
+  public AddDebtViewModel_Factory(Provider<DebtRepository> repositoryProvider,
+      Provider<Application> applicationProvider) {
     this.repositoryProvider = repositoryProvider;
+    this.applicationProvider = applicationProvider;
   }
 
   @Override
   public AddDebtViewModel get() {
-    return newInstance(repositoryProvider.get());
+    return newInstance(repositoryProvider.get(), applicationProvider.get());
   }
 
-  public static AddDebtViewModel_Factory create(Provider<DebtRepository> repositoryProvider) {
-    return new AddDebtViewModel_Factory(repositoryProvider);
+  public static AddDebtViewModel_Factory create(Provider<DebtRepository> repositoryProvider,
+      Provider<Application> applicationProvider) {
+    return new AddDebtViewModel_Factory(repositoryProvider, applicationProvider);
   }
 
-  public static AddDebtViewModel newInstance(DebtRepository repository) {
-    return new AddDebtViewModel(repository);
+  public static AddDebtViewModel newInstance(DebtRepository repository, Application application) {
+    return new AddDebtViewModel(repository, application);
   }
 }
