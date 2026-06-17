@@ -30,7 +30,6 @@ anim design_snackbar_out
 anim fade_in
 anim fade_out
 anim fragment_fast_out_extra_slow_in
-anim item_animation_fall_down
 anim linear_indeterminate_line1_head_interpolator
 anim linear_indeterminate_line1_tail_interpolator
 anim linear_indeterminate_line2_head_interpolator
@@ -50,13 +49,10 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
-anim pulse_scale
-anim rotate_loading
 anim slide_in_left
 anim slide_in_right
 anim slide_out_left
 anim slide_out_right
-anim slide_up
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -95,8 +91,6 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
-array reminder_frequency_entries
-array reminder_frequency_values
 attr SharedValue
 attr SharedValueId
 attr action
@@ -157,7 +151,6 @@ attr alwaysExpand
 attr animateCircleAngleTo
 attr animateMenuItems
 attr animateNavigationIcon
-attr animateOnAttach
 attr animateRelativeTo
 attr animationMode
 attr appBarLayoutStyle
@@ -223,7 +216,6 @@ attr behavior_saveFlags
 attr behavior_significantVelocityThreshold
 attr behavior_skipCollapsed
 attr blendSrc
-attr borderColor
 attr borderRound
 attr borderRoundPercent
 attr borderWidth
@@ -448,7 +440,6 @@ attr cornerFamilyBottomRight
 attr cornerFamilyTopLeft
 attr cornerFamilyTopRight
 attr cornerRadius
-attr cornerRadiusCustom
 attr cornerSize
 attr cornerSizeBottomLeft
 attr cornerSizeBottomRight
@@ -659,8 +650,6 @@ attr fragment
 attr framePosition
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
-attr glowColor
-attr glowRadius
 attr goIcon
 attr graph
 attr guidelineUseRtl
@@ -860,28 +849,6 @@ attr logo
 attr logoAdjustViewBounds
 attr logoDescription
 attr logoScaleType
-attr lottieAnimationViewStyle
-attr lottie_asyncUpdates
-attr lottie_autoPlay
-attr lottie_cacheComposition
-attr lottie_clipTextToBoundingBox
-attr lottie_clipToCompositionBounds
-attr lottie_colorFilter
-attr lottie_defaultFontFileExtension
-attr lottie_enableMergePathsForKitKatAndAbove
-attr lottie_fallbackRes
-attr lottie_fileName
-attr lottie_ignoreDisabledSystemAnimations
-attr lottie_imageAssetsFolder
-attr lottie_loop
-attr lottie_progress
-attr lottie_rawRes
-attr lottie_renderMode
-attr lottie_repeatCount
-attr lottie_repeatMode
-attr lottie_speed
-attr lottie_url
-attr lottie_useCompositionFrameRate
 attr marginHorizontal
 attr marginLeftSystemWindowInsets
 attr marginRightSystemWindowInsets
@@ -1095,7 +1062,6 @@ attr pressedTranslationZ
 attr primaryActivityName
 attr progressBarPadding
 attr progressBarStyle
-attr progressColor
 attr quantizeMotionInterpolator
 attr quantizeMotionPhase
 attr quantizeMotionSteps
@@ -1534,27 +1500,21 @@ color cyber_black
 color cyber_black_deep
 color cyber_card
 color cyber_card_border
-color cyber_chrome
 color cyber_gold
 color cyber_gold_alpha15
 color cyber_gold_alpha30
 color cyber_gold_alpha60
 color cyber_gold_bright
 color cyber_gold_dark
-color cyber_gold_dim
 color cyber_metallic_dark
-color cyber_metallic_light
 color cyber_metallic_mid
-color cyber_panel
 color cyber_surface
-color cyber_surface_high
 color cyber_surface_raised
 color debt_lent
 color debt_lent_dim
 color debt_owed
 color debt_owed_dim
 color debt_partial
-color debt_partial_dim
 color debt_settled
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
@@ -1605,8 +1565,6 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
-color glow_gold
-color glow_green
 color glow_red
 color highlighted_text_material_dark
 color highlighted_text_material_light
@@ -2266,9 +2224,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color nav_bar_color
 color neon_amber
-color neon_cyan_info
 color neon_green_ok
-color neon_orange
 color neon_red_alert
 color notification_action_color_filter
 color notification_icon_bg_color
@@ -2281,26 +2237,20 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
-color progress_fill
 color progress_track
 color ripple_material_dark
 color ripple_material_light
-color scrim
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color status_bar_color
-color switch_thumb_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
-color switch_track_color
-color text_disabled
-color text_gold
 color text_on_gold
 color text_primary
 color text_secondary
@@ -2393,7 +2343,6 @@ dimen border_md
 dimen border_thick
 dimen border_thin
 dimen bottom_nav_height
-dimen bottom_sheet_peek
 dimen button_height
 dimen card_elevation
 dimen card_margin
@@ -2486,7 +2435,6 @@ dimen icon_xl
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
-dimen list_item_height
 dimen m3_alert_dialog_action_bottom_padding
 dimen m3_alert_dialog_action_top_padding
 dimen m3_alert_dialog_corner_size
@@ -3252,17 +3200,7 @@ drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_bottom_nav_cyber
-drawable bg_cyber_button
-drawable bg_cyber_button_outlined
-drawable bg_cyber_card
-drawable bg_cyber_card_debt
-drawable bg_cyber_card_lent
-drawable bg_dialog_cyber
-drawable bg_edittext_cyber
-drawable bg_fab_gold
-drawable bg_ripple_gold
 drawable bg_splash_gradient
-drawable bg_splash_screen
 drawable bg_status_badge
 drawable bg_status_badge_green
 drawable bg_status_badge_orange
@@ -3270,7 +3208,6 @@ drawable bg_status_badge_red
 drawable bg_summary_card_gold
 drawable bg_summary_card_green
 drawable bg_summary_card_red
-drawable bg_toolbar_cyber
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3286,7 +3223,6 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable divider_cyber
 drawable ic_add
 drawable ic_analytics
 drawable ic_arrow_back_black_24
@@ -3299,7 +3235,6 @@ drawable ic_call_answer_video
 drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
-drawable ic_check
 drawable ic_check_circle
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
@@ -3399,13 +3334,10 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable popup_menu_bg
 drawable preference_list_divider_material
-drawable progress_horizontal_cyber
 drawable splash_animated_icon
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-font orbitron_font_family
-font rajdhani_font_family
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3467,9 +3399,7 @@ id action_bar_subtitle
 id action_bar_title
 id action_container
 id action_context_bar
-id action_delete
 id action_divider
-id action_edit
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -3499,7 +3429,6 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id automatic
 id bar_chart
 id barrier
 id baseline
@@ -3594,7 +3523,6 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
-id disabled
 id disjoint
 id divider_line
 id dragAnticlockwise
@@ -3615,7 +3543,6 @@ id edit_query
 id edit_text_id
 id elastic
 id embed
-id enabled
 id end
 id endToStart
 id enterAlways
@@ -3655,7 +3582,6 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
-id hardware
 id header_title
 id hide_ime_id
 id hideable
@@ -3696,7 +3622,6 @@ id linear
 id listMode
 id list_item
 id locale
-id lottie_layer_name
 id ltr
 id m3_side_sheet
 id marquee
@@ -3832,8 +3757,6 @@ id recycler_debts
 id recycler_top_contacts
 id recycler_view
 id report_drawn
-id restart
-id reverse
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3885,7 +3808,6 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
-id software
 id sort_amount_high
 id sort_amount_low
 id sort_date_newest
@@ -4258,7 +4180,6 @@ layout select_dialog_singlechoice_material
 layout splash_screen_view
 layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
-menu menu_debt_detail
 menu menu_debt_list
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -4296,7 +4217,6 @@ string about_dev
 string about_quote
 string about_title
 string about_version
-string active_debts_label
 string active_nodes_count
 string add_debt_title
 string analytics_title
@@ -4330,7 +4250,6 @@ string chart_breakdown
 string chart_timeline
 string clear_text_end_icon_content_description
 string copy
-string currency_symbol
 string debt_detail_title
 string debt_type_lent
 string debt_type_owe
@@ -4343,10 +4262,6 @@ string dialog_partial_hint
 string dialog_partial_title
 string dialog_settle_message
 string dialog_settle_title
-string due_date_label
-string due_in_days
-string due_today
-string due_tomorrow
 string edit_debt_title
 string empty_debts_subtitle
 string empty_debts_title
@@ -4354,7 +4269,6 @@ string empty_lent_title
 string empty_owed_title
 string error_a11y_label
 string error_amount_invalid
-string error_amount_required
 string error_amount_zero
 string error_icon_content_description
 string error_name_required
@@ -4491,14 +4405,12 @@ string nav_settings
 string net_balance_format
 string net_balance_label
 string not_set
-string overdue_by_days
 string overdue_nodes_count
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
-string pref_reminder_frequency_summary
 string pref_reminder_frequency_title
 string preference_copied
 string progress_percent
@@ -4538,8 +4450,6 @@ string summary_collapsed_preference_list
 string top_creditors
 string top_debtors
 string total_amount_label
-string total_debt_label
-string total_lent_label
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat
@@ -5421,14 +5331,9 @@ style Widget_DebtTracker_Button_Danger
 style Widget_DebtTracker_Button_Ghost
 style Widget_DebtTracker_Button_Outlined
 style Widget_DebtTracker_CardView
-style Widget_DebtTracker_CardView_Debt
-style Widget_DebtTracker_CardView_Gold
-style Widget_DebtTracker_CardView_Lent
 style Widget_DebtTracker_Chip
 style Widget_DebtTracker_FAB
 style Widget_DebtTracker_PopupMenu
-style Widget_DebtTracker_ProgressBar
-style Widget_DebtTracker_Switch
 style Widget_DebtTracker_TextInputLayout
 style Widget_DebtTracker_Toolbar
 style Widget_Design_AppBarLayout
@@ -5793,8 +5698,6 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable CustomAttribute attributeName customBoolean customColorDrawableValue customColorValue customDimension customFloatValue customIntegerValue customPixelDimension customReference customStringValue methodName
-styleable CyberCardView borderColor borderWidth cornerRadiusCustom glowColor glowRadius
-styleable CyberProgressBar animateOnAttach progressColor trackColor
 styleable DialogFragmentNavigator android_name
 styleable DialogPreference android_dialogTitle android_dialogMessage android_dialogIcon android_positiveButtonText android_negativeButtonText android_dialogLayout dialogIcon dialogLayout dialogMessage dialogTitle negativeButtonText positiveButtonText
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
@@ -5811,7 +5714,6 @@ styleable ForegroundLinearLayout android_foreground android_foregroundGravity fo
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
 styleable FragmentNavigator android_name
-styleable GlowTextView glowColor glowRadius
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc blendSrc brightness contrast crossfade imagePanX imagePanY imageRotate imageZoom overlay round roundPercent saturation warmth
@@ -5830,7 +5732,6 @@ styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width 
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear trackStopIndicatorSize
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable ListPreference android_entries android_entryValues entries entryValues useSimpleSummaryProvider
-styleable LottieAnimationView lottie_asyncUpdates lottie_autoPlay lottie_cacheComposition lottie_clipTextToBoundingBox lottie_clipToCompositionBounds lottie_colorFilter lottie_defaultFontFileExtension lottie_enableMergePathsForKitKatAndAbove lottie_fallbackRes lottie_fileName lottie_ignoreDisabledSystemAnimations lottie_imageAssetsFolder lottie_loop lottie_progress lottie_rawRes lottie_renderMode lottie_repeatCount lottie_repeatMode lottie_speed lottie_url lottie_useCompositionFrameRate
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop backgroundTint
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType android_popupElevation dropDownBackgroundTint simpleItemLayout simpleItemSelectedColor simpleItemSelectedRippleColor simpleItems
@@ -5931,4 +5832,3 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
-xml preferences

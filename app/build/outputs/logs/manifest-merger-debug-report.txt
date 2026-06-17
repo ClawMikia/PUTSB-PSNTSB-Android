@@ -15,7 +15,6 @@ MERGED from [androidx.navigation:navigation-ui-ktx:2.7.7] D:\.gradle\caches\tran
 MERGED from [androidx.navigation:navigation-ui:2.7.7] D:\.gradle\caches\transforms-3\0687ec7a73cd8d5d1bec9c001ade5737\transformed\navigation-ui-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.12.0] D:\.gradle\caches\transforms-3\32015c8e01bb022521e4e4c8fa141866\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\.gradle\caches\transforms-3\af477d3c39f42f08651bf10be047050f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
-MERGED from [com.airbnb.android:lottie:6.3.0] D:\.gradle\caches\transforms-3\b0a8e8be06a01de7a53ec0df81dcbaad\transformed\jetified-lottie-6.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] D:\.gradle\caches\transforms-3\f893f1f557153288143aa50828cae1ae\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.preference:preference-ktx:1.2.1] D:\.gradle\caches\transforms-3\2c23b884deb4d4eff4ddff7f5c495e16\transformed\jetified-preference-ktx-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.preference:preference:1.2.1] D:\.gradle\caches\transforms-3\1aae383f8f9cac51b355d07e48deb9b6\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
@@ -115,8 +114,6 @@ MERGED from [com.google.android.material:material:1.12.0] D:\.gradle\caches\tran
 MERGED from [com.google.android.material:material:1.12.0] D:\.gradle\caches\transforms-3\32015c8e01bb022521e4e4c8fa141866\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\.gradle\caches\transforms-3\af477d3c39f42f08651bf10be047050f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\.gradle\caches\transforms-3\af477d3c39f42f08651bf10be047050f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
-MERGED from [com.airbnb.android:lottie:6.3.0] D:\.gradle\caches\transforms-3\b0a8e8be06a01de7a53ec0df81dcbaad\transformed\jetified-lottie-6.3.0\AndroidManifest.xml:7:5-20
-MERGED from [com.airbnb.android:lottie:6.3.0] D:\.gradle\caches\transforms-3\b0a8e8be06a01de7a53ec0df81dcbaad\transformed\jetified-lottie-6.3.0\AndroidManifest.xml:7:5-20
 MERGED from [androidx.emoji2:emoji2:1.3.0] D:\.gradle\caches\transforms-3\8e975ac05e2b316a4606dc86bc4c8ebc\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] D:\.gradle\caches\transforms-3\8e975ac05e2b316a4606dc86bc4c8ebc\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.work:work-runtime:2.9.0] D:\.gradle\caches\transforms-3\edfa954dba38394adf5e5cd5acb60554\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
@@ -245,8 +242,6 @@ MERGED from [com.google.android.material:material:1.12.0] D:\.gradle\caches\tran
 MERGED from [com.google.android.material:material:1.12.0] D:\.gradle\caches\transforms-3\32015c8e01bb022521e4e4c8fa141866\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\.gradle\caches\transforms-3\af477d3c39f42f08651bf10be047050f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\.gradle\caches\transforms-3\af477d3c39f42f08651bf10be047050f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.airbnb.android:lottie:6.3.0] D:\.gradle\caches\transforms-3\b0a8e8be06a01de7a53ec0df81dcbaad\transformed\jetified-lottie-6.3.0\AndroidManifest.xml:5:5-44
-MERGED from [com.airbnb.android:lottie:6.3.0] D:\.gradle\caches\transforms-3\b0a8e8be06a01de7a53ec0df81dcbaad\transformed\jetified-lottie-6.3.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] D:\.gradle\caches\transforms-3\f893f1f557153288143aa50828cae1ae\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] D:\.gradle\caches\transforms-3\f893f1f557153288143aa50828cae1ae\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.preference:preference-ktx:1.2.1] D:\.gradle\caches\transforms-3\2c23b884deb4d4eff4ddff7f5c495e16\transformed\jetified-preference-ktx-1.2.1\AndroidManifest.xml:20:5-22:41

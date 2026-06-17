@@ -29,7 +29,6 @@ int anim design_snackbar_out 0x7f01001b
 int anim fade_in 0x7f01001c
 int anim fade_out 0x7f01001d
 int anim fragment_fast_out_extra_slow_in 0x7f01001e
-int anim item_animation_fall_down 0x7f01001f
 int anim linear_indeterminate_line1_head_interpolator 0x7f010020
 int anim linear_indeterminate_line1_tail_interpolator 0x7f010021
 int anim linear_indeterminate_line2_head_interpolator 0x7f010022
@@ -49,13 +48,10 @@ int anim nav_default_enter_anim 0x7f01002f
 int anim nav_default_exit_anim 0x7f010030
 int anim nav_default_pop_enter_anim 0x7f010031
 int anim nav_default_pop_exit_anim 0x7f010032
-int anim pulse_scale 0x7f010033
-int anim rotate_loading 0x7f010034
 int anim slide_in_left 0x7f010035
 int anim slide_in_right 0x7f010036
 int anim slide_out_left 0x7f010037
 int anim slide_out_right 0x7f010038
-int anim slide_up 0x7f010039
 int animator design_appbar_state_list_animator 0x7f020000
 int animator design_fab_hide_motion_spec 0x7f020001
 int animator design_fab_show_motion_spec 0x7f020002
@@ -94,8 +90,6 @@ int animator nav_default_enter_anim 0x7f020022
 int animator nav_default_exit_anim 0x7f020023
 int animator nav_default_pop_enter_anim 0x7f020024
 int animator nav_default_pop_exit_anim 0x7f020025
-int array reminder_frequency_entries 0x7f160000
-int array reminder_frequency_values 0x7f160001
 int attr SharedValue 0x7f030000
 int attr SharedValueId 0x7f030001
 int attr action 0x7f030002
@@ -156,7 +150,6 @@ int attr alwaysExpand 0x7f030038
 int attr animateCircleAngleTo 0x7f030039
 int attr animateMenuItems 0x7f03003a
 int attr animateNavigationIcon 0x7f03003b
-int attr animateOnAttach 0x7f03003c
 int attr animateRelativeTo 0x7f03003d
 int attr animationMode 0x7f03003e
 int attr appBarLayoutStyle 0x7f03003f
@@ -222,7 +215,6 @@ int attr behavior_saveFlags 0x7f03007a
 int attr behavior_significantVelocityThreshold 0x7f03007b
 int attr behavior_skipCollapsed 0x7f03007c
 int attr blendSrc 0x7f03007d
-int attr borderColor 0x7f03007e
 int attr borderRound 0x7f03007f
 int attr borderRoundPercent 0x7f030080
 int attr borderWidth 0x7f030081
@@ -447,7 +439,6 @@ int attr cornerFamilyBottomRight 0x7f03015b
 int attr cornerFamilyTopLeft 0x7f03015c
 int attr cornerFamilyTopRight 0x7f03015d
 int attr cornerRadius 0x7f03015e
-int attr cornerRadiusCustom 0x7f03015f
 int attr cornerSize 0x7f030160
 int attr cornerSizeBottomLeft 0x7f030161
 int attr cornerSizeBottomRight 0x7f030162
@@ -658,8 +649,6 @@ int attr fragment 0x7f03022e
 int attr framePosition 0x7f03022f
 int attr gapBetweenBars 0x7f030230
 int attr gestureInsetBottomIgnored 0x7f030231
-int attr glowColor 0x7f030232
-int attr glowRadius 0x7f030233
 int attr goIcon 0x7f030234
 int attr graph 0x7f030235
 int attr guidelineUseRtl 0x7f030236
@@ -859,28 +848,6 @@ int attr logo 0x7f0302f7
 int attr logoAdjustViewBounds 0x7f0302f8
 int attr logoDescription 0x7f0302f9
 int attr logoScaleType 0x7f0302fa
-int attr lottieAnimationViewStyle 0x7f0302fb
-int attr lottie_asyncUpdates 0x7f0302fc
-int attr lottie_autoPlay 0x7f0302fd
-int attr lottie_cacheComposition 0x7f0302fe
-int attr lottie_clipTextToBoundingBox 0x7f0302ff
-int attr lottie_clipToCompositionBounds 0x7f030300
-int attr lottie_colorFilter 0x7f030301
-int attr lottie_defaultFontFileExtension 0x7f030302
-int attr lottie_enableMergePathsForKitKatAndAbove 0x7f030303
-int attr lottie_fallbackRes 0x7f030304
-int attr lottie_fileName 0x7f030305
-int attr lottie_ignoreDisabledSystemAnimations 0x7f030306
-int attr lottie_imageAssetsFolder 0x7f030307
-int attr lottie_loop 0x7f030308
-int attr lottie_progress 0x7f030309
-int attr lottie_rawRes 0x7f03030a
-int attr lottie_renderMode 0x7f03030b
-int attr lottie_repeatCount 0x7f03030c
-int attr lottie_repeatMode 0x7f03030d
-int attr lottie_speed 0x7f03030e
-int attr lottie_url 0x7f03030f
-int attr lottie_useCompositionFrameRate 0x7f030310
 int attr marginHorizontal 0x7f030311
 int attr marginLeftSystemWindowInsets 0x7f030312
 int attr marginRightSystemWindowInsets 0x7f030313
@@ -1094,7 +1061,6 @@ int attr pressedTranslationZ 0x7f0303e2
 int attr primaryActivityName 0x7f0303e3
 int attr progressBarPadding 0x7f0303e4
 int attr progressBarStyle 0x7f0303e5
-int attr progressColor 0x7f0303e6
 int attr quantizeMotionInterpolator 0x7f0303e7
 int attr quantizeMotionPhase 0x7f0303e8
 int attr quantizeMotionSteps 0x7f0303e9
@@ -1533,27 +1499,21 @@ int color cyber_black 0x7f050032
 int color cyber_black_deep 0x7f050033
 int color cyber_card 0x7f050034
 int color cyber_card_border 0x7f050035
-int color cyber_chrome 0x7f050036
 int color cyber_gold 0x7f050037
 int color cyber_gold_alpha15 0x7f050038
 int color cyber_gold_alpha30 0x7f050039
 int color cyber_gold_alpha60 0x7f05003a
 int color cyber_gold_bright 0x7f05003b
 int color cyber_gold_dark 0x7f05003c
-int color cyber_gold_dim 0x7f05003d
 int color cyber_metallic_dark 0x7f05003e
-int color cyber_metallic_light 0x7f05003f
 int color cyber_metallic_mid 0x7f050040
-int color cyber_panel 0x7f050041
 int color cyber_surface 0x7f050042
-int color cyber_surface_high 0x7f050043
 int color cyber_surface_raised 0x7f050044
 int color debt_lent 0x7f050045
 int color debt_lent_dim 0x7f050046
 int color debt_owed 0x7f050047
 int color debt_owed_dim 0x7f050048
 int color debt_partial 0x7f050049
-int color debt_partial_dim 0x7f05004a
 int color debt_settled 0x7f05004b
 int color design_bottom_navigation_shadow_color 0x7f05004c
 int color design_box_stroke_color 0x7f05004d
@@ -1604,8 +1564,6 @@ int color error_color_material_dark 0x7f050079
 int color error_color_material_light 0x7f05007a
 int color foreground_material_dark 0x7f05007b
 int color foreground_material_light 0x7f05007c
-int color glow_gold 0x7f05007d
-int color glow_green 0x7f05007e
 int color glow_red 0x7f05007f
 int color highlighted_text_material_dark 0x7f050080
 int color highlighted_text_material_light 0x7f050081
@@ -2265,9 +2223,7 @@ int color mtrl_textinput_focused_box_stroke_color 0x7f05030e
 int color mtrl_textinput_hovered_box_stroke_color 0x7f05030f
 int color nav_bar_color 0x7f050310
 int color neon_amber 0x7f050311
-int color neon_cyan_info 0x7f050312
 int color neon_green_ok 0x7f050313
-int color neon_orange 0x7f050314
 int color neon_red_alert 0x7f050315
 int color notification_action_color_filter 0x7f050316
 int color notification_icon_bg_color 0x7f050317
@@ -2280,26 +2236,20 @@ int color primary_text_default_material_dark 0x7f05031d
 int color primary_text_default_material_light 0x7f05031e
 int color primary_text_disabled_material_dark 0x7f05031f
 int color primary_text_disabled_material_light 0x7f050320
-int color progress_fill 0x7f050321
 int color progress_track 0x7f050322
 int color ripple_material_dark 0x7f050323
 int color ripple_material_light 0x7f050324
-int color scrim 0x7f050325
 int color secondary_text_default_material_dark 0x7f050326
 int color secondary_text_default_material_light 0x7f050327
 int color secondary_text_disabled_material_dark 0x7f050328
 int color secondary_text_disabled_material_light 0x7f050329
 int color status_bar_color 0x7f05032a
-int color switch_thumb_color 0x7f05032b
 int color switch_thumb_disabled_material_dark 0x7f05032c
 int color switch_thumb_disabled_material_light 0x7f05032d
 int color switch_thumb_material_dark 0x7f05032e
 int color switch_thumb_material_light 0x7f05032f
 int color switch_thumb_normal_material_dark 0x7f050330
 int color switch_thumb_normal_material_light 0x7f050331
-int color switch_track_color 0x7f050332
-int color text_disabled 0x7f050333
-int color text_gold 0x7f050334
 int color text_on_gold 0x7f050335
 int color text_primary 0x7f050336
 int color text_secondary 0x7f050337
@@ -2392,7 +2342,6 @@ int dimen border_md 0x7f060052
 int dimen border_thick 0x7f060053
 int dimen border_thin 0x7f060054
 int dimen bottom_nav_height 0x7f060055
-int dimen bottom_sheet_peek 0x7f060056
 int dimen button_height 0x7f060057
 int dimen card_elevation 0x7f060058
 int dimen card_margin 0x7f060059
@@ -2485,7 +2434,6 @@ int dimen icon_xl 0x7f0600af
 int dimen item_touch_helper_max_drag_scroll_per_frame 0x7f0600b0
 int dimen item_touch_helper_swipe_escape_max_velocity 0x7f0600b1
 int dimen item_touch_helper_swipe_escape_velocity 0x7f0600b2
-int dimen list_item_height 0x7f0600b3
 int dimen m3_alert_dialog_action_bottom_padding 0x7f0600b4
 int dimen m3_alert_dialog_action_top_padding 0x7f0600b5
 int dimen m3_alert_dialog_corner_size 0x7f0600b6
@@ -3251,17 +3199,7 @@ int drawable app_icon 0x7f070111
 int drawable avd_hide_password 0x7f070077
 int drawable avd_show_password 0x7f070078
 int drawable bg_bottom_nav_cyber 0x7f070079
-int drawable bg_cyber_button 0x7f07007a
-int drawable bg_cyber_button_outlined 0x7f07007b
-int drawable bg_cyber_card 0x7f07007c
-int drawable bg_cyber_card_debt 0x7f07007d
-int drawable bg_cyber_card_lent 0x7f07007e
-int drawable bg_dialog_cyber 0x7f07007f
-int drawable bg_edittext_cyber 0x7f070080
-int drawable bg_fab_gold 0x7f070081
-int drawable bg_ripple_gold 0x7f070082
 int drawable bg_splash_gradient 0x7f070112
-int drawable bg_splash_screen 0x7f070083
 int drawable bg_status_badge 0x7f070084
 int drawable bg_status_badge_green 0x7f070085
 int drawable bg_status_badge_orange 0x7f070086
@@ -3269,7 +3207,6 @@ int drawable bg_status_badge_red 0x7f070087
 int drawable bg_summary_card_gold 0x7f070088
 int drawable bg_summary_card_green 0x7f070089
 int drawable bg_summary_card_red 0x7f07008a
-int drawable bg_toolbar_cyber 0x7f07008b
 int drawable btn_checkbox_checked_mtrl 0x7f07008c
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f07008d
 int drawable btn_checkbox_unchecked_mtrl 0x7f07008e
@@ -3285,7 +3222,6 @@ int drawable design_ic_visibility 0x7f070097
 int drawable design_ic_visibility_off 0x7f070098
 int drawable design_password_eye 0x7f070099
 int drawable design_snackbar_background 0x7f07009a
-int drawable divider_cyber 0x7f07009b
 int drawable ic_add 0x7f07009c
 int drawable ic_analytics 0x7f07009d
 int drawable ic_arrow_back_black_24 0x7f07009e
@@ -3298,7 +3234,6 @@ int drawable ic_call_answer_video 0x7f0700a4
 int drawable ic_call_answer_video_low 0x7f0700a5
 int drawable ic_call_decline 0x7f0700a6
 int drawable ic_call_decline_low 0x7f0700a7
-int drawable ic_check 0x7f0700a8
 int drawable ic_check_circle 0x7f0700a9
 int drawable ic_clear_black_24 0x7f0700aa
 int drawable ic_clock_black_24dp 0x7f0700ab
@@ -3398,13 +3333,10 @@ int drawable notification_tile_bg 0x7f070108
 int drawable notify_panel_notification_icon_bg 0x7f070109
 int drawable popup_menu_bg 0x7f07010a
 int drawable preference_list_divider_material 0x7f07010b
-int drawable progress_horizontal_cyber 0x7f07010c
 int drawable splash_animated_icon 0x7f07010d
 int drawable test_level_drawable 0x7f07010e
 int drawable tooltip_frame_dark 0x7f07010f
 int drawable tooltip_frame_light 0x7f070110
-int font orbitron_font_family 0x7f080000
-int font rajdhani_font_family 0x7f080001
 int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
@@ -3466,9 +3398,7 @@ int id action_bar_subtitle 0x7f090039
 int id action_bar_title 0x7f09003a
 int id action_container 0x7f09003b
 int id action_context_bar 0x7f09003c
-int id action_delete 0x7f09003d
 int id action_divider 0x7f09003e
-int id action_edit 0x7f09003f
 int id action_image 0x7f090040
 int id action_menu_divider 0x7f090041
 int id action_menu_presenter 0x7f090042
@@ -3498,7 +3428,6 @@ int id auto 0x7f090059
 int id autoComplete 0x7f09005a
 int id autoCompleteToEnd 0x7f09005b
 int id autoCompleteToStart 0x7f09005c
-int id automatic 0x7f09005d
 int id bar_chart 0x7f09005e
 int id barrier 0x7f09005f
 int id baseline 0x7f090060
@@ -3593,7 +3522,6 @@ int id disableHome 0x7f0900b3
 int id disableIntraAutoTransition 0x7f0900b4
 int id disablePostScroll 0x7f0900b5
 int id disableScroll 0x7f0900b6
-int id disabled 0x7f0900b7
 int id disjoint 0x7f0900b8
 int id divider_line 0x7f0900b9
 int id dragAnticlockwise 0x7f0900ba
@@ -3614,7 +3542,6 @@ int id edit_query 0x7f0900c8
 int id edit_text_id 0x7f0900c9
 int id elastic 0x7f0900ca
 int id embed 0x7f0900cb
-int id enabled 0x7f0900cc
 int id end 0x7f0900cd
 int id endToStart 0x7f0900ce
 int id enterAlways 0x7f0900cf
@@ -3654,7 +3581,6 @@ int id graph_wrap 0x7f0900f0
 int id group_divider 0x7f0900f1
 int id grouping 0x7f0900f2
 int id groups 0x7f0900f3
-int id hardware 0x7f0900f4
 int id header_title 0x7f0900f5
 int id hide_ime_id 0x7f0900f6
 int id hideable 0x7f0900f7
@@ -3695,7 +3621,6 @@ int id linear 0x7f090119
 int id listMode 0x7f09011a
 int id list_item 0x7f09011b
 int id locale 0x7f09011c
-int id lottie_layer_name 0x7f09011d
 int id ltr 0x7f09011e
 int id m3_side_sheet 0x7f09011f
 int id marquee 0x7f090120
@@ -3831,8 +3756,6 @@ int id recycler_debts 0x7f0901a1
 int id recycler_top_contacts 0x7f0901a2
 int id recycler_view 0x7f0901a3
 int id report_drawn 0x7f0901a4
-int id restart 0x7f0901a5
-int id reverse 0x7f0901a6
 int id reverseSawtooth 0x7f0901a7
 int id right 0x7f0901a8
 int id rightToLeft 0x7f0901a9
@@ -3884,7 +3807,6 @@ int id snackbar_action 0x7f0901d6
 int id snackbar_text 0x7f0901d7
 int id snap 0x7f0901d8
 int id snapMargins 0x7f0901d9
-int id software 0x7f0901da
 int id sort_amount_high 0x7f0901db
 int id sort_amount_low 0x7f0901dc
 int id sort_date_newest 0x7f0901dd
@@ -4257,7 +4179,6 @@ int layout select_dialog_singlechoice_material 0x7f0c0087
 int layout splash_screen_view 0x7f0c0088
 int layout support_simple_spinner_dropdown_item 0x7f0c0089
 int menu bottom_nav_menu 0x7f0e0000
-int menu menu_debt_detail 0x7f0e0001
 int menu menu_debt_list 0x7f0e0002
 int mipmap ic_launcher 0x7f0f0000
 int mipmap ic_launcher_round 0x7f0f0001
@@ -4295,7 +4216,6 @@ int string about_dev 0x7f12001c
 int string about_quote 0x7f12001d
 int string about_title 0x7f12001e
 int string about_version 0x7f12001f
-int string active_debts_label 0x7f120020
 int string active_nodes_count 0x7f120021
 int string add_debt_title 0x7f120022
 int string analytics_title 0x7f120023
@@ -4329,7 +4249,6 @@ int string chart_breakdown 0x7f12003e
 int string chart_timeline 0x7f12003f
 int string clear_text_end_icon_content_description 0x7f120040
 int string copy 0x7f120041
-int string currency_symbol 0x7f120042
 int string debt_detail_title 0x7f120043
 int string debt_type_lent 0x7f120044
 int string debt_type_owe 0x7f120045
@@ -4342,10 +4261,6 @@ int string dialog_partial_hint 0x7f12004b
 int string dialog_partial_title 0x7f12004c
 int string dialog_settle_message 0x7f12004d
 int string dialog_settle_title 0x7f12004e
-int string due_date_label 0x7f12004f
-int string due_in_days 0x7f120050
-int string due_today 0x7f120051
-int string due_tomorrow 0x7f120052
 int string edit_debt_title 0x7f120053
 int string empty_debts_subtitle 0x7f120054
 int string empty_debts_title 0x7f120055
@@ -4353,7 +4268,6 @@ int string empty_lent_title 0x7f120056
 int string empty_owed_title 0x7f120057
 int string error_a11y_label 0x7f120058
 int string error_amount_invalid 0x7f120059
-int string error_amount_required 0x7f12005a
 int string error_amount_zero 0x7f12005b
 int string error_icon_content_description 0x7f12005c
 int string error_name_required 0x7f12005d
@@ -4490,14 +4404,12 @@ int string nav_settings 0x7f12010d
 int string net_balance_format 0x7f1200de
 int string net_balance_label 0x7f1200df
 int string not_set 0x7f1200e0
-int string overdue_by_days 0x7f1200e1
 int string overdue_nodes_count 0x7f1200e2
 int string password_toggle_content_description 0x7f1200e3
 int string path_password_eye 0x7f1200e4
 int string path_password_eye_mask_strike_through 0x7f1200e5
 int string path_password_eye_mask_visible 0x7f1200e6
 int string path_password_strike_through 0x7f1200e7
-int string pref_reminder_frequency_summary 0x7f12010e
 int string pref_reminder_frequency_title 0x7f12010f
 int string preference_copied 0x7f1200e8
 int string progress_percent 0x7f1200e9
@@ -4537,8 +4449,6 @@ int string summary_collapsed_preference_list 0x7f120103
 int string top_creditors 0x7f120104
 int string top_debtors 0x7f120105
 int string total_amount_label 0x7f120106
-int string total_debt_label 0x7f120107
-int string total_lent_label 0x7f120108
 int string v7_preference_off 0x7f120109
 int string v7_preference_on 0x7f12010a
 int style AlertDialog_AppCompat 0x7f130000
@@ -5420,14 +5330,9 @@ int style Widget_DebtTracker_Button_Danger 0x7f13036b
 int style Widget_DebtTracker_Button_Ghost 0x7f13036c
 int style Widget_DebtTracker_Button_Outlined 0x7f13036d
 int style Widget_DebtTracker_CardView 0x7f13036e
-int style Widget_DebtTracker_CardView_Debt 0x7f13036f
-int style Widget_DebtTracker_CardView_Gold 0x7f130370
-int style Widget_DebtTracker_CardView_Lent 0x7f130371
 int style Widget_DebtTracker_Chip 0x7f130372
 int style Widget_DebtTracker_FAB 0x7f130373
 int style Widget_DebtTracker_PopupMenu 0x7f130374
-int style Widget_DebtTracker_ProgressBar 0x7f130375
-int style Widget_DebtTracker_Switch 0x7f130376
 int style Widget_DebtTracker_TextInputLayout 0x7f130377
 int style Widget_DebtTracker_Toolbar 0x7f130378
 int style Widget_Design_AppBarLayout 0x7f130379
@@ -6748,16 +6653,6 @@ int styleable CustomAttribute_customPixelDimension 7
 int styleable CustomAttribute_customReference 8
 int styleable CustomAttribute_customStringValue 9
 int styleable CustomAttribute_methodName 10
-int[] styleable CyberCardView { 0x7f03007e, 0x7f030081, 0x7f03015f, 0x7f030232, 0x7f030233 }
-int styleable CyberCardView_borderColor 0
-int styleable CyberCardView_borderWidth 1
-int styleable CyberCardView_cornerRadiusCustom 2
-int styleable CyberCardView_glowColor 3
-int styleable CyberCardView_glowRadius 4
-int[] styleable CyberProgressBar { 0x7f03003c, 0x7f0303e6, 0x7f03051e }
-int styleable CyberProgressBar_animateOnAttach 0
-int styleable CyberProgressBar_progressColor 1
-int styleable CyberProgressBar_trackColor 2
 int[] styleable DialogFragmentNavigator { 0x01010003 }
 int styleable DialogFragmentNavigator_android_name 0
 int[] styleable DialogPreference { 0x010101f2, 0x010101f3, 0x010101f4, 0x010101f5, 0x010101f6, 0x010101f7, 0x7f03018d, 0x7f03018e, 0x7f03018f, 0x7f030193, 0x7f030396, 0x7f0303d2 }
@@ -6852,9 +6747,6 @@ int styleable FragmentContainerView_android_name 0
 int styleable FragmentContainerView_android_tag 1
 int[] styleable FragmentNavigator { 0x01010003 }
 int styleable FragmentNavigator_android_name 0
-int[] styleable GlowTextView { 0x7f030232, 0x7f030233 }
-int styleable GlowTextView_glowColor 0
-int styleable GlowTextView_glowRadius 1
 int[] styleable GradientColor { 0x0101019d, 0x0101019e, 0x010101a1, 0x010101a2, 0x010101a3, 0x010101a4, 0x01010201, 0x0101020b, 0x01010510, 0x01010511, 0x01010512, 0x01010513 }
 int styleable GradientColor_android_startColor 0
 int styleable GradientColor_android_endColor 1
@@ -7094,28 +6986,6 @@ int styleable ListPreference_android_entryValues 1
 int styleable ListPreference_entries 2
 int styleable ListPreference_entryValues 3
 int styleable ListPreference_useSimpleSummaryProvider 4
-int[] styleable LottieAnimationView { 0x7f0302fc, 0x7f0302fd, 0x7f0302fe, 0x7f0302ff, 0x7f030300, 0x7f030301, 0x7f030302, 0x7f030303, 0x7f030304, 0x7f030305, 0x7f030306, 0x7f030307, 0x7f030308, 0x7f030309, 0x7f03030a, 0x7f03030b, 0x7f03030c, 0x7f03030d, 0x7f03030e, 0x7f03030f, 0x7f030310 }
-int styleable LottieAnimationView_lottie_asyncUpdates 0
-int styleable LottieAnimationView_lottie_autoPlay 1
-int styleable LottieAnimationView_lottie_cacheComposition 2
-int styleable LottieAnimationView_lottie_clipTextToBoundingBox 3
-int styleable LottieAnimationView_lottie_clipToCompositionBounds 4
-int styleable LottieAnimationView_lottie_colorFilter 5
-int styleable LottieAnimationView_lottie_defaultFontFileExtension 6
-int styleable LottieAnimationView_lottie_enableMergePathsForKitKatAndAbove 7
-int styleable LottieAnimationView_lottie_fallbackRes 8
-int styleable LottieAnimationView_lottie_fileName 9
-int styleable LottieAnimationView_lottie_ignoreDisabledSystemAnimations 10
-int styleable LottieAnimationView_lottie_imageAssetsFolder 11
-int styleable LottieAnimationView_lottie_loop 12
-int styleable LottieAnimationView_lottie_progress 13
-int styleable LottieAnimationView_lottie_rawRes 14
-int styleable LottieAnimationView_lottie_renderMode 15
-int styleable LottieAnimationView_lottie_repeatCount 16
-int styleable LottieAnimationView_lottie_repeatMode 17
-int styleable LottieAnimationView_lottie_speed 18
-int styleable LottieAnimationView_lottie_url 19
-int styleable LottieAnimationView_lottie_useCompositionFrameRate 20
 int[] styleable MaterialAlertDialog { 0x7f030053, 0x7f030054, 0x7f030055, 0x7f030056, 0x7f03005a }
 int styleable MaterialAlertDialog_backgroundInsetBottom 0
 int styleable MaterialAlertDialog_backgroundInsetEnd 1
@@ -8068,4 +7938,3 @@ int[] styleable include { 0x7f03013f }
 int styleable include_constraintSet 0
 int xml backup_rules 0x7f150000
 int xml data_extraction_rules 0x7f150001
-int xml preferences 0x7f150002
