@@ -19,10 +19,7 @@
     <string name="nav_lent">Owes Me</string>
     <string name="nav_analytics">Analytics</string>
 
-    <string name="total_debt_label">TOTAL DEBT EXPOSURE</string>
-    <string name="total_lent_label">TOTAL RECEIVABLES</string>
     <string name="net_balance_label">NET BALANCE</string>
-    <string name="active_debts_label">ACTIVE NODES</string>
 
     <!-- Debt Types -->
     <string name="debt_type_owe">I OWE</string>
@@ -83,7 +80,6 @@
 
     <!-- Errors -->
     <string name="error_name_required">Entity name is required</string>
-    <string name="error_amount_required">Amount is required</string>
     <string name="error_amount_invalid">Enter a valid amount</string>
     <string name="error_amount_zero">Amount must be greater than zero</string>
     <string name="error_payment_exceeds">Payment exceeds remaining balance</string>
@@ -103,13 +99,6 @@
     <string name="net_balance_format">%1$s%2$s</string>
     <string name="rank_format">#%1$d</string>
 
-    <!-- Date Labels -->
-    <string name="overdue_by_days">Overdue by %1$dd</string>
-    <string name="due_today">Due today</string>
-    <string name="due_tomorrow">Due tomorrow</string>
-    <string name="due_in_days">Due in %1$dd</string>
-    <string name="due_date_label">Due %1$s</string>
-
     <!-- Sort -->
     <string name="sort_date_newest">Date (Newest)</string>
     <string name="sort_date_oldest">Date (Oldest)</string>
@@ -118,13 +107,9 @@
     <string name="sort_name_az">Name (A-Z)</string>
     <string name="sort_overdue_first">Overdue First</string>
 
-    <!-- Currency -->
-    <string name="currency_symbol">₱</string>
-
     <!-- Settings -->
     <string name="settings_title">SYSTEM CONFIGURATION</string>
     <string name="pref_reminder_frequency_title">OVERDUE REMINDER FREQUENCY</string>
-    <string name="pref_reminder_frequency_summary">How often to remind you about overdue nodes</string>
     <string name="reminder_freq_none">OFF</string>
     <string name="reminder_freq_hourly">HOURLY</string>
     <string name="reminder_freq_daily">DAILY</string>

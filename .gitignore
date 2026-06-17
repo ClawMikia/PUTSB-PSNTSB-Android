@@ -12,7 +12,6 @@ captures/
 
 # Kotlin
 .kotlin/
-.apple/
 
 # Keystore files (Keep your signing keys private!)
 *.jks
@@ -38,3 +37,8 @@ local.properties
 gradle-app.setting
 !gradle-wrapper.jar
 .gradletasknamecache
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

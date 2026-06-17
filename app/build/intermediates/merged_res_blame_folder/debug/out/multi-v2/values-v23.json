@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-59:/values-v23/values-v23.xml",
+            "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-58:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "D:\\.gradle\\caches\\transforms-3\\edfa954dba38394adf5e5cd5acb60554\\transformed\\work-runtime-2.9.0\\res\\values-v23\\values-v23.xml",

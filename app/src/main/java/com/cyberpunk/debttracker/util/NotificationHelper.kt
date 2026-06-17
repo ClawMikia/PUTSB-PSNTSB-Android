@@ -1,5 +1,6 @@
 package com.cyberpunk.debttracker.util
 
+import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -9,6 +10,8 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.cyberpunk.debttracker.R
 import com.cyberpunk.debttracker.data.model.Debt
+import com.cyberpunk.debttracker.notification.NotificationReceiver
+import com.cyberpunk.debttracker.ui.dashboard.MainActivity
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity
 
 object NotificationHelper {
@@ -50,7 +53,7 @@ object NotificationHelper {
     }
 
     fun showOverdueSummaryNotification(context: Context, overdueCount: Int) {
-        val intent = Intent(context, com.cyberpunk.debttracker.ui.dashboard.MainActivity::class.java).apply {
+        val intent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         val pendingIntent = PendingIntent.getActivity(
@@ -74,7 +77,7 @@ object NotificationHelper {
         val dueDate = debt.dueDate ?: return
         if (dueDate < System.currentTimeMillis()) return
 
-        val intent = Intent(context, com.cyberpunk.debttracker.notification.NotificationReceiver::class.java).apply {
+        val intent = Intent(context, NotificationReceiver::class.java).apply {
             putExtra("extra_debt", debt)
         }
         val pendingIntent = PendingIntent.getBroadcast(
@@ -82,16 +85,16 @@ object NotificationHelper {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as android.app.AlarmManager
+        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             if (alarmManager.canScheduleExactAlarms()) {
-                alarmManager.setExactAndAllowWhileIdle(android.app.AlarmManager.RTC_WAKEUP, dueDate, pendingIntent)
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, dueDate, pendingIntent)
             } else {
-                alarmManager.set(android.app.AlarmManager.RTC_WAKEUP, dueDate, pendingIntent)
+                alarmManager.set(AlarmManager.RTC_WAKEUP, dueDate, pendingIntent)
             }
         } else {
-            alarmManager.setExactAndAllowWhileIdle(android.app.AlarmManager.RTC_WAKEUP, dueDate, pendingIntent)
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, dueDate, pendingIntent)
         }
     }
 }

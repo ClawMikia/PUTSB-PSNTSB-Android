@@ -6,10 +6,12 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.lifecycleScope
 import com.cyberpunk.debttracker.R
 import com.cyberpunk.debttracker.databinding.ActivitySplashBinding
 import com.cyberpunk.debttracker.ui.dashboard.MainActivity
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashActivity : AppCompatActivity() {
 
@@ -76,7 +78,7 @@ class SplashActivity : AppCompatActivity() {
             .start()
 
         // Step 6: Cycle status messages then navigate
-        CoroutineScope(Dispatchers.Main).launch {
+        lifecycleScope.launch {
             delay(1300)
             binding.tvStatus.text = getString(R.string.splash_scanning)
             delay(700)

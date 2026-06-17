@@ -225,7 +225,7 @@ class DebtDetailActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         // Re-read debt from intent to catch edits
-        debt = intent.getParcelableExtra(EXTRA_DEBT)
+        debt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
         renderDebt()
     }
 }

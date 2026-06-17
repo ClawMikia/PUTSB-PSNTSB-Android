@@ -19,9 +19,6 @@ interface DebtDao {
     @Delete
     suspend fun delete(debt: Debt)
 
-    @Query("DELETE FROM debts WHERE id = :id")
-    suspend fun deleteById(id: Long)
-
     // ─── Queries ───────────────────────────────────────────────────────────────
 
     @Query("SELECT * FROM debts WHERE id = :id LIMIT 1")

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-59:/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "com.cyberpunk.debttracker.app-mergeDebugResources-58:/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
                     "source": "D:\\.gradle\\caches\\transforms-3\\1aae383f8f9cac51b355d07e48deb9b6\\transformed\\preference-1.2.1\\res\\values-pt-rPT\\values-pt-rPT.xml",

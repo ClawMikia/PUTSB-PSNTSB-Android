@@ -2,14 +2,11 @@ package com.cyberpunk.debttracker.ui.dashboard
 
 import androidx.lifecycle.*
 import com.cyberpunk.debttracker.data.model.Debt
-import com.cyberpunk.debttracker.data.model.DebtStatus
-import com.cyberpunk.debttracker.data.model.DebtType
 import com.cyberpunk.debttracker.data.repository.DebtRepository
 import com.cyberpunk.debttracker.data.repository.SortOrder
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel

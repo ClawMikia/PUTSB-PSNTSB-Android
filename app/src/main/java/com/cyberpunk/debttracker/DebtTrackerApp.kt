@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import dagger.hilt.android.HiltAndroidApp
+import com.cyberpunk.debttracker.util.NotificationHelper
 import javax.inject.Inject
 
 @HiltAndroidApp
@@ -14,7 +15,7 @@ class DebtTrackerApp : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
-        com.cyberpunk.debttracker.util.NotificationHelper.createNotificationChannel(this)
+        NotificationHelper.createNotificationChannel(this)
     }
 
     override val workManagerConfiguration: Configuration

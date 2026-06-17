@@ -57,12 +57,6 @@
     <dimen name="progress_height">6dp</dimen>
     <dimen name="progress_height_thick">10dp</dimen>
 
-    <!-- RecyclerView Item -->
-    <dimen name="list_item_height">88dp</dimen>
-
-    <!-- Bottom Sheet -->
-    <dimen name="bottom_sheet_peek">300dp</dimen>
-
     <!-- Splash -->
     <dimen name="splash_logo_size">96dp</dimen>
 </resources>
