@@ -177,8 +177,7 @@
                     android:focusableInTouchMode="false"
                     android:textColor="@color/text_primary"
                     android:textSize="14sp"
-                    android:fontFamily="sans-serif"
-                    android:hint="Optional" />
+                    android:fontFamily="sans-serif" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Save Button -->

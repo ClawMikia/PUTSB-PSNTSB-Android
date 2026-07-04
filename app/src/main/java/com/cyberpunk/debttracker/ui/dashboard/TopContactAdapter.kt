@@ -33,6 +33,9 @@ class TopContactAdapter :
             val ctx = binding.root.context
 
             binding.tvRank.text = ctx.getString(R.string.rank_format, rank)
+            binding.tvRank.setAvatarBackground(
+                ContextCompat.getColor(ctx, R.color.cyber_surface_raised)
+            )
 
             val initial = contact.personName.trim().firstOrNull()?.uppercaseChar()?.toString() ?: "?"
             binding.tvAvatar.text = initial

@@ -5,15 +5,26 @@ import androidx.lifecycle.viewModelScope
 import com.cyberpunk.debttracker.data.model.Debt
 import com.cyberpunk.debttracker.data.repository.DebtRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class DebtDetailViewModel @Inject constructor(
     private val repository: DebtRepository
 ) : ViewModel() {
+
+    private val _debtId = MutableStateFlow<Long?>(null)
+    val debt: StateFlow<Debt?> = _debtId
+        .filterNotNull()
+        .flatMapLatest { repository.getDebtById(it) }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
+
+    fun setDebtId(id: Long) {
+        _debtId.value = id
+    }
 
     private val _event = MutableSharedFlow<DetailEvent>()
     val event: SharedFlow<DetailEvent> = _event
@@ -36,11 +47,21 @@ class DebtDetailViewModel @Inject constructor(
         repository.delete(debt)
         _event.emit(DetailEvent.Deleted)
     }
+
+    fun archive(debt: Debt) = viewModelScope.launch {
+        if (!debt.isSettled) {
+            _event.emit(DetailEvent.Error("Only settled debts can be archived"))
+            return@launch
+        }
+        repository.archive(debt)
+        _event.emit(DetailEvent.Archived)
+    }
 }
 
 sealed class DetailEvent {
     object Settled         : DetailEvent()
     object PaymentRecorded : DetailEvent()
     object Deleted         : DetailEvent()
+    object Archived        : DetailEvent()
     data class Error(val msg: String) : DetailEvent()
 }

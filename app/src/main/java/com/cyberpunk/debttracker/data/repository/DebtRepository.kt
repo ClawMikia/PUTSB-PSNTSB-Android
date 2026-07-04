@@ -24,6 +24,9 @@ class DebtRepository @Inject constructor(
     fun getOverdueCount(): Flow<Int> = debtDao.getOverdueCount()
     fun getSettledCount(): Flow<Int> = debtDao.getSettledCount()
     fun getTotalCount(): Flow<Int> = debtDao.getTotalCount()
+    fun getArchivedDebts(): Flow<List<Debt>> = debtDao.getArchivedDebts()
+
+    fun getDebtById(id: Long): Flow<Debt?> = debtDao.getDebtByIdFlow(id)
 
     fun getAllSorted(sortOrder: SortOrder): Flow<List<Debt>> = when (sortOrder) {
         SortOrder.DATE_NEWEST -> debtDao.getAllSortedByDateDesc()
@@ -43,6 +46,14 @@ class DebtRepository @Inject constructor(
     )
 
     suspend fun delete(debt: Debt) = debtDao.delete(debt)
+
+    suspend fun archive(debt: Debt) {
+        if (debt.isSettled) {
+            debtDao.archiveDebt(debt.id)
+        }
+    }
+
+    suspend fun getAllDebtsForExport(): List<Debt> = debtDao.getAllDebtsForExport()
 
     suspend fun markSettled(debt: Debt) {
         debtDao.update(

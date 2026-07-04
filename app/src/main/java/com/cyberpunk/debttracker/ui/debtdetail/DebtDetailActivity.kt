@@ -41,10 +41,13 @@ class DebtDetailActivity : AppCompatActivity() {
         binding = ActivityDebtDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        debt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
+        val initialDebt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
+        initialDebt?.let {
+            debt = it
+            viewModel.setDebtId(it.id)
+        }
 
         setupToolbar()
-        renderDebt()
         setupButtons()
         observeViewModel()
     }
@@ -135,6 +138,9 @@ class DebtDetailActivity : AppCompatActivity() {
             binding.btnPartialPay.isEnabled  = false
             binding.btnMarkSettled.alpha = 0.4f
             binding.btnPartialPay.alpha  = 0.4f
+            binding.btnArchive.visible()
+        } else {
+            binding.btnArchive.gone()
         }
     }
 
@@ -145,9 +151,23 @@ class DebtDetailActivity : AppCompatActivity() {
         binding.btnPartialPay.setOnClickListener {
             showPartialPayDialog()
         }
+        binding.btnArchive.setOnClickListener {
+            showArchiveDialog()
+        }
         binding.btnDeleteDebt.setOnClickListener {
             showDeleteDialog()
         }
+    }
+
+    private fun showArchiveDialog() {
+        AlertDialog.Builder(this, R.style.Theme_DebtTracker_Dialog)
+            .setTitle(getString(R.string.archive_dialog_title))
+            .setMessage(getString(R.string.archive_dialog_message))
+            .setPositiveButton(getString(R.string.btn_archive)) { _, _ ->
+                debt?.let { viewModel.archive(it) }
+            }
+            .setNegativeButton(getString(R.string.dialog_cancel), null)
+            .show()
     }
 
     private fun showSettleDialog() {
@@ -199,22 +219,37 @@ class DebtDetailActivity : AppCompatActivity() {
     private fun observeViewModel() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.event.collect { event ->
-                    when (event) {
-                        is DetailEvent.Settled -> {
-                            binding.root.showCyberSnack(getString(R.string.success_debt_settled))
-                            finish()
+                launch {
+                    viewModel.debt.collect { updatedDebt ->
+                        if (updatedDebt != null) {
+                            debt = updatedDebt
+                            renderDebt()
                         }
-                        is DetailEvent.PaymentRecorded -> {
-                            binding.root.showCyberSnack(getString(R.string.success_payment_recorded))
-                            finish()
-                        }
-                        is DetailEvent.Deleted -> {
-                            binding.root.showCyberSnack(getString(R.string.success_debt_deleted))
-                            finish()
-                        }
-                        is DetailEvent.Error -> {
-                            binding.root.showCyberSnack(event.msg, isError = true)
+                    }
+                }
+
+                launch {
+                    viewModel.event.collect { event ->
+                        when (event) {
+                            is DetailEvent.Settled -> {
+                                binding.root.showCyberSnack(getString(R.string.success_debt_settled))
+                                // Don't finish, let renderDebt update the UI
+                            }
+                            is DetailEvent.PaymentRecorded -> {
+                                binding.root.showCyberSnack(getString(R.string.success_payment_recorded))
+                                // Don't finish, let renderDebt update the UI
+                            }
+                            is DetailEvent.Deleted -> {
+                                binding.root.showCyberSnack(getString(R.string.success_debt_deleted))
+                                finish()
+                            }
+                            is DetailEvent.Archived -> {
+                                binding.root.showCyberSnack("Debt node archived successfully")
+                                finish()
+                            }
+                            is DetailEvent.Error -> {
+                                binding.root.showCyberSnack(event.msg, isError = true)
+                            }
                         }
                     }
                 }
@@ -224,8 +259,5 @@ class DebtDetailActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        // Re-read debt from intent to catch edits
-        debt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
-        renderDebt()
     }
 }

@@ -8,22 +8,24 @@
 
     <TextView
         android:id="@+id/tv_rank"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:gravity="center"
         android:fontFamily="sans-serif-black"
         android:textColor="@color/cyber_gold"
-        android:textSize="12sp" />
+        android:textSize="11sp"
+        android:background="@drawable/bg_circle_rank" />
 
     <TextView
         android:id="@+id/tv_avatar"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="20dp"
         android:gravity="center"
         android:fontFamily="sans-serif-black"
         android:textSize="14sp"
-        android:textColor="@color/text_on_gold" />
+        android:textColor="@color/text_on_gold"
+        android:background="@drawable/bg_circle_avatar_placeholder" />
 
     <TextView
         android:id="@+id/tv_name"

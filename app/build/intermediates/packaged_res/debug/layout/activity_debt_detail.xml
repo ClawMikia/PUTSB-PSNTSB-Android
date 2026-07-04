@@ -105,7 +105,8 @@
                         android:textSize="28sp"
                         android:fontFamily="sans-serif-black"
                         android:textColor="@color/text_on_gold"
-                        android:layout_marginBottom="16dp" />
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_circle_avatar_placeholder" />
 
                     <!-- Person name -->
                     <TextView
@@ -408,6 +409,17 @@
                 android:layout_height="52dp"
                 android:text="@string/btn_mark_paid"
                 android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_archive"
+                style="@style/Widget.DebtTracker.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="ARCHIVE DEBT"
+                android:visibility="gone"
+                android:layout_marginBottom="12dp"
+                app:strokeColor="@color/cyber_gold"
+                android:textColor="@color/cyber_gold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_delete_debt"

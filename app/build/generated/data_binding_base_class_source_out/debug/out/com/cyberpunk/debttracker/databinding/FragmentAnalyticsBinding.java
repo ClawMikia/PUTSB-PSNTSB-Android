@@ -4,9 +4,11 @@ package com.cyberpunk.debttracker.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
@@ -26,10 +28,16 @@ public final class FragmentAnalyticsBinding implements ViewBinding {
   public final BarChart barChart;
 
   @NonNull
+  public final ImageView btnExport;
+
+  @NonNull
   public final PieChart pieChart;
 
   @NonNull
   public final RecyclerView recyclerTopContacts;
+
+  @NonNull
+  public final Toolbar toolbar;
 
   @NonNull
   public final TextView tvStatSettled;
@@ -38,12 +46,15 @@ public final class FragmentAnalyticsBinding implements ViewBinding {
   public final TextView tvStatTotal;
 
   private FragmentAnalyticsBinding(@NonNull CoordinatorLayout rootView, @NonNull BarChart barChart,
-      @NonNull PieChart pieChart, @NonNull RecyclerView recyclerTopContacts,
+      @NonNull ImageView btnExport, @NonNull PieChart pieChart,
+      @NonNull RecyclerView recyclerTopContacts, @NonNull Toolbar toolbar,
       @NonNull TextView tvStatSettled, @NonNull TextView tvStatTotal) {
     this.rootView = rootView;
     this.barChart = barChart;
+    this.btnExport = btnExport;
     this.pieChart = pieChart;
     this.recyclerTopContacts = recyclerTopContacts;
+    this.toolbar = toolbar;
     this.tvStatSettled = tvStatSettled;
     this.tvStatTotal = tvStatTotal;
   }
@@ -81,6 +92,12 @@ public final class FragmentAnalyticsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_export;
+      ImageView btnExport = ViewBindings.findChildViewById(rootView, id);
+      if (btnExport == null) {
+        break missingId;
+      }
+
       id = R.id.pie_chart;
       PieChart pieChart = ViewBindings.findChildViewById(rootView, id);
       if (pieChart == null) {
@@ -90,6 +107,12 @@ public final class FragmentAnalyticsBinding implements ViewBinding {
       id = R.id.recycler_top_contacts;
       RecyclerView recyclerTopContacts = ViewBindings.findChildViewById(rootView, id);
       if (recyclerTopContacts == null) {
+        break missingId;
+      }
+
+      id = R.id.toolbar;
+      Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
+      if (toolbar == null) {
         break missingId;
       }
 
@@ -105,8 +128,8 @@ public final class FragmentAnalyticsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAnalyticsBinding((CoordinatorLayout) rootView, barChart, pieChart,
-          recyclerTopContacts, tvStatSettled, tvStatTotal);
+      return new FragmentAnalyticsBinding((CoordinatorLayout) rootView, barChart, btnExport,
+          pieChart, recyclerTopContacts, toolbar, tvStatSettled, tvStatTotal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

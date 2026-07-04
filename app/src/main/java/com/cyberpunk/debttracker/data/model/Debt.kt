@@ -35,6 +35,9 @@ data class Debt(
 
     @ColumnInfo(name = "updated_at")
     val updatedAt: Long = System.currentTimeMillis(),
+
+    @ColumnInfo(name = "is_archived")
+    val isArchived: Boolean = false,
 ) : Parcelable {
 
     val remaining: Double get() = amount - paidAmount

@@ -30,6 +30,9 @@ public final class ActivityDebtDetailBinding implements ViewBinding {
   public final AppBarLayout appBar;
 
   @NonNull
+  public final MaterialButton btnArchive;
+
+  @NonNull
   public final ImageView btnDelete;
 
   @NonNull
@@ -96,18 +99,20 @@ public final class ActivityDebtDetailBinding implements ViewBinding {
   public final TextView tvTypeLabel;
 
   private ActivityDebtDetailBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull AppBarLayout appBar, @NonNull ImageView btnDelete,
-      @NonNull MaterialButton btnDeleteDebt, @NonNull ImageView btnEdit,
-      @NonNull MaterialButton btnMarkSettled, @NonNull MaterialButton btnPartialPay,
-      @NonNull MaterialCardView cardHero, @NonNull MaterialCardView cardProgress,
-      @NonNull LinearLayout layoutHero, @NonNull ProgressBar progressPayment,
-      @NonNull LinearLayout rowDueDate, @NonNull Toolbar toolbar, @NonNull TextView tvAmount,
-      @NonNull TextView tvAvatarDetail, @NonNull TextView tvCreatedDate,
-      @NonNull TextView tvDescription, @NonNull TextView tvDueDate, @NonNull TextView tvPaidAmount,
-      @NonNull TextView tvPersonName, @NonNull TextView tvProgressPct,
-      @NonNull TextView tvRemaining, @NonNull TextView tvStatus, @NonNull TextView tvTypeLabel) {
+      @NonNull AppBarLayout appBar, @NonNull MaterialButton btnArchive,
+      @NonNull ImageView btnDelete, @NonNull MaterialButton btnDeleteDebt,
+      @NonNull ImageView btnEdit, @NonNull MaterialButton btnMarkSettled,
+      @NonNull MaterialButton btnPartialPay, @NonNull MaterialCardView cardHero,
+      @NonNull MaterialCardView cardProgress, @NonNull LinearLayout layoutHero,
+      @NonNull ProgressBar progressPayment, @NonNull LinearLayout rowDueDate,
+      @NonNull Toolbar toolbar, @NonNull TextView tvAmount, @NonNull TextView tvAvatarDetail,
+      @NonNull TextView tvCreatedDate, @NonNull TextView tvDescription, @NonNull TextView tvDueDate,
+      @NonNull TextView tvPaidAmount, @NonNull TextView tvPersonName,
+      @NonNull TextView tvProgressPct, @NonNull TextView tvRemaining, @NonNull TextView tvStatus,
+      @NonNull TextView tvTypeLabel) {
     this.rootView = rootView;
     this.appBar = appBar;
+    this.btnArchive = btnArchive;
     this.btnDelete = btnDelete;
     this.btnDeleteDebt = btnDeleteDebt;
     this.btnEdit = btnEdit;
@@ -162,6 +167,12 @@ public final class ActivityDebtDetailBinding implements ViewBinding {
       id = R.id.app_bar;
       AppBarLayout appBar = ViewBindings.findChildViewById(rootView, id);
       if (appBar == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_archive;
+      MaterialButton btnArchive = ViewBindings.findChildViewById(rootView, id);
+      if (btnArchive == null) {
         break missingId;
       }
 
@@ -297,9 +308,9 @@ public final class ActivityDebtDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDebtDetailBinding((CoordinatorLayout) rootView, appBar, btnDelete,
-          btnDeleteDebt, btnEdit, btnMarkSettled, btnPartialPay, cardHero, cardProgress, layoutHero,
-          progressPayment, rowDueDate, toolbar, tvAmount, tvAvatarDetail, tvCreatedDate,
+      return new ActivityDebtDetailBinding((CoordinatorLayout) rootView, appBar, btnArchive,
+          btnDelete, btnDeleteDebt, btnEdit, btnMarkSettled, btnPartialPay, cardHero, cardProgress,
+          layoutHero, progressPayment, rowDueDate, toolbar, tvAmount, tvAvatarDetail, tvCreatedDate,
           tvDescription, tvDueDate, tvPaidAmount, tvPersonName, tvProgressPct, tvRemaining,
           tvStatus, tvTypeLabel);
     }

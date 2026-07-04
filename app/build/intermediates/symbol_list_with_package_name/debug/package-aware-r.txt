@@ -3200,6 +3200,8 @@ drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_bottom_nav_cyber
+drawable bg_circle_avatar_placeholder
+drawable bg_circle_rank
 drawable bg_splash_gradient
 drawable bg_status_badge
 drawable bg_status_badge_green
@@ -3225,6 +3227,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add
 drawable ic_analytics
+drawable ic_archive
 drawable ic_arrow_back_black_24
 drawable ic_arrow_down_24dp
 drawable ic_back
@@ -3242,6 +3245,7 @@ drawable ic_dashboard
 drawable ic_delete
 drawable ic_edit
 drawable ic_empty_state
+drawable ic_export
 drawable ic_info
 drawable ic_keyboard_black_24dp
 drawable ic_lent
@@ -3334,6 +3338,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable popup_menu_bg
 drawable preference_list_divider_material
+drawable selector_intro_dot
 drawable splash_animated_icon
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3442,10 +3447,13 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnNext
+id btn_archive
 id btn_cancel
 id btn_delete
 id btn_delete_debt
 id btn_edit
+id btn_export
 id btn_freq_daily
 id btn_freq_hourly
 id btn_freq_none
@@ -3454,6 +3462,7 @@ id btn_mark_settled
 id btn_partial_pay
 id btn_save
 id btn_sort
+id btn_unlock
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3493,6 +3502,7 @@ id constraint
 id container
 id content
 id contentPanel
+id content_frame
 id contiguous
 id continuousVelocity
 id coordinator
@@ -3551,6 +3561,7 @@ id escape
 id et_amount
 id et_description
 id et_due_date
+id et_password
 id et_payment
 id et_person_name
 id exitUntilCollapsed
@@ -3582,6 +3593,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id guideline
 id header_title
 id hide_ime_id
 id hideable
@@ -3605,13 +3617,16 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id ivIntro
 id iv_logo
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
 id layout_empty
+id layout_empty_archive
 id layout_hero
+id layout_locked
 id left
 id leftToRight
 id legacy
@@ -3753,6 +3768,7 @@ id progress_payment
 id radio
 id ratio
 id rectangles
+id recycler_archived
 id recycler_debts
 id recycler_top_contacts
 id recycler_view
@@ -3841,6 +3857,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id switchWidget
+id tabIndicator
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3874,6 +3891,7 @@ id textinput_suffix_text
 id til_amount
 id til_description
 id til_due_date
+id til_password
 id til_payment
 id til_person_name
 id time
@@ -3897,6 +3915,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvDescription
+id tvTitle
 id tv_active_count
 id tv_amount
 id tv_app_name
@@ -3904,7 +3924,9 @@ id tv_avatar
 id tv_avatar_detail
 id tv_created_date
 id tv_description
+id tv_dialog_title
 id tv_due_date
+id tv_lock_status
 id tv_meme_credit
 id tv_name
 id tv_net_balance
@@ -3932,6 +3954,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viewPager
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -4069,7 +4092,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_debt
+layout activity_archive
 layout activity_debt_detail
+layout activity_intro
 layout activity_main
 layout activity_splash
 layout custom_dialog
@@ -4089,6 +4114,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_partial_payment
+layout dialog_password
 layout expand_button
 layout fragment_about
 layout fragment_analytics
@@ -4100,6 +4126,7 @@ layout image_frame
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_debt
+layout item_intro_page
 layout item_top_contact
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -4224,16 +4251,32 @@ string androidx_startup
 string app_name
 string app_tagline
 string appbar_scrolling_view_behavior
+string archive_btn_set_password
+string archive_btn_unlock
+string archive_dialog_message
+string archive_dialog_title
+string archive_empty
+string archive_encryption_not_set
+string archive_lock_status
+string archive_password_title
+string archive_set_password_title
+string archive_success
+string archive_title
+string archive_unlock_instruction
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string btn_archive
 string btn_cancel
 string btn_delete
 string btn_edit
+string btn_export
+string btn_get_started
 string btn_mark_paid
+string btn_next
 string btn_partial_pay
 string btn_save_debt
 string call_notification_answer_action
@@ -4274,6 +4317,8 @@ string error_icon_content_description
 string error_name_required
 string error_payment_exceeds
 string expand_button_title
+string export_failed
+string export_success
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -4282,6 +4327,14 @@ string hint_amount
 string hint_description
 string hint_person_name
 string icon_content_description
+string intro_desc_1
+string intro_desc_2
+string intro_desc_3
+string intro_desc_4
+string intro_title_1
+string intro_title_2
+string intro_title_3
+string intro_title_4
 string item_view_role_description
 string label_amount
 string label_created
@@ -4404,6 +4457,7 @@ string nav_owed
 string nav_settings
 string net_balance_format
 string net_balance_label
+string no_debts_to_export
 string not_set
 string overdue_nodes_count
 string password_toggle_content_description
@@ -5832,3 +5886,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml provider_paths

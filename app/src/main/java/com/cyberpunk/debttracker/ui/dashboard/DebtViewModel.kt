@@ -59,6 +59,9 @@ class DebtViewModel @Inject constructor(
     val totalCount: StateFlow<Int> = repository.getTotalCount()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
+    val archivedDebts: StateFlow<List<Debt>> = repository.getArchivedDebts()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
     // ─── Actions ──────────────────────────────────────────────────────────────
 
     fun setSortOrder(order: SortOrder) {
@@ -70,4 +73,5 @@ class DebtViewModel @Inject constructor(
     suspend fun getTopOwedContacts() = repository.getTopOwedContacts()
     suspend fun getTopLentContacts() = repository.getTopLentContacts()
     suspend fun getDebtsFrom(from: Long) = repository.getDebtsFrom(from)
+    suspend fun getAllDebtsForExport() = repository.getAllDebtsForExport()
 }

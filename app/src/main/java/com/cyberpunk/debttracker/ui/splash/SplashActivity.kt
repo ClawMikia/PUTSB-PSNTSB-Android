@@ -10,6 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import com.cyberpunk.debttracker.R
 import com.cyberpunk.debttracker.databinding.ActivitySplashBinding
 import com.cyberpunk.debttracker.ui.dashboard.MainActivity
+import androidx.preference.PreferenceManager
+import com.cyberpunk.debttracker.ui.intro.IntroActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -90,7 +92,16 @@ class SplashActivity : AppCompatActivity() {
                 .alpha(0f)
                 .setDuration(300)
                 .withEndAction {
-                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                    val isFirstRun = PreferenceManager.getDefaultSharedPreferences(this@SplashActivity)
+                        .getBoolean("is_first_run", true)
+
+                    val targetActivity = if (isFirstRun) {
+                        IntroActivity::class.java
+                    } else {
+                        MainActivity::class.java
+                    }
+
+                    startActivity(Intent(this@SplashActivity, targetActivity))
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     finish()
                 }

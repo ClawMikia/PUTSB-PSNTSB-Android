@@ -29,6 +29,9 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final AppBarLayout appBar;
 
   @NonNull
+  public final ImageView btnArchive;
+
+  @NonNull
   public final ImageView btnSort;
 
   @NonNull
@@ -68,14 +71,16 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final TextView tvTotalOwe;
 
   private FragmentDashboardBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull AppBarLayout appBar, @NonNull ImageView btnSort, @NonNull MaterialCardView cardIOwe,
-      @NonNull MaterialCardView cardNetBalance, @NonNull MaterialCardView cardOwesMe,
-      @NonNull LinearLayout layoutEmpty, @NonNull RecyclerView recyclerDebts,
-      @NonNull Toolbar toolbar, @NonNull TextView tvActiveCount, @NonNull TextView tvNetBalance,
+      @NonNull AppBarLayout appBar, @NonNull ImageView btnArchive, @NonNull ImageView btnSort,
+      @NonNull MaterialCardView cardIOwe, @NonNull MaterialCardView cardNetBalance,
+      @NonNull MaterialCardView cardOwesMe, @NonNull LinearLayout layoutEmpty,
+      @NonNull RecyclerView recyclerDebts, @NonNull Toolbar toolbar,
+      @NonNull TextView tvActiveCount, @NonNull TextView tvNetBalance,
       @NonNull TextView tvNetBalanceLabel, @NonNull TextView tvOverdueCount,
       @NonNull TextView tvTotalLent, @NonNull TextView tvTotalOwe) {
     this.rootView = rootView;
     this.appBar = appBar;
+    this.btnArchive = btnArchive;
     this.btnSort = btnSort;
     this.cardIOwe = cardIOwe;
     this.cardNetBalance = cardNetBalance;
@@ -121,6 +126,12 @@ public final class FragmentDashboardBinding implements ViewBinding {
       id = R.id.app_bar;
       AppBarLayout appBar = ViewBindings.findChildViewById(rootView, id);
       if (appBar == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_archive;
+      ImageView btnArchive = ViewBindings.findChildViewById(rootView, id);
+      if (btnArchive == null) {
         break missingId;
       }
 
@@ -202,8 +213,8 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDashboardBinding((CoordinatorLayout) rootView, appBar, btnSort, cardIOwe,
-          cardNetBalance, cardOwesMe, layoutEmpty, recyclerDebts, toolbar, tvActiveCount,
+      return new FragmentDashboardBinding((CoordinatorLayout) rootView, appBar, btnArchive, btnSort,
+          cardIOwe, cardNetBalance, cardOwesMe, layoutEmpty, recyclerDebts, toolbar, tvActiveCount,
           tvNetBalance, tvNetBalanceLabel, tvOverdueCount, tvTotalLent, tvTotalOwe);
     }
     String missingId = rootView.getResources().getResourceName(id);

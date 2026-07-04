@@ -57,6 +57,11 @@
             android:theme="@style/Theme.DebtTracker"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name="com.cyberpunk.debttracker.ui.intro.IntroActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DebtTracker" />
+        <activity
             android:name="com.cyberpunk.debttracker.ui.adddebt.AddDebtActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -67,11 +72,25 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DebtTracker" />
+        <activity
+            android:name="com.cyberpunk.debttracker.ui.dashboard.ArchiveActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DebtTracker" />
 
         <receiver
             android:name="com.cyberpunk.debttracker.notification.NotificationReceiver"
             android:exported="false" />
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.cyberpunk.debttracker.debug.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.cyberpunk.debttracker.debug.androidx-startup"

@@ -63,6 +63,15 @@ class DashboardFragment : Fragment() {
 
     private fun setupClickListeners() {
         binding.btnSort.setOnClickListener { showSortMenu(it) }
+        binding.btnArchive.setOnClickListener {
+            checkArchivePassword()
+        }
+    }
+
+    private fun checkArchivePassword() {
+        // I'll handle password check here or in a new activity.
+        // Let's create an ArchiveActivity that handles its own security.
+        startActivity(Intent(requireContext(), ArchiveActivity::class.java))
     }
 
     private fun showSortMenu(anchor: View) {

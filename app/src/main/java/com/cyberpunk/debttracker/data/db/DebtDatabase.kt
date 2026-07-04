@@ -7,7 +7,7 @@ import com.cyberpunk.debttracker.data.model.Debt
 
 @Database(
     entities = [Debt::class],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 @TypeConverters(Converters::class)

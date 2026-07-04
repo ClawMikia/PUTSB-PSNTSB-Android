@@ -40,6 +40,7 @@
             android:textSize="18sp"
             android:fontFamily="sans-serif-black"
             android:textColor="@color/text_on_gold"
+            android:background="@drawable/bg_circle_avatar_placeholder"
             app:layout_constraintStart_toEndOf="@id/view_type_stripe"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />

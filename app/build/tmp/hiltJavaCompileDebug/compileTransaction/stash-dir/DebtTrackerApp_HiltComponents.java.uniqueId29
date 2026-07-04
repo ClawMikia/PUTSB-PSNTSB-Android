@@ -6,6 +6,7 @@ import com.cyberpunk.debttracker.notification.OverdueReminderWorker_HiltModule;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.AnalyticsFragment_GeneratedInjector;
+import com.cyberpunk.debttracker.ui.dashboard.ArchiveActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.dashboard.DashboardFragment_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.LentFragment_GeneratedInjector;
@@ -196,6 +197,7 @@ public final class DebtTrackerApp_HiltComponents {
   )
   @ActivityScoped
   public abstract static class ActivityC implements AddDebtActivity_GeneratedInjector,
+      ArchiveActivity_GeneratedInjector,
       MainActivity_GeneratedInjector,
       DebtDetailActivity_GeneratedInjector,
       ActivityComponent,

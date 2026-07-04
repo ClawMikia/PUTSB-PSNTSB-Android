@@ -31,7 +31,7 @@
     <string name="label_person_name">ENTITY NAME</string>
     <string name="label_amount">AMOUNT (₱)</string>
     <string name="label_description">DESCRIPTION</string>
-    <string name="label_due_date">DUE DATE</string>
+    <string name="label_due_date">DUE DATE (Optional)</string>
     <string name="label_debt_type">DEBT TYPE</string>
     <string name="hint_person_name">Enter entity name…</string>
     <string name="hint_amount">0.00</string>
@@ -84,6 +84,27 @@
     <string name="error_amount_zero">Amount must be greater than zero</string>
     <string name="error_payment_exceeds">Payment exceeds remaining balance</string>
 
+    <!-- Archive -->
+    <string name="archive_title">ENCRYPTED ARCHIVE</string>
+    <string name="btn_archive">ARCHIVE DEBT</string>
+    <string name="archive_dialog_title">Archive Debt?</string>
+    <string name="archive_dialog_message">This will hide the debt from all lists. You can access it later in the Archive section using your password.</string>
+    <string name="archive_success">Debt node archived successfully</string>
+    <string name="archive_password_title">Enter Password</string>
+    <string name="archive_set_password_title">Set Archive Password</string>
+    <string name="archive_lock_status">ACCESS RESTRICTED</string>
+    <string name="archive_unlock_instruction">Authentication required to view archived nodes.</string>
+    <string name="archive_btn_unlock">AUTHENTICATE</string>
+    <string name="archive_empty">ARCHIVE IS EMPTY</string>
+    <string name="archive_encryption_not_set">ENCRYPTION NOT SET</string>
+    <string name="archive_btn_set_password">SET PASSWORD</string>
+
+    <!-- Export -->
+    <string name="btn_export">Export to Excel</string>
+    <string name="export_success">Export successful</string>
+    <string name="export_failed">Export failed</string>
+    <string name="no_debts_to_export">No debts to export</string>
+
     <!-- Success -->
     <string name="success_debt_added">Debt node initialized</string>
     <string name="success_debt_updated">Node updated</string>
@@ -119,4 +140,16 @@
     <string name="splash_initializing">INITIALIZING DEBT MATRIX…</string>
     <string name="splash_scanning">SCANNING FINANCIAL NODES…</string>
     <string name="splash_ready">SYSTEM ONLINE</string>
+
+    <!-- Intro / Tutorial -->
+    <string name="intro_title_1">WELCOME TO THE MATRIX</string>
+    <string name="intro_desc_1">Track your financial nodes in the sprawl. Manage who owes you and who you owe with cyber-precision.</string>
+    <string name="intro_title_2">DASHBOARD COMMAND</string>
+    <string name="intro_desc_2">View your Net Balance and active nodes at a glance. Stay ahead of your creditors.</string>
+    <string name="intro_title_3">ANALYTICS &amp; INSIGHTS</string>
+    <string name="intro_desc_3">Visualize your debt distribution and timeline. Identify top debtors in your network.</string>
+    <string name="intro_title_4">ENCRYPTED ARCHIVE</string>
+    <string name="intro_desc_4">Secure your settled nodes in the encrypted archive. Access restricted by your private key.</string>
+    <string name="btn_next">NEXT</string>
+    <string name="btn_get_started">INITIALIZE SYSTEM</string>
 </resources>

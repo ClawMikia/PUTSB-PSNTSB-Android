@@ -1,11 +1,15 @@
 package com.cyberpunk.debttracker.ui.dashboard
 
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
@@ -15,11 +19,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.cyberpunk.debttracker.R
 import com.cyberpunk.debttracker.databinding.FragmentAnalyticsBinding
 import com.cyberpunk.debttracker.util.DateFormatter
+import com.cyberpunk.debttracker.util.ExcelExporter
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.io.File
 
 @AndroidEntryPoint
 class AnalyticsFragment : Fragment() {
@@ -43,7 +49,45 @@ class AnalyticsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupCharts()
         setupRecycler()
+        setupClickListeners()
         observeViewModel()
+    }
+
+    private fun setupClickListeners() {
+        binding.btnExport.setOnClickListener {
+            exportToExcel()
+        }
+    }
+
+    private fun exportToExcel() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val debts = viewModel.getAllDebtsForExport()
+            if (debts.isEmpty()) {
+                Toast.makeText(requireContext(), "No debts to export", Toast.LENGTH_SHORT).show()
+                return@launch
+            }
+
+            val file = ExcelExporter.exportDebtsToExcel(requireContext(), debts)
+            if (file != null) {
+                shareFile(file)
+            } else {
+                Toast.makeText(requireContext(), "Export failed", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun shareFile(file: File) {
+        val uri: Uri = FileProvider.getUriForFile(
+            requireContext(),
+            "${requireContext().packageName}.provider",
+            file
+        )
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            putExtra(Intent.EXTRA_STREAM, uri)
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        }
+        startActivity(Intent.createChooser(intent, "Share Exported Excel"))
     }
 
     private fun setupCharts() {
@@ -128,12 +172,20 @@ class AnalyticsFragment : Fragment() {
 
         // Pie chart
         val entries = mutableListOf<PieEntry>()
-        if (owed > 0) entries.add(PieEntry(owed, "I Owe"))
-        if (lent > 0) entries.add(PieEntry(lent, "Owes Me"))
+        val chartColors = mutableListOf<Int>()
+
+        if (owed > 0) {
+            entries.add(PieEntry(owed, "I Owe"))
+            chartColors.add(owedColor)
+        }
+        if (lent > 0) {
+            entries.add(PieEntry(lent, "Owes Me"))
+            chartColors.add(lentColor)
+        }
 
         if (entries.isNotEmpty()) {
             val dataSet = PieDataSet(entries, "").apply {
-                colors = listOf(owedColor, lentColor)
+                colors = chartColors
                 sliceSpace = 3f
                 selectionShift = 5f
                 valueTextColor = Color.TRANSPARENT

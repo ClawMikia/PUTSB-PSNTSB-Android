@@ -23,6 +23,7 @@ import com.cyberpunk.debttracker.ui.adddebt.AddDebtActivity;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.AnalyticsFragment;
+import com.cyberpunk.debttracker.ui.dashboard.ArchiveActivity;
 import com.cyberpunk.debttracker.ui.dashboard.DashboardFragment;
 import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel;
 import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel_HiltModules;
@@ -410,6 +411,10 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     }
 
     @Override
+    public void injectArchiveActivity(ArchiveActivity archiveActivity) {
+    }
+
+    @Override
     public void injectMainActivity(MainActivity mainActivity) {
     }
 
@@ -444,20 +449,20 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
-
       static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
 
       static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
 
-      @KeepFieldType
-      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
+      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
 
       @KeepFieldType
       AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
 
       @KeepFieldType
       DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
+
+      @KeepFieldType
+      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
     }
   }
 
@@ -506,18 +511,18 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     private static final class LazyClassKeyProvider {
       static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
 
-      static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
-
       static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
+
+      static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
 
       @KeepFieldType
       AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
 
       @KeepFieldType
-      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
+      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
 
       @KeepFieldType
-      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
+      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
