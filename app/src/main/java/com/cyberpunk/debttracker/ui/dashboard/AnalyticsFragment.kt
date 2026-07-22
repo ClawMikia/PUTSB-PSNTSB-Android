@@ -1,6 +1,5 @@
 package com.cyberpunk.debttracker.ui.dashboard
 
-import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -8,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
@@ -25,7 +24,6 @@ import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.io.File
 
 @AndroidEntryPoint
 class AnalyticsFragment : Fragment() {
@@ -35,6 +33,18 @@ class AnalyticsFragment : Fragment() {
 
     private val viewModel: DebtViewModel by activityViewModels()
     private lateinit var topContactAdapter: TopContactAdapter
+
+    private var pendingDebts: List<com.cyberpunk.debttracker.data.model.Debt> = emptyList()
+
+    private val createDocumentLauncher = registerForActivityResult(
+        ActivityResultContracts.CreateDocument("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    ) { uri: Uri? ->
+        if (uri != null) {
+            saveToUri(uri)
+        } else {
+            Toast.makeText(requireContext(), "Save cancelled", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -67,27 +77,24 @@ class AnalyticsFragment : Fragment() {
                 return@launch
             }
 
-            val file = ExcelExporter.exportDebtsToExcel(requireContext(), debts)
-            if (file != null) {
-                shareFile(file)
-            } else {
-                Toast.makeText(requireContext(), "Export failed", Toast.LENGTH_SHORT).show()
-            }
+            pendingDebts = debts
+            createDocumentLauncher.launch(ExcelExporter.getDefaultFileName())
         }
     }
 
-    private fun shareFile(file: File) {
-        val uri: Uri = FileProvider.getUriForFile(
-            requireContext(),
-            "${requireContext().packageName}.provider",
-            file
-        )
-        val intent = Intent(Intent.ACTION_SEND).apply {
-            type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-            putExtra(Intent.EXTRA_STREAM, uri)
-            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+    private fun saveToUri(uri: Uri) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val success = requireContext().contentResolver.openOutputStream(uri)?.use { os ->
+                ExcelExporter.exportDebtsToExcel(os, pendingDebts)
+            } ?: false
+
+            if (success) {
+                Toast.makeText(requireContext(), "Exported successfully", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "Export failed", Toast.LENGTH_SHORT).show()
+            }
+            pendingDebts = emptyList()
         }
-        startActivity(Intent.createChooser(intent, "Share Exported Excel"))
     }
 
     private fun setupCharts() {

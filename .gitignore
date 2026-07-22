@@ -1,44 +1,136 @@
-# Built variants
+# =========================
+# Android & Gradle
+# =========================
 **/build/
+.gradle/
+!gradle-wrapper.jar
+.gradleletasknamecache
+gradle-app.setting
+local.properties
 
-# Android Studio
-*.iml
+# =========================
+# Android Studio / IntelliJ
+# =========================
 .idea/
+*.iml
 captures/
 .externalNativeBuild/
 .cxx/
 *.hprof
-.DS_Store
+kotlin-agent/
 
+# =========================
 # Kotlin
+# =========================
 .kotlin/
 
-# Keystore files (Keep your signing keys private!)
+# =========================
+# Keystore & Signing
+# =========================
 *.jks
 *.keystore
 *.p12
 
+# =========================
 # Google Services (Firebase)
+# =========================
 google-services.json
 
+# =========================
 # Secrets & Local Config
+# =========================
 secrets.properties
-local.properties
 
-# Log files
+# =========================
+# Log Files & Crash Reports
+# =========================
 *.log
+hs_err_pid*.log
+replay_pid*.log
 
-# Backup files
+# =========================
+# Backup & Temp Files
+# =========================
 *.bak
 *~
+*.tmp
+*.temp
+*.swp
+*.swo
 
-# Gradle
-.gradle/
-gradle-app.setting
-!gradle-wrapper.jar
-.gradletasknamecache
-
-# OS generated files
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+ehthumbs_vista.db
+$RECYCLE.BIN/
+
+# =========================
+# Windows Shortcuts
+# =========================
+*.lnk
+
+# =========================
+# macOS
+# =========================
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# =========================
+# Linux
+# =========================
+*~
+
+# =========================
+# VS Code (if used)
+# =========================
+.vscode/
+*.code-workspace
+
+# =========================
+# Build artifacts
+# =========================
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.jar
+!gradle-wrapper.jar
+
+# =========================
+# Native build
+# =========================
+obj/
+libs/
+
+# =========================
+# Proguard
+# =========================
+proguard/
+
+# =========================
+# Navigation (auto-generated)
+# =========================
+**/navigation/*.xml
+
+# =========================
+# Room schema exports
+# =========================
+**/schemas/
+
+# =========================
+# Refactoring
+# =========================
+.refact/

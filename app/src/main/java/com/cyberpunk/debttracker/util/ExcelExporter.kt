@@ -1,41 +1,36 @@
 package com.cyberpunk.debttracker.util
 
-import android.content.Context
-import android.os.Environment
 import com.cyberpunk.debttracker.data.model.Debt
 import com.cyberpunk.debttracker.data.model.DebtType
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import java.io.File
-import java.io.FileOutputStream
+import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
 object ExcelExporter {
 
-    fun exportDebtsToExcel(context: Context, debts: List<Debt>): File? {
+    fun getDefaultFileName(): String {
+        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+        return "DebtTracker_Export_$timeStamp.xlsx"
+    }
+
+    fun exportDebtsToExcel(outputStream: OutputStream, debts: List<Debt>): Boolean {
         val workbook = XSSFWorkbook()
-        
+
         val iOweDebts = debts.filter { it.debtType == DebtType.I_OWE }
         val owesMeDebts = debts.filter { it.debtType == DebtType.OWES_ME }
 
         createSheet(workbook, "I OWE", iOweDebts)
         createSheet(workbook, "OWES ME", owesMeDebts)
 
-        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-        val fileName = "DebtTracker_Export_$timeStamp.xlsx"
-        
-        val directory = context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
-        val file = File(directory, fileName)
-
         return try {
-            val outputStream = FileOutputStream(file)
             workbook.write(outputStream)
             outputStream.close()
             workbook.close()
-            file
+            true
         } catch (e: Exception) {
             e.printStackTrace()
-            null
+            false
         }
     }
 
@@ -63,8 +58,6 @@ object ExcelExporter {
             row.createCell(9).setCellValue(if (debt.isArchived) "Yes" else "No")
         }
 
-        for (i in headers.indices) {
-            sheet.autoSizeColumn(i)
-        }
+
     }
 }
