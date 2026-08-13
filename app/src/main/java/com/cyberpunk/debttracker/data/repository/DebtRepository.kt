@@ -55,6 +55,8 @@ class DebtRepository @Inject constructor(
 
     suspend fun getAllDebtsForExport(): List<Debt> = debtDao.getAllDebtsForExport()
 
+    suspend fun importAll(debts: List<Debt>) = debtDao.insertAll(debts)
+
     suspend fun markSettled(debt: Debt) {
         debtDao.update(
             debt.copy(

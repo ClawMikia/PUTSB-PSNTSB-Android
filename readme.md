@@ -80,6 +80,10 @@ Inspired by legendary street wisdom, this motto encapsulates the fluid nature of
 - **Excel Matrix Export:** Generate high-fidelity .xlsx reports using Apache POI with separate sheets for "I OWE" and "OWES ME".
 - **SAF File Picker:** Uses Android's Storage Access Framework to let users choose exactly where to save the exported file.
 - **Export Columns:** ID, Person Name, Amount, Paid Amount, Remaining, Description, Due Date, Status, Created At, Archived.
+- **JSON Backup Export:** Export the entire node database (including archived nodes) to a single portable .json file from Settings > Data Backup.
+- **JSON Backup Import:** Restore or merge nodes from a .json backup via the system document picker, with a confirmation dialog before writing.
+- **Full Fidelity Backup:** JSON backup preserves every field — IDs, timestamps, status, and archive flag — so restored data matches the original exactly.
+- **Merge Behavior:** Import overwrites nodes with matching IDs and appends new ones, making it safe to restore onto existing data.
 - **Pie Chart:** Donut-style animated chart showing I Owe vs Owes Me distribution.
 - **Bar Chart:** Monthly debt timeline for the last 6 months with gold bars.
 - **Stats Cards:** Total debts count and settled count displayed as metric cards.
@@ -164,7 +168,7 @@ The interface is engineered for high-contrast, low-light operations typical of t
 | Charts | MPAndroidChart v3.1.0 |
 | Excel | Apache POI 5.2.3 |
 | Splash | AndroidX Splash Screen 1.0.1 |
-| Target SDK | 34 (Android 14) |
+| Target SDK | 36 (Android 16) |
 | Min SDK | 26 (Android 8.0) |
 
 ---
@@ -207,7 +211,7 @@ app/src/main/
 | OwedFragment | Filtered list of "I Owe" debts with total and sort |
 | LentFragment | Filtered list of "Owes Me" debts with total and sort |
 | AnalyticsFragment | Pie chart, bar chart, stats, top contacts, Excel export |
-| SettingsFragment | Reminder frequency toggle and about link |
+| SettingsFragment | Reminder frequency toggle, JSON backup export/import, and about link |
 | AboutFragment | App info, version, Filipino meme quote, developer credit |
 | AddDebtActivity | Form to create or edit a debt (person, amount, type, due date) |
 | DebtDetailActivity | Full detail view with payment actions, progress bar, edit/delete |
@@ -226,5 +230,5 @@ app/src/main/
 ---
 
 *Developed by: The Bumbay Operative*
-*System Protocol: Android 14 (API 34)*
+*System Protocol: Android 16 (API 36)*
 *Security Status: Fully Encrypted*

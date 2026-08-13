@@ -136,6 +136,21 @@
     <string name="reminder_freq_daily">DAILY</string>
     <string name="reminder_freq_weekly">WEEKLY</string>
 
+    <!-- Backup -->
+    <string name="settings_backup_title">DATA BACKUP</string>
+    <string name="btn_export_json">Export JSON</string>
+    <string name="btn_import_json">Import JSON</string>
+    <string name="backup_no_data">No debts to export</string>
+    <string name="backup_export_success">Backup exported successfully</string>
+    <string name="backup_export_failed">Export failed</string>
+    <string name="backup_save_cancelled">Export cancelled</string>
+    <string name="backup_import_title">IMPORT BACKUP?</string>
+    <string name="backup_import_message">Import %1$d debt nodes from the selected file. Existing nodes with the same ID will be replaced, and new nodes will be added. Continue?</string>
+    <string name="backup_import_success">Imported %1$d debt nodes</string>
+    <string name="backup_import_failed">Invalid backup file</string>
+    <string name="backup_import_cancelled">Import cancelled</string>
+    <string name="backup_file_empty">Backup file contains no debts</string>
+
     <!-- Splash -->
     <string name="splash_initializing">INITIALIZING DEBT MATRIX…</string>
     <string name="splash_scanning">SCANNING FINANCIAL NODES…</string>

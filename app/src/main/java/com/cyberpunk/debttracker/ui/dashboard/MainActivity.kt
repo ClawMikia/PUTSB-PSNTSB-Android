@@ -5,10 +5,15 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -41,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigation()
         setupFab()
+        setupBottomNavInsets()
         initReminders()
         checkNotificationPermission()
     }
@@ -69,6 +75,28 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         binding.bottomNavigation.setupWithNavController(navController)
+    }
+
+    private fun setupBottomNavInsets() {
+        val baseNavHeight = resources.getDimensionPixelSize(R.dimen.bottom_nav_height)
+        val fabOffset = resources.getDimensionPixelSize(R.dimen.spacing_md)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            binding.root.updatePadding(top = bars.top)
+            if (bars.bottom > 0) {
+                binding.bottomNavigation.updateLayoutParams<ViewGroup.LayoutParams> {
+                    height = baseNavHeight + bars.bottom
+                }
+                binding.bottomNavigation.setPadding(0, 0, 0, bars.bottom)
+                binding.navHostFragment.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                    bottomMargin = baseNavHeight + bars.bottom
+                }
+                binding.fabAddDebt.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                    bottomMargin = baseNavHeight + fabOffset + bars.bottom
+                }
+            }
+            insets
+        }
     }
 
     private fun setupFab() {

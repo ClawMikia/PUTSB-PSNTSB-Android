@@ -34,6 +34,7 @@ import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.settings.SettingsFragment;
+import com.cyberpunk.debttracker.ui.settings.SettingsFragment_MembersInjector;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.ViewModelLifecycle;
@@ -359,6 +360,7 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
 
     @Override
     public void injectSettingsFragment(SettingsFragment settingsFragment) {
+      injectSettingsFragment2(settingsFragment);
     }
 
     @Override
@@ -369,6 +371,12 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     @Override
     public ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder() {
       return new ViewWithFragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl);
+    }
+
+    @CanIgnoreReturnValue
+    private SettingsFragment injectSettingsFragment2(SettingsFragment instance) {
+      SettingsFragment_MembersInjector.injectRepository(instance, singletonCImpl.debtRepositoryProvider.get());
+      return instance;
     }
   }
 
@@ -449,17 +457,17 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
-
       static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
+
+      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
 
       static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
 
       @KeepFieldType
-      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
+      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
 
       @KeepFieldType
-      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
+      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
 
       @KeepFieldType
       AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
@@ -509,20 +517,20 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
+      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
+
       static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
 
       static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
 
-      static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
+      @KeepFieldType
+      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
 
       @KeepFieldType
       DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
 
       @KeepFieldType
       AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
-
-      @KeepFieldType
-      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {

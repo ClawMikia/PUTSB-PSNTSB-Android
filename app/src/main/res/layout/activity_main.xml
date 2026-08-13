@@ -39,11 +39,11 @@
         android:layout_height="64dp"
         android:layout_gravity="bottom"
         android:background="@drawable/bg_bottom_nav_cyber"
+        app:elevation="0dp"
         app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemRippleColor="@color/cyber_gold_alpha15"
         app:itemTextColor="@color/bottom_nav_item_color"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_nav_menu"
-        app:elevation="0dp"
-        app:itemRippleColor="@color/cyber_gold_alpha15" />
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
