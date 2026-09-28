@@ -13,10 +13,12 @@ import com.cyberpunk.debttracker.data.model.Debt
 import com.cyberpunk.debttracker.data.model.DebtType
 import com.cyberpunk.debttracker.databinding.ActivityAddDebtBinding
 import com.cyberpunk.debttracker.util.DateFormatter
+import com.cyberpunk.debttracker.util.applySystemBarAndImeInsets
 import com.cyberpunk.debttracker.util.showCyberSnack
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.util.*
+import com.cyberpunk.debttracker.util.enableCyberEdgeToEdge
 
 @AndroidEntryPoint
 class AddDebtActivity : AppCompatActivity() {
@@ -33,8 +35,10 @@ class AddDebtActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableCyberEdgeToEdge()
         binding = ActivityAddDebtBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.root.applySystemBarAndImeInsets()
 
         existingDebt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
 

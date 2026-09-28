@@ -23,6 +23,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import com.cyberpunk.debttracker.util.enableCyberEdgeToEdge
 
 @AndroidEntryPoint
 class DebtDetailActivity : AppCompatActivity() {
@@ -38,8 +39,10 @@ class DebtDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableCyberEdgeToEdge()
         binding = ActivityDebtDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.root.applySystemBarInsets()
 
         val initialDebt = IntentCompat.getParcelableExtra(intent, EXTRA_DEBT, Debt::class.java)
         initialDebt?.let {

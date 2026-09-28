@@ -1,234 +1,364 @@
-# PUTSB-PSNTSB (Pag Utang Tawag Sakin Boss, Pag Singil na Tawag Sakin Bantot)
+# PUTSB-PSNTSB — The Neural Debt Matrix
 
-## The Neural Debt Matrix
-
-**DebtTracker** is a specialized financial node tracker designed for high-stakes debt management in the sprawl. This application helps you keep track of every credit and debit in your personal network with a sleek, immersive cyberpunk aesthetic.
-
-[![System Status: Online](https://img.shields.io/badge/System-Online-gold?style=for-the-badge&logo=android)](https://github.com/your-repo)
-[![Version: 2.0.7-CYBER](https://img.shields.io/badge/Version-2.0.7--CYBER-gold?style=for-the-badge)](https://github.com/your-repo)
-[![Theme: Cyberpunk](https://img.shields.io/badge/Theme-Cyberpunk-gold?style=for-the-badge)](https://github.com/your-repo)
-[![API: 26+](https://img.shields.io/badge/API-26%2B-brightgreen?style=for-the-badge)](https://github.com/your-repo)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/your-repo)
-
----
-
-### "The Golden Rule of the Streets"
 > *"Pag Utang Tawag Sakin Boss, Pag Singil na Tawag Sakin Bantot"*
 
-Inspired by legendary street wisdom, this motto encapsulates the fluid nature of financial respect in the matrix.
+A cyberpunk-themed debt tracker for Android that treats who-owes-whom as a
+living system: contacts become NPCs, repayments move a shared Patience gauge,
+and a full gamification layer (100 achievements, 137 rotating quests, procedural
+icon art) sits on top of the ledger.
+
+- **Package:** `com.cyberpunk.debttracker`
+- **Version:** 1.0.0 (versionCode 1)
+- **Min SDK:** 26 (Android 8.0) · **Target / Compile SDK:** 36 (Android 16)
+- **Language:** Kotlin 1.9.24 · **Build:** Gradle 8.11.1 (Kotlin DSL)
 
 ---
 
-## What People Are Saying
+## Table of Contents
 
-> *"This app changed how I track debts. The cyberpunk theme makes managing money feel less boring and more like a game."*
-> -- Active User
-
-> *"Finally an app that lets me export to Excel AND looks incredible. The dark theme is easy on the eyes at night."*
-> -- Beta Tester
-
-> *"The password-protected archive is a genius feature. Settled debts hidden away but still accessible when needed."*
-> -- Early Adopter
-
-> *"Clean UI, smooth animations, and the partial payment tracking is exactly what I needed. 10/10 would recommend."*
-> -- Satisfied User
-
-> *"The pie chart and bar graph analytics give me a clear picture of my financial situation at a glance."*
-> -- Debt Tracker Enthusiast
+1. [Features](#features)
+2. [Gamification System](#gamification-system)
+3. [Data & Storage](#data--storage)
+4. [Architecture](#architecture)
+5. [Tech Stack](#tech-stack)
+6. [Project Structure](#project-structure)
+7. [Screens](#screens)
+8. [Design Language](#design-language)
+9. [System Bar / Edge-to-Edge Handling](#system-bar--edge-to-edge-handling)
+10. [Build & Run](#build--run)
+11. [Testing](#testing)
+12. [Known Issues](#known-issues)
 
 ---
 
-## Latest Functionalities & Features
+## Features
 
-### Neural Dashboard
-- **Net Balance Engine:** Real-time calculation of your total financial exposure (Owed vs Lent).
-- **Active Node Monitoring:** Quick glance at active, partial, and overdue nodes.
-- **Top Entity Tracking:** Automatically identifies and ranks your Top Creditors and Top Debtors.
-- **Summary Cards:** Gold-bordered cards showing Net Balance, I Owe total, and Owes Me total with icon indicators.
-- **Overdue Alerts:** Red-highlighted overdue count with instant visibility on the dashboard.
+### Debt Ledger
+- Create nodes with person, amount, description, type (**I Owe** / **Owes Me**), optional due date.
+- Partial payments with live remaining-balance and progress bar.
+- One-tap **Mark Settled**, plus edit and delete with confirmation.
+- Automatic status lifecycle: `ACTIVE → PARTIAL → OVERDUE → SETTLED`.
+- 6 sort modes (date asc/desc, amount asc/desc, name, overdue-first) with **independent state per tab**.
+- Net balance = total owed-to-you minus total you-owe, computed reactively.
 
-### Debt Node Management
-- **Dynamic Matrix:** Initialize new debt nodes with detailed parameters: Person Name, Amount, Description, Debt Type (I Owe / Owes Me), and optional Due Date.
-- **Partial Payment Protocols:** Record fractional payments with automated balance updates and progress bar visualization.
-- **Mark Settled:** One-tap to mark any debt as fully paid.
-- **Status Lifecycle:** Nodes transition through Active, Partial, Overdue, and Settled states automatically.
-- **Edit & Delete:** Full CRUD operations with confirmation dialogs for destructive actions.
-- **Due Date Tracking:** Optional due dates with calendar picker and automatic overdue detection.
+### Archive
+- Password-gated vault for settled nodes, hidden from the main ledger.
+- Minimum 4-character password, hashed and stored locally.
+- Re-prompted on every entry to the archive.
 
-### Advanced Sorting
-- **6 Sort Options** via context menu:
-  1. Date (Newest First)
-  2. Date (Oldest First)
-  3. Amount (High to Low)
-  4. Amount (Low to High)
-  5. Name (A-Z)
-  6. Overdue First
-- Applied per-tab: Dashboard, I Owe, and Owes Me each maintain independent sort state.
+### Backup & Export
+- **JSON backup** export/import covering every field (id, timestamps, status, archive flag).
+- Import **merges** by id — safe to restore onto existing data.
+- **Excel (.xlsx)** export via Apache POI, split into `I OWE` and `OWES ME` sheets.
+- Uses the Storage Access Framework, so the user picks the destination.
 
-### Filtered Views
-- **I Owe Tab:** Isolated view of all debts you owe to others with total amount summary.
-- **Owes Me Tab:** Isolated view of all debts others owe you with total amount summary.
-- Each tab features its own sort menu and empty state illustrations.
+### Analytics
+- Animated donut chart (I Owe vs Owes Me).
+- 6-month bar timeline of debt volume.
+- Total / settled metric cards and a top-5 contacts ranking.
 
-### Data Security & Archiving
-- **Password-Protected Archive:** A secure vault for settled debts, completely hidden from the main interface.
-- **Password Setup:** First-time users create a minimum 4-character password.
-- **Authentication Gate:** Must enter password each time to access the archive.
-- **Archive Action:** Settled debts can be archived from the detail screen.
-
-### System Export & Analytics
-- **Excel Matrix Export:** Generate high-fidelity .xlsx reports using Apache POI with separate sheets for "I OWE" and "OWES ME".
-- **SAF File Picker:** Uses Android's Storage Access Framework to let users choose exactly where to save the exported file.
-- **Export Columns:** ID, Person Name, Amount, Paid Amount, Remaining, Description, Due Date, Status, Created At, Archived.
-- **JSON Backup Export:** Export the entire node database (including archived nodes) to a single portable .json file from Settings > Data Backup.
-- **JSON Backup Import:** Restore or merge nodes from a .json backup via the system document picker, with a confirmation dialog before writing.
-- **Full Fidelity Backup:** JSON backup preserves every field — IDs, timestamps, status, and archive flag — so restored data matches the original exactly.
-- **Merge Behavior:** Import overwrites nodes with matching IDs and appends new ones, making it safe to restore onto existing data.
-- **Pie Chart:** Donut-style animated chart showing I Owe vs Owes Me distribution.
-- **Bar Chart:** Monthly debt timeline for the last 6 months with gold bars.
-- **Stats Cards:** Total debts count and settled count displayed as metric cards.
-- **Top Contacts:** Ranked list of top 5 contacts by total amount with avatar initials.
-
-### Intelligence Notifications
-- **Per-Debt Reminders:** Scheduled notifications for each debt's due date via AlarmManager.
-- **Overdue Summary:** Background scanning for overdue debts via WorkManager periodic tasks.
-- **Configurable Frequency:** Off, Hourly, Daily, or Weekly reminder cycles.
-- **Notification Channel:** Dedicated "Debt Reminders" channel for Android 8.0+.
-- **Permission Handling:** Graceful POST_NOTIFICATIONS permission request on Android 13+.
-
-### Onboarding & Splash
-- **Animated Splash Screen:** 6-step choreographed sequence with logo pop, text fade-in, and status text cycling through "Initializing...", "Scanning...", "System Online".
-- **Intro Tutorial:** 4-page ViewPager2 onboarding with dot indicators covering Welcome, Dashboard, Analytics, and Archive.
-- **First-Run Detection:** Intro shown only on first launch, stored in SharedPreferences.
+### Notifications
+- Per-debt due-date reminders via `AlarmManager`.
+- Overdue sweep via periodic `WorkManager` jobs.
+- Frequency: Off / Hourly / Daily / Weekly.
+- Android 13+ `POST_NOTIFICATIONS` requested gracefully.
 
 ---
 
-## UI & Design Language
+## Gamification System
 
-The interface is engineered for high-contrast, low-light operations typical of the sprawl.
+All gamification state lives in a **separate Room database** (`gamification_db`)
+that is deliberately **excluded from backup** so a campaign always starts fresh on
+a new device. Debt data (`debt_tracker_db`) *is* backed up.
 
-### Color Palette
+### Player progression
+- **Level curve** with a strictly increasing XP requirement per level.
+- **Rank titles** that shift with level (e.g. `FRESH IN THE MATRIX` → `ROOKIE NODE`).
+- Three tracked meters: **XP**, **₱ Coins** (spent on NPC actions), and **Nerve**
+  (0–100, capped). Nerve is a net resource: 44 reward definitions grant it and 31
+  penalties drain it.
+- **Daily streak** with rollover handling for missed days.
 
-| Color | Hex | Usage |
+### Achievements — 100 total
+Defined in `game/AchievementCatalog.kt`, each with a code, title, blurb, target
+`Stat`, and XP/coin/nerve payout. Evaluated against live stat counters.
+
+### Quests — 137 total, on three cycles
+| Cycle | Count | Resets |
 |---|---|---|
-| Cyber Gold | `#FFD700` | Primary accent, headers, FAB, buttons, dividers |
-| Cyber Black | `#0A0A0A` | Main background |
-| Cyber Surface | `#111111` | Surface color |
-| Cyber Card | `#181818` | Card backgrounds |
-| Debt Owed | `#FF4444` | Red -- I owe someone |
-| Debt Lent | `#00C853` | Green -- Someone owes me |
-| Debt Partial | `#FF9800` | Orange -- Partially paid |
-| Debt Settled | `#607D8B` | Grey -- Fully settled |
-| Neon Red Alert | `#FF1744` | Overdue/errors |
-| Neon Green OK | `#00E676` | Success/active |
+| Daily | 7 | Midnight, local time |
+| Monthly | 30 | 1st of the month |
+| Annual | 100 | 1st of January |
 
-### Typography
-- **Hero:** 36sp, sans-serif-black, gold, wide letter spacing
-- **Title:** 26sp, sans-serif-medium, white
-- **Subtitle:** 18sp, sans-serif-medium, secondary color
-- **Body:** 15sp, sans-serif, white
-- **Caption:** 12sp, secondary color
-- **Label:** 10sp, gold, all caps, wide spacing
-- **Amount:** 22sp, sans-serif-black, gold
+Cycle keys are derived from the device's local time zone via
+`Cycles.dailyKey/monthlyKey/annualKey` in `game/LevelCurve.kt`.
 
-### Animations
-- **Splash:** 6-step choreographed sequence with OvershootInterpolator and AccelerateDecelerateInterpolator
-- **Activity Transitions:** Custom slide-in/slide-out animations (Cyber theme)
-- **Card Press:** Scale pop animation (0.9 -> 1.05 -> 1.0) with OvershootInterpolator
-- **Chart Entry:** Animated Y-axis entry with Easing.EaseInOutQuad
-- **Custom Snackbar:** Dark background with gold text (success) or red text (error)
+### Rewards & penalties
+- Reward definitions pay out **XP, coins, and nerve**; penalties drain them.
+- 33 penalty entries cover overdue debts, negative net balance, coin bankruptcy,
+  excessive NPC anger, and idle-creditor neglect.
 
-### UI Components
-- Custom BottomNavigationView with cyber-themed background
-- Gold FloatingActionButton for adding new debts
-- MaterialCardView with 1dp stroke borders and 12-14dp corners
-- TextInputLayout with outlined box style and gold focus accents
-- ChipGroup for debt type selection (I Owe / Owes Me)
-- MaterialButtonToggleGroup for reminder frequency
-- RecyclerView with ListAdapter + DiffUtil for smooth list updates
-- ViewPager2 with TabLayout dot indicators for onboarding
-- MPAndroidChart PieChart (donut) and BarChart
-- Progress bars with gold tint showing payment percentage
-- Custom AlertDialogs and PopupMenus with dark theme
+### NPCs
+- Every contact that appears in the debt table is promoted to an NPC.
+- One of **16 archetypes** is deterministically assigned from the person's name
+  (`NpcArchetype.forPerson`), so a given contact always keeps the same identity.
+- Per-NPC state: `patience` (0…max), `relation` (−100…100), `level`, `xp`, `rages`,
+  and a `mood` derived from open/overdue/settled counts.
+- `GameEngine.syncNpcs()` rebuilds aggregates from the live debt table on every
+  mutation, so the roster can never drift from the ledger.
+
+#### NPC actions
+| Action | Cost | Effect | Rule |
+|---|---|---|---|
+| **NUDGE** | free | +1 relation | Once per contact per day |
+| **PACIFY** | 50 coins | +25 patience, +10 relation | Requires sufficient balance |
+| **CONFRONT** | free | −12 patience, −6 relation | Applies the `NPC_CONFRONT` penalty |
+
+Buttons surface their own state: NUDGE greys out and relabels to `NUDGED` once
+used for the day, and PACIFY dims with a `✕` on its price when unaffordable,
+rather than failing silently on tap.
+
+### Procedural iconography
+No image assets. `game/IconForge.kt` generates every icon at runtime from a
+stable string seed:
+
+- **Teddy bears** for rewards, achievements, and quests — `BearDesign` varies head
+  and ear shape, eye and nose style, muzzle, fur palette, proportions, and accessories.
+- **White skulls** for penalties — `SkullDesign` varies cranium shape, eye-socket
+  geometry, jaw, teeth count, cracks, and bone tinting.
+- Drawables are memoised in a 512-entry `LruCache` keyed by type + seed.
+
+`IconUniquenessTest` fingerprints every generated design and asserts no two
+rewards share a bear and no two penalties share a skull.
+
+### Campaign purge
+`GameEngine.purgeCampaign()` wipes the gamification database for a true
+fresh-install reset **without** touching the debt ledger. Reachable from the
+`PURGE` button in the Game Hub toolbar, behind a confirmation dialog.
 
 ---
 
-## Technical Stack
+## Data & Storage
+
+Two independent Room databases, both provided through Hilt in `di/DatabaseModule.kt`:
+
+| Database | Contents | Backup |
+|---|---|---|
+| `debt_tracker_db` | Debt nodes, archive flags | **Included** |
+| `gamification_db` | Profile, rollover, achievements, quests, stats, NPCs, log | **Excluded** |
+
+`android:allowBackup="true"` is kept, with the gamification database (plus its
+`-wal`, `-shm`, and `-journal` sidecars) explicitly excluded in both
+`res/xml/backup_rules.xml` and `res/xml/data_extraction_rules.xml`. The result:
+cloud backup and device-to-device transfer preserve real debts but never carry
+campaign progress across a reinstall.
+
+---
+
+## Architecture
+
+MVVM with a repository layer and unidirectional data flow.
+
+```
+UI (Activity/Fragment, ViewBinding)
+  └── ViewModel  — StateFlow/LiveData, no Android framework deps in logic
+        └── Repository — single source of truth, suspend + Flow APIs
+              ├── DebtDao / DebtDatabase
+              └── GameEngine → GameDao / GameDatabase
+```
+
+- **Hilt** for DI; all activities and fragments are `@AndroidEntryPoint`.
+- **Coroutines + Flow** throughout; Room queries return `Flow` and the UI collects
+  with `repeatOnLifecycle(STARTED)`.
+- **GameEngine** is injected directly into `DebtRepository` so every ledger
+  mutation (insert, update, delete, archive, import, payment, settle) automatically
+  drives the gamification layer. This keeps the two systems from drifting apart.
+
+`DebtTrackerApp` performs a cold-start `GameEngine.bootstrap()` to roll the day
+over, refresh derived stats, and re-sync NPCs before any screen appears.
+
+---
+
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
 | Language | Kotlin 1.9.24 |
-| Architecture | MVVM (Model-View-ViewModel) |
-| DI | Dagger Hilt 2.51.1 |
-| Database | Room 2.6.1 with KSP |
-| Navigation | Jetpack Navigation Component 2.7.7 |
-| UI Binding | ViewBinding |
-| Async | Kotlin Coroutines + Flow |
-| Background | WorkManager 2.9.0 + AlarmManager |
+| Architecture | MVVM + Repository |
+| DI | Dagger Hilt 2.51.1 (KSP) |
+| Database | Room 2.6.1 (KSP) — two databases |
+| Navigation | Navigation Component 2.7.7 |
+| UI | ViewBinding, Material Components 1.12.0 |
+| Async | Coroutines 1.7.3 + Flow |
+| Background | WorkManager 2.9.0, hilt-work 1.2.0, AlarmManager |
 | Charts | MPAndroidChart v3.1.0 |
 | Excel | Apache POI 5.2.3 |
-| Splash | AndroidX Splash Screen 1.0.1 |
-| Target SDK | 36 (Android 16) |
-| Min SDK | 26 (Android 8.0) |
+| Splash | core-splashscreen 1.0.1 |
+| Preferences | androidx.preference 1.2.1 |
+| Tests | JUnit 4.13.2 |
 
 ---
 
 ## Project Structure
 
 ```text
-app/src/main/
-├── java/com/cyberpunk/debttracker/
-│   ├── data/            # Room Database, DAOs, Entity Models, Repositories
-│   ├── di/              # Hilt Dependency Injection Modules
-│   ├── notification/    # Broadcast Receivers & Background Workers (Reminders)
-│   ├── ui/              # MVVM Pattern: Activities, Fragments, ViewModels, Adapters
-│   │   ├── dashboard/   # Main command center, Top Entities, Debt Lists
-│   │   ├── analytics/   # MPAndroidChart integration, Export
-│   │   ├── archive/     # Password-protected debt storage
-│   │   ├── settings/    # System configuration & reminder frequency
-│   │   └── intro/       # System initialization & onboarding
-│   └── util/            # Helpers for Excel Export, Security, Formatting, Notifications
-└── res/
-    ├── drawable/        # Cyber-themed vector assets & custom backgrounds
-    ├── layout/          # Immersive UI definitions
-    ├── menu/            # Context-aware navigation & sort menus
-    ├── navigation/      # Navigation graph
-    ├── anim/            # Custom transition animations
-    ├── raw/             # Sound/font assets
-    └── values/          # Theming (colors.xml, strings.xml, themes.xml, styles.xml)
+app/src/main/java/com/cyberpunk/debttracker/
+├── data/
+│   ├── db/            # DebtDatabase, DebtDao, GameDatabase, GameDao, Converters
+│   ├── model/         # Debt entity
+│   │   └── game/      # GameModels — entities + enums
+│   └── repository/    # DebtRepository (bridge to GameEngine)
+├── di/                # DatabaseModule — Hilt providers
+├── game/              # Gamification domain (framework-free)
+│   ├── GameEngine.kt      # Orchestration, events, rollover, evaluation
+│   ├── LevelCurve.kt      # Level math, QuestCycle, Cycles
+│   ├── Stat.kt            # Stat keys + gauge groups
+│   ├── RewardCatalog.kt   # Reward & penalty definitions
+│   ├── AchievementCatalog.kt
+│   ├── QuestCatalog.kt
+│   ├── NpcArchetype.kt    # 16 archetypes
+│   ├── IconForge.kt       # Seeded RNG + drawable cache
+│   ├── BearIcon.kt        # Procedural teddy bear
+│   └── SkullIcon.kt       # Procedural skull
+├── notification/      # AlarmManager receivers, WorkManager jobs
+├── ui/
+│   ├── dashboard/     # MainActivity, Dashboard/Owed/Lent/Analytics/Archive
+│   ├── adddebt/       # AddDebtActivity
+│   ├── debtdetail/    # DebtDetailActivity
+│   ├── game/          # GameHubActivity, adapters, EventBanner
+│   ├── settings/      # SettingsFragment
+│   ├── about/         # AboutFragment
+│   ├── intro/         # IntroActivity
+│   └── splash/        # SplashActivity
+└── util/              # Formatting, Excel, JSON backup, security, insets
 ```
 
+The `game/` package has **no Android UI imports** — catalogs, level math, and icon
+*design* generation are pure Kotlin, which is what makes them unit-testable on the JVM.
+
 ---
 
-## Screens Overview
+## Screens
 
-| Screen | Description |
+| Screen | Purpose |
 |---|---|
-| SplashActivity | Animated 6-step intro sequence with logo, tagline, and status text |
-| IntroActivity | 4-page onboarding tutorial (ViewPager2 + dot indicators) |
-| MainActivity | Main host with bottom navigation (5 tabs) and FAB |
-| DashboardFragment | Summary cards, active/overdue counts, scrollable debt list with sort |
-| OwedFragment | Filtered list of "I Owe" debts with total and sort |
-| LentFragment | Filtered list of "Owes Me" debts with total and sort |
-| AnalyticsFragment | Pie chart, bar chart, stats, top contacts, Excel export |
-| SettingsFragment | Reminder frequency toggle, JSON backup export/import, and about link |
-| AboutFragment | App info, version, Filipino meme quote, developer credit |
-| AddDebtActivity | Form to create or edit a debt (person, amount, type, due date) |
-| DebtDetailActivity | Full detail view with payment actions, progress bar, edit/delete |
-| ArchiveActivity | Password-gated access to archived settled debts |
+| `SplashActivity` | Animated 6-step init sequence; routes to intro or main |
+| `IntroActivity` | 4-page first-run tutorial (ViewPager2) |
+| `MainActivity` | Host for 5 bottom-nav tabs + FAB; owns the bottom-nav inset logic |
+| `DashboardFragment` | Net balance cards, top entities, active list, Game Hub entry card |
+| `OwedFragment` / `LentFragment` | Filtered per-direction lists with independent sorting |
+| `AnalyticsFragment` | Charts, stats, top contacts, Excel export |
+| `ArchiveActivity` | Password-gated settled-debt vault |
+| `AddDebtActivity` | Create/edit form |
+| `DebtDetailActivity` | Detail view, partial payments, settle/edit/delete |
+| `GameHubActivity` | 6 tabs: Daily / Monthly / Annual quests, Feats, Contacts, Log |
+| `SettingsFragment` | Reminder frequency, JSON backup, campaign purge, about |
+| `AboutFragment` | Version and credits |
 
 ---
 
-## Deployment
+## Design Language
 
-1. **Terminal Sync:** Clone the repository.
-2. **Initialization:** Open in Android Studio Hedgehog (2023.1.1) or later.
-3. **Syncing:** Allow Gradle to fetch all neural dependencies.
-4. **Deployment:** Run on an Android device (API 26 or higher).
-5. **Authorization:** Follow the intro sequence to initialize your system parameters.
+### Palette
+
+| Token | Hex | Use |
+|---|---|---|
+| Cyber Gold | `#FFD700` | Primary accent, headers, FAB, dividers |
+| Cyber Black | `#0A0A0A` | Background |
+| Cyber Surface | `#111111` | Surfaces |
+| Neon Amber | `#FF9800` | Partial / warning |
+| Neon Red Alert | `#FF1744` | Overdue, errors, `CONFRONT` |
+| Neon Green OK | `#00E676` | Success, settled-positive |
+| Debt Owed | `#FF4444` | I Owe |
+| Debt Lent | `#00C853` | Owes Me |
+
+### Typography
+- Hero `36sp` sans-serif-black · Title `26sp` medium · Body `15sp`
+- Labels `10sp` all-caps with wide letter spacing (`.08`)
+
+### Motion
+- Splash: 6-step choreographed sequence with overshoot easing
+- Card press: scale pop `0.9 → 1.05 → 1.0`
+- Chart entry: animated Y-axis
+- Event banner: slide-in toast for rewards/penalties/achievements
 
 ---
 
-*Developed by: The Bumbay Operative*
-*System Protocol: Android 16 (API 36)*
-*Security Status: Fully Encrypted*
+## System Bar / Edge-to-Edge Handling
+
+`targetSdk 36` means **Android 15+ enforces edge-to-edge** — the system bars draw
+*over* the app window, so every screen must inset its own content or toolbars and
+buttons end up underneath the status and navigation bars.
+
+Handled in `util/WindowInsetsExt.kt`:
+
+- `enableCyberEdgeToEdge()` — opts in on **every** API level (not just where the
+  platform forces it) so spacing is identical across devices. Reuses the existing
+  `status_bar_color` / `nav_bar_color` as the pre-API-29 scrim.
+- `applySystemBarInsets()` — pads a view by `systemBars + displayCutout` insets,
+  capturing the layout's original padding first so it composes with declared padding.
+- `applySystemBarAndImeInsets()` — same, but also lifts above the soft keyboard
+  (used by `AddDebtActivity`).
+- `padBottomByNavBar()` / `marginBottomByNavBar()` — for hosts that paint their
+  own background edge-to-edge.
+
+Applied in all seven activities before `setContentView`. `MainActivity` grows the
+bottom navigation bar by the nav-bar inset and pushes the nav host and FAB up by
+the same amount. The six nav fragments need no changes: they live inside
+`MainActivity`'s nav host, which is already inset.
+
+---
+
+## Build & Run
+
+```bash
+# Clone
+git clone <repo-url> && cd PUTSB-PSNTSB-Android
+
+# Build
+./gradlew :app:assembleDebug
+
+# Compile only (fast type check)
+./gradlew :app:compileDebugKotlin
+
+# Unit tests
+./gradlew :app:testDebugUnitTest
+```
+
+Requires JDK 17 (Android Studio's bundled JBR works) and the Android SDK with
+platform 36. `local.properties` must point at your SDK — it is git-ignored by design.
+
+> **Note:** this checkout currently has no committed Gradle wrapper JAR or
+> `gradlew` scripts. Use Android Studio, or invoke a local Gradle 8.11.1
+> distribution directly.
+
+---
+
+## Testing
+
+`app/src/test/java/com/cyberpunk/debttracker/game/`
+
+- **`GameCatalogTest`** — asserts exactly 100 achievements, 7/30/100 quests, unique
+  codes across every catalog, no reward/penalty code collisions, 16 unique
+  archetypes, and the settlement/late-day reward brackets.
+- **`LevelCurveTest`** — level-curve monotonicity, boundary XP, multi-level jumps,
+  max-level cap, rank titles, and quest cycle key formatting.
+- **`IconUniquenessTest`** — fingerprints every generated bear and skull design and
+  asserts all rewards/achievements/quests/penalties render distinctly.
+
+---
+
+## Known Issues
+
+- `gradlew` / `gradle-wrapper.jar` are not committed. See Build & Run above.
+- `DebtDatabase` emits a Room warning about a missing schema export directory.
+- `PACIFY` costs 50 coins and new profiles start at 0, so it is unreachable until
+  the first rewards land. The button now shows this state explicitly.
+- `nudgesToday` is incremented but never reset, so it is a lifetime counter
+  rather than a daily one despite the name.
+
+---
+
+## License
+
+MIT

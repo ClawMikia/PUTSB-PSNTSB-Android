@@ -14,6 +14,7 @@ import com.cyberpunk.debttracker.ui.dashboard.MainActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.dashboard.OwedFragment_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel_HiltModules;
+import com.cyberpunk.debttracker.ui.game.GameHubActivity_GeneratedInjector;
 import com.cyberpunk.debttracker.ui.settings.SettingsFragment_GeneratedInjector;
 import dagger.Binds;
 import dagger.Component;
@@ -200,6 +201,7 @@ public final class DebtTrackerApp_HiltComponents {
       ArchiveActivity_GeneratedInjector,
       MainActivity_GeneratedInjector,
       DebtDetailActivity_GeneratedInjector,
+      GameHubActivity_GeneratedInjector,
       ActivityComponent,
       DefaultViewModelFactories.ActivityEntryPoint,
       HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint,

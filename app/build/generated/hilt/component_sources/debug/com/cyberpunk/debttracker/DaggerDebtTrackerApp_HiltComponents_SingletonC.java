@@ -14,9 +14,14 @@ import androidx.work.ListenableWorker;
 import androidx.work.WorkerParameters;
 import com.cyberpunk.debttracker.data.db.DebtDao;
 import com.cyberpunk.debttracker.data.db.DebtDatabase;
+import com.cyberpunk.debttracker.data.db.GameDao;
+import com.cyberpunk.debttracker.data.db.GameDatabase;
 import com.cyberpunk.debttracker.data.repository.DebtRepository;
 import com.cyberpunk.debttracker.di.DatabaseModule_ProvideDebtDaoFactory;
 import com.cyberpunk.debttracker.di.DatabaseModule_ProvideDebtDatabaseFactory;
+import com.cyberpunk.debttracker.di.DatabaseModule_ProvideGameDaoFactory;
+import com.cyberpunk.debttracker.di.DatabaseModule_ProvideGameDatabaseFactory;
+import com.cyberpunk.debttracker.game.GameEngine;
 import com.cyberpunk.debttracker.notification.OverdueReminderWorker;
 import com.cyberpunk.debttracker.notification.OverdueReminderWorker_AssistedFactory;
 import com.cyberpunk.debttracker.ui.adddebt.AddDebtActivity;
@@ -25,6 +30,7 @@ import com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.AnalyticsFragment;
 import com.cyberpunk.debttracker.ui.dashboard.ArchiveActivity;
 import com.cyberpunk.debttracker.ui.dashboard.DashboardFragment;
+import com.cyberpunk.debttracker.ui.dashboard.DashboardFragment_MembersInjector;
 import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel;
 import com.cyberpunk.debttracker.ui.dashboard.DebtViewModel_HiltModules;
 import com.cyberpunk.debttracker.ui.dashboard.LentFragment;
@@ -33,6 +39,8 @@ import com.cyberpunk.debttracker.ui.dashboard.OwedFragment;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel;
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel_HiltModules;
+import com.cyberpunk.debttracker.ui.game.GameHubActivity;
+import com.cyberpunk.debttracker.ui.game.GameHubActivity_MembersInjector;
 import com.cyberpunk.debttracker.ui.settings.SettingsFragment;
 import com.cyberpunk.debttracker.ui.settings.SettingsFragment_MembersInjector;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -348,6 +356,7 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
 
     @Override
     public void injectDashboardFragment(DashboardFragment dashboardFragment) {
+      injectDashboardFragment2(dashboardFragment);
     }
 
     @Override
@@ -371,6 +380,12 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     @Override
     public ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder() {
       return new ViewWithFragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl);
+    }
+
+    @CanIgnoreReturnValue
+    private DashboardFragment injectDashboardFragment2(DashboardFragment instance) {
+      DashboardFragment_MembersInjector.injectGame(instance, singletonCImpl.gameEngineProvider.get());
+      return instance;
     }
 
     @CanIgnoreReturnValue
@@ -431,6 +446,11 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     }
 
     @Override
+    public void injectGameHubActivity(GameHubActivity gameHubActivity) {
+      injectGameHubActivity2(gameHubActivity);
+    }
+
+    @Override
     public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
       return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(getViewModelKeys(), new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl));
     }
@@ -455,19 +475,25 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
       return new ViewCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
     }
 
+    @CanIgnoreReturnValue
+    private GameHubActivity injectGameHubActivity2(GameHubActivity instance) {
+      GameHubActivity_MembersInjector.injectGame(instance, singletonCImpl.gameEngineProvider.get());
+      return instance;
+    }
+
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
-
       static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
+
+      static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
 
       static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
 
       @KeepFieldType
-      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
+      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
 
       @KeepFieldType
-      DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
+      DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
 
       @KeepFieldType
       AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
@@ -517,20 +543,20 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
+      static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
+
       static String com_cyberpunk_debttracker_ui_dashboard_DebtViewModel = "com.cyberpunk.debttracker.ui.dashboard.DebtViewModel";
 
       static String com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel = "com.cyberpunk.debttracker.ui.debtdetail.DebtDetailViewModel";
 
-      static String com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel = "com.cyberpunk.debttracker.ui.adddebt.AddDebtViewModel";
+      @KeepFieldType
+      AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
 
       @KeepFieldType
       DebtViewModel com_cyberpunk_debttracker_ui_dashboard_DebtViewModel2;
 
       @KeepFieldType
       DebtDetailViewModel com_cyberpunk_debttracker_ui_debtdetail_DebtDetailViewModel2;
-
-      @KeepFieldType
-      AddDebtViewModel com_cyberpunk_debttracker_ui_adddebt_AddDebtViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
@@ -647,6 +673,12 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
 
     private Provider<DebtDao> provideDebtDaoProvider;
 
+    private Provider<GameDatabase> provideGameDatabaseProvider;
+
+    private Provider<GameDao> provideGameDaoProvider;
+
+    private Provider<GameEngine> gameEngineProvider;
+
     private Provider<DebtRepository> debtRepositoryProvider;
 
     private Provider<OverdueReminderWorker_AssistedFactory> overdueReminderWorker_AssistedFactoryProvider;
@@ -670,6 +702,9 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     private void initialize(final ApplicationContextModule applicationContextModuleParam) {
       this.provideDebtDatabaseProvider = DoubleCheck.provider(new SwitchingProvider<DebtDatabase>(singletonCImpl, 3));
       this.provideDebtDaoProvider = DoubleCheck.provider(new SwitchingProvider<DebtDao>(singletonCImpl, 2));
+      this.provideGameDatabaseProvider = DoubleCheck.provider(new SwitchingProvider<GameDatabase>(singletonCImpl, 6));
+      this.provideGameDaoProvider = DoubleCheck.provider(new SwitchingProvider<GameDao>(singletonCImpl, 5));
+      this.gameEngineProvider = DoubleCheck.provider(new SwitchingProvider<GameEngine>(singletonCImpl, 4));
       this.debtRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<DebtRepository>(singletonCImpl, 1));
       this.overdueReminderWorker_AssistedFactoryProvider = SingleCheck.provider(new SwitchingProvider<OverdueReminderWorker_AssistedFactory>(singletonCImpl, 0));
     }
@@ -697,6 +732,7 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
     @CanIgnoreReturnValue
     private DebtTrackerApp injectDebtTrackerApp2(DebtTrackerApp instance) {
       DebtTrackerApp_MembersInjector.injectWorkerFactory(instance, hiltWorkerFactory());
+      DebtTrackerApp_MembersInjector.injectGame(instance, gameEngineProvider.get());
       return instance;
     }
 
@@ -723,13 +759,22 @@ public final class DaggerDebtTrackerApp_HiltComponents_SingletonC {
           };
 
           case 1: // com.cyberpunk.debttracker.data.repository.DebtRepository 
-          return (T) new DebtRepository(singletonCImpl.provideDebtDaoProvider.get());
+          return (T) new DebtRepository(singletonCImpl.provideDebtDaoProvider.get(), singletonCImpl.gameEngineProvider.get());
 
           case 2: // com.cyberpunk.debttracker.data.db.DebtDao 
           return (T) DatabaseModule_ProvideDebtDaoFactory.provideDebtDao(singletonCImpl.provideDebtDatabaseProvider.get());
 
           case 3: // com.cyberpunk.debttracker.data.db.DebtDatabase 
           return (T) DatabaseModule_ProvideDebtDatabaseFactory.provideDebtDatabase(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          case 4: // com.cyberpunk.debttracker.game.GameEngine 
+          return (T) new GameEngine(singletonCImpl.provideGameDaoProvider.get(), singletonCImpl.provideDebtDaoProvider.get());
+
+          case 5: // com.cyberpunk.debttracker.data.db.GameDao 
+          return (T) DatabaseModule_ProvideGameDaoFactory.provideGameDao(singletonCImpl.provideGameDatabaseProvider.get());
+
+          case 6: // com.cyberpunk.debttracker.data.db.GameDatabase 
+          return (T) DatabaseModule_ProvideGameDatabaseFactory.provideGameDatabase(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
 
           default: throw new AssertionError(id);
         }

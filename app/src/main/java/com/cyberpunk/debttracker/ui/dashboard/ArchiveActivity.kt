@@ -16,11 +16,13 @@ import com.cyberpunk.debttracker.R
 import com.cyberpunk.debttracker.databinding.ActivityArchiveBinding
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity
 import com.cyberpunk.debttracker.util.SecurityHelper
+import com.cyberpunk.debttracker.util.applySystemBarInsets
 import com.cyberpunk.debttracker.util.gone
 import com.cyberpunk.debttracker.util.visible
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import com.cyberpunk.debttracker.util.enableCyberEdgeToEdge
 
 @AndroidEntryPoint
 class ArchiveActivity : AppCompatActivity() {
@@ -31,8 +33,10 @@ class ArchiveActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableCyberEdgeToEdge()
         binding = ActivityArchiveBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.root.applySystemBarInsets()
 
         setupToolbar()
         setupRecycler()

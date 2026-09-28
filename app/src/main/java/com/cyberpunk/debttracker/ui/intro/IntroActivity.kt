@@ -14,7 +14,9 @@ import androidx.viewpager2.widget.ViewPager2
 import com.cyberpunk.debttracker.R
 import com.cyberpunk.debttracker.databinding.ActivityIntroBinding
 import com.cyberpunk.debttracker.ui.dashboard.MainActivity
+import com.cyberpunk.debttracker.util.applySystemBarInsets
 import com.google.android.material.tabs.TabLayoutMediator
+import com.cyberpunk.debttracker.util.enableCyberEdgeToEdge
 
 class IntroActivity : AppCompatActivity() {
 
@@ -22,8 +24,10 @@ class IntroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableCyberEdgeToEdge()
         binding = ActivityIntroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.root.applySystemBarInsets()
 
         val pages = listOf(
             IntroPage(

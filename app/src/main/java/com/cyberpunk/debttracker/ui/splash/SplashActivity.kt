@@ -12,8 +12,10 @@ import com.cyberpunk.debttracker.databinding.ActivitySplashBinding
 import com.cyberpunk.debttracker.ui.dashboard.MainActivity
 import androidx.preference.PreferenceManager
 import com.cyberpunk.debttracker.ui.intro.IntroActivity
+import com.cyberpunk.debttracker.util.applySystemBarInsets
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import com.cyberpunk.debttracker.util.enableCyberEdgeToEdge
 
 class SplashActivity : AppCompatActivity() {
 
@@ -22,8 +24,10 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
+        enableCyberEdgeToEdge()
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.root.applySystemBarInsets()
 
         runSplashSequence()
     }

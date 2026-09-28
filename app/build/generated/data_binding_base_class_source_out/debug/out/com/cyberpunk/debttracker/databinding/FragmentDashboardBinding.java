@@ -35,6 +35,9 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final ImageView btnSort;
 
   @NonNull
+  public final MaterialCardView cardGameHub;
+
+  @NonNull
   public final MaterialCardView cardIOwe;
 
   @NonNull
@@ -42,6 +45,9 @@ public final class FragmentDashboardBinding implements ViewBinding {
 
   @NonNull
   public final MaterialCardView cardOwesMe;
+
+  @NonNull
+  public final ImageView ivGameHubBear;
 
   @NonNull
   public final LinearLayout layoutEmpty;
@@ -54,6 +60,9 @@ public final class FragmentDashboardBinding implements ViewBinding {
 
   @NonNull
   public final TextView tvActiveCount;
+
+  @NonNull
+  public final TextView tvGameHubSummary;
 
   @NonNull
   public final TextView tvNetBalance;
@@ -72,23 +81,28 @@ public final class FragmentDashboardBinding implements ViewBinding {
 
   private FragmentDashboardBinding(@NonNull CoordinatorLayout rootView,
       @NonNull AppBarLayout appBar, @NonNull ImageView btnArchive, @NonNull ImageView btnSort,
-      @NonNull MaterialCardView cardIOwe, @NonNull MaterialCardView cardNetBalance,
-      @NonNull MaterialCardView cardOwesMe, @NonNull LinearLayout layoutEmpty,
+      @NonNull MaterialCardView cardGameHub, @NonNull MaterialCardView cardIOwe,
+      @NonNull MaterialCardView cardNetBalance, @NonNull MaterialCardView cardOwesMe,
+      @NonNull ImageView ivGameHubBear, @NonNull LinearLayout layoutEmpty,
       @NonNull RecyclerView recyclerDebts, @NonNull Toolbar toolbar,
-      @NonNull TextView tvActiveCount, @NonNull TextView tvNetBalance,
-      @NonNull TextView tvNetBalanceLabel, @NonNull TextView tvOverdueCount,
-      @NonNull TextView tvTotalLent, @NonNull TextView tvTotalOwe) {
+      @NonNull TextView tvActiveCount, @NonNull TextView tvGameHubSummary,
+      @NonNull TextView tvNetBalance, @NonNull TextView tvNetBalanceLabel,
+      @NonNull TextView tvOverdueCount, @NonNull TextView tvTotalLent,
+      @NonNull TextView tvTotalOwe) {
     this.rootView = rootView;
     this.appBar = appBar;
     this.btnArchive = btnArchive;
     this.btnSort = btnSort;
+    this.cardGameHub = cardGameHub;
     this.cardIOwe = cardIOwe;
     this.cardNetBalance = cardNetBalance;
     this.cardOwesMe = cardOwesMe;
+    this.ivGameHubBear = ivGameHubBear;
     this.layoutEmpty = layoutEmpty;
     this.recyclerDebts = recyclerDebts;
     this.toolbar = toolbar;
     this.tvActiveCount = tvActiveCount;
+    this.tvGameHubSummary = tvGameHubSummary;
     this.tvNetBalance = tvNetBalance;
     this.tvNetBalanceLabel = tvNetBalanceLabel;
     this.tvOverdueCount = tvOverdueCount;
@@ -141,6 +155,12 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.card_game_hub;
+      MaterialCardView cardGameHub = ViewBindings.findChildViewById(rootView, id);
+      if (cardGameHub == null) {
+        break missingId;
+      }
+
       id = R.id.card_i_owe;
       MaterialCardView cardIOwe = ViewBindings.findChildViewById(rootView, id);
       if (cardIOwe == null) {
@@ -156,6 +176,12 @@ public final class FragmentDashboardBinding implements ViewBinding {
       id = R.id.card_owes_me;
       MaterialCardView cardOwesMe = ViewBindings.findChildViewById(rootView, id);
       if (cardOwesMe == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_game_hub_bear;
+      ImageView ivGameHubBear = ViewBindings.findChildViewById(rootView, id);
+      if (ivGameHubBear == null) {
         break missingId;
       }
 
@@ -180,6 +206,12 @@ public final class FragmentDashboardBinding implements ViewBinding {
       id = R.id.tv_active_count;
       TextView tvActiveCount = ViewBindings.findChildViewById(rootView, id);
       if (tvActiveCount == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_game_hub_summary;
+      TextView tvGameHubSummary = ViewBindings.findChildViewById(rootView, id);
+      if (tvGameHubSummary == null) {
         break missingId;
       }
 
@@ -214,8 +246,9 @@ public final class FragmentDashboardBinding implements ViewBinding {
       }
 
       return new FragmentDashboardBinding((CoordinatorLayout) rootView, appBar, btnArchive, btnSort,
-          cardIOwe, cardNetBalance, cardOwesMe, layoutEmpty, recyclerDebts, toolbar, tvActiveCount,
-          tvNetBalance, tvNetBalanceLabel, tvOverdueCount, tvTotalLent, tvTotalOwe);
+          cardGameHub, cardIOwe, cardNetBalance, cardOwesMe, ivGameHubBear, layoutEmpty,
+          recyclerDebts, toolbar, tvActiveCount, tvGameHubSummary, tvNetBalance, tvNetBalanceLabel,
+          tvOverdueCount, tvTotalLent, tvTotalOwe);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

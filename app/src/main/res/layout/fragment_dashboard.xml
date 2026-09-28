@@ -301,6 +301,78 @@
                 android:letterSpacing="0.1" />
         </LinearLayout>
 
+        <!-- ================= NEURAL GAME HUB ENTRY ================= -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_game_hub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/cyber_surface"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:rippleColor="@color/cyber_gold_alpha15"
+            app:strokeColor="@color/cyber_gold_alpha30"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_game_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp">
+
+                <ImageView
+                    android:id="@+id/iv_game_hub_bear"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:contentDescription="@string/game_hub_title" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.12"
+                        android:text="@string/game_dashboard_card_title"
+                        android:textColor="@color/cyber_gold"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_game_hub_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:letterSpacing="0.06"
+                        android:maxLines="1"
+                        android:text="@string/game_dashboard_card_subtitle"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.12"
+                    android:text="@string/game_dashboard_card_cta"
+                    android:textColor="@color/cyber_gold"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout

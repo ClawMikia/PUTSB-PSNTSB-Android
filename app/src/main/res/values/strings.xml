@@ -167,4 +167,53 @@
     <string name="intro_desc_4">Secure your settled nodes in the encrypted archive. Access restricted by your private key.</string>
     <string name="btn_next">NEXT</string>
     <string name="btn_get_started">INITIALIZE SYSTEM</string>
+
+    <!-- ================= GAME HUB ================= -->
+    <string name="game_hub_title">NEURAL GAME HUB</string>
+    <string name="game_hub_subtitle">SINGLE-PLAYER CAMPAIGN</string>
+    <string name="game_tab_daily">DAILY</string>
+    <string name="game_tab_monthly">MONTHLY</string>
+    <string name="game_tab_annual">ANNUAL</string>
+    <string name="game_tab_achievements">FEATS</string>
+    <string name="game_tab_npcs">CONTACTS</string>
+    <string name="game_tab_log">LOG</string>
+
+    <string name="game_level_format">LEVEL %1$d</string>
+    <string name="game_xp_format">%1$d / %2$d XP</string>
+    <string name="game_coins_format">%1$s COINS</string>
+    <string name="game_bolts_format">%1$d BOLTS</string>
+    <string name="game_nerve_format">NERVE %1$d/%2$d</string>
+    <string name="game_streak_format">%1$d DAY STREAK</string>
+    <string name="game_quest_progress">%1$d / %2$d</string>
+    <string name="game_achievement_progress">%1$d / %2$d</string>
+    <string name="game_achievements_count">%1$d / %2$d UNLOCKED</string>
+    <string name="game_quests_count">%1$d / %2$d COMPLETE</string>
+    <string name="game_npc_open_debts">%1$d open</string>
+    <string name="game_npc_overdue">%1$d OVERDUE</string>
+    <string name="game_npc_pacified">PACIFIED</string>
+    <string name="game_npc_npc_level">LV %1$d</string>
+    <string name="game_npc_xp_format">%1$d / %2$d</string>
+    <string name="game_patience_format">PATIENCE %1$d%%</string>
+    <string name="game_resets_in">RESETS IN %1$s</string>
+    <string name="game_locked_placeholder">LOCKED</string>
+    <string name="game_locked_hint">Reach the target to reveal.</string>
+    <string name="game_no_contacts">No contacts in the matrix yet. Add a debt node to recruit someone.</string>
+    <string name="game_no_log">No activity recorded yet.</string>
+    <string name="game_purge_title">PURGE CAMPAIGN?</string>
+    <string name="game_purge_message">This wipes your level, XP, coins, bolts, nerve, every achievement, every quest and the whole contact roster. Your actual debt records are NOT touched. It is the same reset you get by uninstalling the app.</string>
+    <string name="game_purge_confirm">PURGE</string>
+    <string name="game_purge_cancel">CANCEL</string>
+    <string name="game_purge_done">Campaign purged. Back to zero.</string>
+    <string name="game_pacify_cost">PACIFY · %1$d</string>
+    <string name="game_pacify_cost_short">PACIFY · %1$d ✕</string>
+    <string name="game_action_nudge">NUDGE</string>
+    <string name="game_action_nudged_today">NUDGED</string>
+    <string name="game_action_pacify">PACIFY</string>
+    <string name="game_action_confront">CONFRONT</string>
+    <string name="game_action_purge">PURGE CAMPAIGN</string>
+    <string name="game_nudged_already">One nudge per contact per day. Come back tomorrow.</string>
+    <string name="game_pacify_poor">PACIFY costs %1$d coins and you have %2$d.</string>
+    <string name="game_dashboard_card_title">NEURAL GAME HUB</string>
+    <string name="game_dashboard_card_subtitle">100 feats · 137 quests · 33 skulls</string>
+    <string name="game_dashboard_card_cta">ENTER</string>
 </resources>

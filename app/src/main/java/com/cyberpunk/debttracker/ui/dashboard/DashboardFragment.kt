@@ -16,15 +16,26 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.cyberpunk.debttracker.R
 import com.cyberpunk.debttracker.data.repository.SortOrder
 import com.cyberpunk.debttracker.databinding.FragmentDashboardBinding
+import com.cyberpunk.debttracker.game.AchievementCatalog
+import com.cyberpunk.debttracker.game.GameEngine
+import com.cyberpunk.debttracker.game.IconForge
+import com.cyberpunk.debttracker.game.QuestCatalog
+import com.cyberpunk.debttracker.game.QuestCycle
 import com.cyberpunk.debttracker.ui.debtdetail.DebtDetailActivity
+import com.cyberpunk.debttracker.ui.game.GameHubActivity
 import com.cyberpunk.debttracker.util.gone
 import com.cyberpunk.debttracker.util.toCurrencyString
 import com.cyberpunk.debttracker.util.visible
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class DashboardFragment : Fragment() {
+
+    @Inject
+    lateinit var game: GameEngine
 
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
@@ -66,6 +77,10 @@ class DashboardFragment : Fragment() {
         binding.btnArchive.setOnClickListener {
             checkArchivePassword()
         }
+        binding.cardGameHub.setOnClickListener {
+            startActivity(Intent(requireContext(), GameHubActivity::class.java))
+        }
+        binding.ivGameHubBear.setImageDrawable(IconForge.bear("RW_FIRST_LAUNCH"))
     }
 
     private fun checkArchivePassword() {
@@ -149,6 +164,22 @@ class DashboardFragment : Fragment() {
                             binding.tvOverdueCount.gone()
                         }
                     }
+                }
+
+                launch {
+                    combine(
+                        game.profile,
+                        game.unlockedAchievements,
+                        game.questStates(QuestCycle.DAILY),
+                    ) { profile, unlocked, daily ->
+                        val questsDone = daily.count { it.completed }
+                        binding.tvGameHubSummary.text = buildString {
+                            append("LV ").append(profile?.level ?: 1)
+                            append("  ·  ").append(unlocked).append('/').append(AchievementCatalog.all.size)
+                            append(" FEATS  ·  ").append(questsDone).append('/')
+                            append(QuestCatalog.countDaily()).append(" DAILY")
+                        }
+                    }.collect { }
                 }
             }
         }

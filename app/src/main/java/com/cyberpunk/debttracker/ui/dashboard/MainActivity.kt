@@ -24,6 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 import androidx.preference.PreferenceManager
 import com.cyberpunk.debttracker.util.ReminderManager
+import com.cyberpunk.debttracker.util.enableCyberEdgeToEdge
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableCyberEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -81,19 +83,27 @@ class MainActivity : AppCompatActivity() {
         val baseNavHeight = resources.getDimensionPixelSize(R.dimen.bottom_nav_height)
         val fabOffset = resources.getDimensionPixelSize(R.dimen.spacing_md)
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
-            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            binding.root.updatePadding(top = bars.top)
-            if (bars.bottom > 0) {
-                binding.bottomNavigation.updateLayoutParams<ViewGroup.LayoutParams> {
-                    height = baseNavHeight + bars.bottom
-                }
-                binding.bottomNavigation.setPadding(0, 0, 0, bars.bottom)
-                binding.navHostFragment.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                    bottomMargin = baseNavHeight + bars.bottom
-                }
-                binding.fabAddDebt.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                    bottomMargin = baseNavHeight + fabOffset + bars.bottom
-                }
+            val bars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            )
+            // Status/notification bar at the top, plus cutout + 3-button nav on
+            // the sides in landscape so nothing hides behind the system bars.
+            binding.root.updatePadding(
+                left = bars.left,
+                top = bars.top,
+                right = bars.right,
+            )
+            // Always reassign, otherwise a rotation back to a device without a
+            // nav bar leaves the stale extra height/margins in place.
+            binding.bottomNavigation.updateLayoutParams<ViewGroup.LayoutParams> {
+                height = baseNavHeight + bars.bottom
+            }
+            binding.bottomNavigation.setPadding(0, 0, 0, bars.bottom)
+            binding.navHostFragment.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = baseNavHeight + bars.bottom
+            }
+            binding.fabAddDebt.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = baseNavHeight + fabOffset + bars.bottom
             }
             insets
         }
